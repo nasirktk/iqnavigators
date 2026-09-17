@@ -20,27 +20,32 @@
        CSS RESET & DESIGN SYSTEM TOKENS
        ========================================================================== */
     :root {
-      /* Brand Color Palette */
-      --navy: #1E1B3A;
-      --navy-deep: #13112A;
-      --navy-surface: #252248;
-      --navy-card: #201C3F;
-      --sky-blue: #4BB8E8;
-      --purple: #9B7EC8;
-      --pink: #E8417A;
-      --orange: #F5A623;
-      --yellow: #F5D020;
-      --gray: #C8C8C8;
+      /* Official Brand Color Palette (Directly from IQ Navigators SCSS Hex Codes) */
+      --navy: #14112C;           /* $#14112c: Deep Midnight Navy (Primary Background & Typography) */
+      --navy-deep: #0E0C1F;      /* Deeper Midnight Navy */
+      --navy-surface: #1E1A3D;   /* Dark Navy Card Surface */
+      --navy-card: #191535;      /* Dark Navy Card Background */
+      
+      --sky-blue: #6EA0CF;       /* $#6ea0cf: Official Cerulean Blue */
+      --edu-blue: #3273BC;       /* Signature Academic Blue (Accessible tone of $#6ea0cf for buttons) */
+      --edu-blue-hover: #14112C; /* Button hover state */
+      
+      --purple: #B681B1;         /* $#b681b1: Official Mauve / Purple */
+      --pink: #E4669A;           /* $#e4669a: Official Rose / Pink */
+      --coral: #F49585;          /* $#f49585: Official Soft Coral */
+      --orange: #FABB6D;         /* $#fabb6d: Official Warm Amber */
+      --yellow: #FAD24E;         /* $#fad24e: Official Star Yellow / Gold */
+      --gray: #CCCCCC;           /* $#cccccc: Official Silver Gray */
       --gray-light: #ECEEF6;
       --gray-text: #5D5A75;
       --light-bg: #F8F9FF;
       --white: #FFFFFF;
 
-      /* Brand Gradients (Used strictly as accents, badges, text & CTA fills) */
-      --brand-gradient: linear-gradient(135deg, #4BB8E8 0%, #9B7EC8 35%, #E8417A 70%, #F5A623 100%);
-      --brand-gradient-horizontal: linear-gradient(90deg, #4BB8E8 0%, #9B7EC8 33%, #E8417A 66%, #F5A623 100%);
-      --brand-glow: 0 8px 24px rgba(232, 65, 122, 0.28);
-      --card-glow: 0 14px 36px rgba(30, 27, 58, 0.08);
+      /* Educational Brand Gradients (Soft Academic Blue to Cerulean from Logo) */
+      --brand-gradient: linear-gradient(135deg, #3273BC 0%, #6EA0CF 100%);
+      --brand-gradient-horizontal: linear-gradient(90deg, #3273BC 0%, #6EA0CF 100%);
+      --brand-glow: 0 8px 24px rgba(110, 160, 207, 0.28);
+      --card-glow: 0 14px 36px rgba(20, 17, 44, 0.08);
 
       /* Typography: Manrope for punchy headings & numbers, Plus Jakarta Sans for body */
       --font-heading: 'Manrope', 'Plus Jakarta Sans', sans-serif;
@@ -209,24 +214,28 @@
     }
 
     .btn-gradient {
-      background: var(--brand-gradient);
+      background: var(--edu-blue);
       color: var(--white);
-      box-shadow: 0 4px 15px rgba(232, 65, 122, 0.28);
+      box-shadow: 0 6px 18px rgba(50, 115, 188, 0.28);
     }
 
     .btn-gradient:hover {
-      box-shadow: 0 8px 24px rgba(232, 65, 122, 0.4);
+      background: var(--navy);
+      color: var(--white);
+      box-shadow: 0 10px 24px rgba(20, 17, 44, 0.28);
+      filter: none;
     }
 
     .btn-outline {
       background: transparent;
       color: var(--navy);
-      border: 1.5px solid var(--gray-light);
+      border: 1.5px solid rgba(20, 17, 44, 0.15);
     }
 
     .btn-outline:hover {
-      border-color: var(--navy);
-      background: rgba(30, 27, 58, 0.03);
+      border-color: var(--edu-blue);
+      color: var(--edu-blue);
+      background: rgba(110, 160, 207, 0.08);
     }
 
     .btn-outline-white {
@@ -316,7 +325,7 @@
     }
 
     .nav-link:hover {
-      color: var(--sky-blue);
+      color: var(--edu-blue);
     }
 
     .nav-link::after {
@@ -326,7 +335,7 @@
       left: 0;
       width: 0;
       height: 3px;
-      background: var(--brand-gradient-horizontal);
+      background: var(--edu-blue);
       transition: width var(--transition-smooth);
       border-radius: 2px;
     }
@@ -481,14 +490,14 @@
       padding: 6px 18px 6px 8px;
       border-radius: var(--radius-pill);
       background: var(--white);
-      border: 1px solid rgba(75, 184, 232, 0.4);
-      box-shadow: 0 4px 16px rgba(75, 184, 232, 0.14);
+      border: 1px solid rgba(110, 160, 207, 0.35);
+      box-shadow: 0 4px 16px rgba(110, 160, 207, 0.15);
       margin-bottom: 24px;
       flex-wrap: wrap;
     }
 
     .scope-pill {
-      background: var(--brand-gradient);
+      background: var(--edu-blue);
       color: var(--white);
       font-size: 0.76rem;
       font-weight: 800;
@@ -496,7 +505,7 @@
       text-transform: uppercase;
       padding: 5px 14px;
       border-radius: var(--radius-pill);
-      box-shadow: 0 2px 8px rgba(232, 65, 122, 0.25);
+      box-shadow: 0 2px 8px rgba(50, 115, 188, 0.25);
     }
 
     .scope-text {
@@ -576,7 +585,7 @@
       border-radius: 50%;
       border: 2px solid var(--white);
       margin-left: -8px;
-      background: var(--brand-gradient);
+      background: var(--edu-blue);
       color: var(--white);
       display: flex;
       align-items: center;
@@ -849,26 +858,26 @@
 
     /* 4 Distinct Brand Pastel Variations */
     .pastel-sky {
-      background: rgba(75, 184, 232, 0.08);
-      border: 1px solid rgba(75, 184, 232, 0.25);
+      background: rgba(110, 160, 207, 0.11);
+      border: 1px solid rgba(110, 160, 207, 0.28);
       border-top-color: var(--sky-blue);
     }
 
     .pastel-purple {
-      background: rgba(155, 126, 200, 0.09);
-      border: 1px solid rgba(155, 126, 200, 0.25);
+      background: rgba(182, 129, 177, 0.11);
+      border: 1px solid rgba(182, 129, 177, 0.28);
       border-top-color: var(--purple);
     }
 
     .pastel-pink {
-      background: rgba(232, 65, 122, 0.08);
-      border: 1px solid rgba(232, 65, 122, 0.25);
+      background: rgba(228, 102, 154, 0.11);
+      border: 1px solid rgba(228, 102, 154, 0.28);
       border-top-color: var(--pink);
     }
 
     .pastel-orange {
-      background: rgba(245, 166, 35, 0.09);
-      border: 1px solid rgba(245, 166, 35, 0.25);
+      background: rgba(250, 187, 109, 0.13);
+      border: 1px solid rgba(250, 187, 109, 0.28);
       border-top-color: var(--orange);
     }
 
@@ -1094,7 +1103,7 @@
     }
 
     .program-badge-featured {
-      background: var(--brand-gradient);
+      background: var(--edu-blue);
       color: var(--white);
       font-size: 0.72rem;
       font-weight: 800;
@@ -1784,16 +1793,17 @@
       font-size: 1.05rem;
       font-weight: 800;
       border-radius: var(--radius-pill);
-      background: var(--brand-gradient);
+      background: var(--edu-blue);
       color: var(--white);
       cursor: pointer;
-      box-shadow: var(--brand-glow);
-      transition: transform var(--transition-smooth), filter var(--transition-smooth);
+      box-shadow: 0 6px 18px rgba(50, 115, 188, 0.28);
+      transition: transform var(--transition-smooth), background-color var(--transition-smooth), box-shadow var(--transition-smooth);
     }
 
     .form-submit-btn:hover {
       transform: translateY(-2px);
-      filter: brightness(0.95);
+      background: var(--navy);
+      box-shadow: 0 10px 26px rgba(20, 17, 44, 0.28);
     }
 
     .form-status-msg {
@@ -2150,76 +2160,134 @@
     }
 
     /* ==========================================================================
-       THE 4 DIMENSIONS MODEL (The IQ Navigators Education Framework)
+       THE 4 DIMENSIONS MODEL (The IQ Navigators Education Framework - Luxury Dark Section)
        ========================================================================== */
     .section-dimensions {
-      padding: 100px 0;
-      background: var(--light-bg);
+      padding: 105px 0;
+      background: var(--navy);
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
       position: relative;
     }
 
     .four-dimensions-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
+      gap: 24px;
     }
 
     .dim-card {
-      min-height: 290px;
-      border-radius: 24px;
-      padding: 30px 24px;
+      min-height: 310px;
+      border-radius: 20px;
+      padding: 32px 24px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      color: var(--white);
       position: relative;
-      overflow: hidden;
-      box-shadow: 0 12px 30px rgba(30, 27, 58, 0.06);
+      background: var(--white);
+      border: 1px solid rgba(255, 255, 255, 0.9);
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.22);
+      border-top: 4px solid transparent;
       transition: transform var(--transition-smooth), box-shadow var(--transition-smooth);
     }
 
     .dim-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 20px 42px rgba(30, 27, 58, 0.14);
+      transform: translateY(-8px);
+      box-shadow: 0 24px 48px rgba(0, 0, 0, 0.32);
     }
 
     .dim-card.dim-sky {
-      background: linear-gradient(145deg, #4BB8E8 0%, #228DBE 100%);
+      border-top-color: var(--edu-blue);
     }
 
     .dim-card.dim-purple {
-      background: linear-gradient(145deg, #9B7EC8 0%, #7E5DB3 100%);
+      border-top-color: var(--purple);
     }
 
     .dim-card.dim-pink {
-      background: linear-gradient(145deg, #E8417A 0%, #C4265D 100%);
+      border-top-color: var(--pink);
     }
 
     .dim-card.dim-orange {
-      background: linear-gradient(145deg, #F5A623 0%, #D48810 100%);
-      color: var(--navy);
+      border-top-color: var(--orange);
+    }
+
+    .dim-card-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 24px;
     }
 
     .dim-num {
       font-family: var(--font-heading);
-      font-size: 46px;
+      font-size: 2.3rem;
       font-weight: 800;
-      opacity: 0.38;
       line-height: 1;
+      letter-spacing: -0.02em;
+    }
+
+    .dim-sky .dim-num {
+      color: var(--edu-blue);
+    }
+
+    .dim-purple .dim-num {
+      color: var(--purple);
+    }
+
+    .dim-pink .dim-num {
+      color: var(--pink);
+    }
+
+    .dim-orange .dim-num {
+      color: var(--orange);
+    }
+
+    .dim-pill {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      padding: 5px 12px;
+      border-radius: var(--radius-pill);
+    }
+
+    .dim-sky .dim-pill {
+      background: rgba(110, 160, 207, 0.12);
+      color: #2E6EB8;
+      border: 1px solid rgba(110, 160, 207, 0.35);
+    }
+
+    .dim-purple .dim-pill {
+      background: rgba(182, 129, 177, 0.12);
+      color: #8C4E87;
+      border: 1px solid rgba(182, 129, 177, 0.35);
+    }
+
+    .dim-pink .dim-pill {
+      background: rgba(228, 102, 154, 0.12);
+      color: #C0336F;
+      border: 1px solid rgba(228, 102, 154, 0.35);
+    }
+
+    .dim-orange .dim-pill {
+      background: rgba(250, 187, 109, 0.15);
+      color: #B26E17;
+      border: 1px solid rgba(250, 187, 109, 0.35);
     }
 
     .dim-title {
-      font-size: 1.45rem;
+      font-size: 1.35rem;
       font-weight: 800;
-      margin-bottom: 8px;
-      color: inherit;
-      line-height: 1.2;
+      margin-bottom: 10px;
+      color: var(--navy);
+      line-height: 1.25;
     }
 
     .dim-desc {
-      font-size: 0.9rem;
-      line-height: 1.55;
-      opacity: 0.92;
+      font-size: 0.92rem;
+      line-height: 1.6;
+      color: var(--gray-text);
     }
 
     /* ==========================================================================
@@ -2611,11 +2679,11 @@
       height: 66px;
       border-radius: 50%;
       background: var(--white);
-      color: var(--pink);
+      color: var(--edu-blue);
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 8px 24px rgba(232, 65, 122, 0.45);
+      box-shadow: 0 8px 24px rgba(110, 160, 207, 0.4);
       transition: transform var(--transition-smooth), background-color var(--transition-smooth), color var(--transition-smooth);
       position: relative;
       z-index: 2;
@@ -2629,7 +2697,7 @@
 
     .video-card-frame:hover .play-btn-circle {
       transform: scale(1.1);
-      background: var(--brand-gradient);
+      background: var(--edu-blue);
       color: var(--white);
     }
 
@@ -2638,7 +2706,7 @@
       width: 66px;
       height: 66px;
       border-radius: 50%;
-      background: rgba(232, 65, 122, 0.45);
+      background: rgba(110, 160, 207, 0.35);
       animation: playPulse 2s infinite ease-out;
       z-index: 1;
     }
@@ -2648,7 +2716,7 @@
       width: 66px;
       height: 66px;
       border-radius: 50%;
-      background: rgba(75, 184, 232, 0.45);
+      background: rgba(56, 189, 248, 0.35);
       animation: playPulse 2s infinite ease-out 0.8s;
       z-index: 1;
     }
@@ -3280,64 +3348,6 @@
   </section>
 
   <!-- ==========================================================================
-       THE 4 DIMENSIONS MODEL (The IQ Navigators Education Framework)
-       ========================================================================== -->
-  <section class="section-dimensions" id="dimensions">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">Education Model</span>
-        <h2 class="section-title">Four dimensions. One complete learner.</h2>
-        <p class="section-subtitle">
-          Academic achievement is only one part of becoming capable, confident, and independent. Our 4-pillar model
-          connects knowledge with character and real-world skills.
-        </p>
-      </div>
-
-      <div class="four-dimensions-grid">
-        <!-- 01 Academic Mastery -->
-        <article class="dim-card dim-sky">
-          <span class="dim-num">01</span>
-          <div>
-            <h3 class="dim-title">Academic Mastery</h3>
-            <p class="dim-desc">Strong Cambridge-aligned foundations across English, Urdu, Mathematics, and Science with
-              inquiry-based learning.</p>
-          </div>
-        </article>
-
-        <!-- 02 Technical & AI -->
-        <article class="dim-card dim-purple">
-          <span class="dim-num">02</span>
-          <div>
-            <h3 class="dim-title">Technical &amp; AI</h3>
-            <p class="dim-desc">Coding fundamentals, Artificial Intelligence bootcamps, digital literacy, and modern
-              tools for 21st-century problem solving.</p>
-          </div>
-        </article>
-
-        <!-- 03 Moral Character & Ethics -->
-        <article class="dim-card dim-pink">
-          <span class="dim-num">03</span>
-          <div>
-            <h3 class="dim-title">Moral Character</h3>
-            <p class="dim-desc">Cultivating 9 essential character traits: courtesy, neatness, truthfulness,
-              self-control, empathy, and sound ethical foundations.</p>
-          </div>
-        </article>
-
-        <!-- 04 Hard Skills -->
-        <article class="dim-card dim-orange">
-          <span class="dim-num">04</span>
-          <div>
-            <h3 class="dim-title">Hard Skills</h3>
-            <p class="dim-desc">Practical competencies, independent research projects, cognitive confidence, and
-              demonstrable student portfolios.</p>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- ==========================================================================
        VIRTUAL CLASSROOM SHOWCASE (Raising Confident Learners & Holistic Growth)
        ========================================================================== -->
   <section class="section-cutout" id="student-profile">
@@ -3356,12 +3366,6 @@
         <div class="video-card-frame" id="videoTriggerCard" role="button" aria-label="Watch Online Classroom Demo">
           <img src="images/class.webp" alt="IQ Navigators Virtual Online Classroom Session" class="video-thumb-img">
           <div class="video-overlay"></div>
-
-          <!-- Top Badge: Live Classroom Tag
-          <div class="video-top-tag">
-            <span class="pulse-dot"></span>
-            <span>Watch: Inside Our Digital Classroom</span>
-          </div> -->
 
           <!-- Glowing Pulsing Play Button -->
           <div class="video-play-btn">
@@ -3383,7 +3387,7 @@
 
         <!-- Floating Badge 1: Top Left -->
         <div class="cutout-badge cutout-badge-1">
-          <div class="cutout-badge-icon" style="background: rgba(75, 184, 232, 0.15); color: #157FAE;">
+          <div class="cutout-badge-icon" style="background: rgba(110, 160, 207, 0.18); color: #2E6EB8;">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
               stroke-linecap="round" stroke-linejoin="round">
               <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
@@ -3396,7 +3400,7 @@
 
         <!-- Floating Badge 2: Right -->
         <div class="cutout-badge cutout-badge-2">
-          <div class="cutout-badge-icon" style="background: rgba(155, 126, 200, 0.2); color: #6D4BB0;">
+          <div class="cutout-badge-icon" style="background: rgba(182, 129, 177, 0.2); color: #8C4E87;">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
               stroke-linecap="round" stroke-linejoin="round">
               <polygon
@@ -3486,7 +3490,7 @@
         <img src="images/class.webp" alt="IQ Navigators Online Classroom Session"
           style="width: 100%; height: 100%; object-fit: cover; display: block;">
         <div
-          style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(30, 27, 58, 0.05) 0%, rgba(30, 27, 58, 0.4) 100%);">
+          style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(20, 17, 44, 0.05) 0%, rgba(20, 17, 44, 0.4) 100%);">
         </div>
         <div
           style="position: absolute; bottom: 12px; left: 16px; background: rgba(255, 255, 255, 0.94); backdrop-filter: blur(8px); padding: 5px 14px; border-radius: var(--radius-pill); font-size: 0.8rem; font-weight: 800; color: var(--navy); display: inline-flex; align-items: center; gap: 6px;">
@@ -3508,7 +3512,7 @@
           style="background: #F8F9FD; border-radius: 16px; padding: 22px 24px; border: 1px solid #ECEEF6; margin-bottom: 24px; text-align: left;">
           <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 14px;">
             <span
-              style="display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: #4BB8E8;"></span>
+              style="display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--sky-blue);"></span>
             <span
               style="font-family: var(--font-heading); font-size: 0.88rem; font-weight: 800; color: var(--navy); text-transform: uppercase; letter-spacing: 0.05em;">Interactive
               Platform Features:</span>
@@ -3547,6 +3551,72 @@
       </div>
     </div>
   </div>
+
+  <!-- ==========================================================================
+       THE 4 DIMENSIONS MODEL (The IQ Navigators Education Framework)
+       ========================================================================== -->
+  <section class="section-dimensions" id="dimensions">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag light">Education Model</span>
+        <h2 class="section-title light">Four dimensions. <span class="text-gradient">One complete learner.</span></h2>
+        <p class="section-subtitle light">
+          Academic achievement is only one part of becoming capable, confident, and independent. Our 4-pillar model
+          connects knowledge with character and real-world skills.
+        </p>
+      </div>
+
+      <div class="four-dimensions-grid">
+        <!-- 01 Academic Mastery -->
+        <article class="dim-card dim-sky">
+          <div class="dim-card-top">
+            <span class="dim-num">01</span>
+            <span class="dim-pill">Cambridge Aligned</span>
+          </div>
+          <div class="dim-card-content">
+            <h3 class="dim-title">Academic Mastery</h3>
+            <p class="dim-desc">Strong Cambridge-aligned foundations across English, Urdu, Mathematics, and Science with inquiry-based learning.</p>
+          </div>
+        </article>
+
+        <!-- 02 Technical & AI -->
+        <article class="dim-card dim-purple">
+          <div class="dim-card-top">
+            <span class="dim-num">02</span>
+            <span class="dim-pill">Future Ready</span>
+          </div>
+          <div class="dim-card-content">
+            <h3 class="dim-title">Technical &amp; AI</h3>
+            <p class="dim-desc">Coding fundamentals, Artificial Intelligence bootcamps, digital literacy, and modern tools for 21st-century problem solving.</p>
+          </div>
+        </article>
+
+        <!-- 03 Moral Character & Ethics -->
+        <article class="dim-card dim-pink">
+          <div class="dim-card-top">
+            <span class="dim-num">03</span>
+            <span class="dim-pill">Ethical Growth</span>
+          </div>
+          <div class="dim-card-content">
+            <h3 class="dim-title">Moral Character</h3>
+            <p class="dim-desc">Cultivating 9 essential character traits: courtesy, neatness, truthfulness, self-control, empathy, and sound ethical foundations.</p>
+          </div>
+        </article>
+
+        <!-- 04 Hard Skills -->
+        <article class="dim-card dim-orange">
+          <div class="dim-card-top">
+            <span class="dim-num">04</span>
+            <span class="dim-pill">Applied Mastery</span>
+          </div>
+          <div class="dim-card-content">
+            <h3 class="dim-title">Hard Skills</h3>
+            <p class="dim-desc">Practical competencies, independent research projects, cognitive confidence, and demonstrable student portfolios.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
 
   <!-- ==========================================================================
        NEW: OUR LEARNING APPROACH (Photo Story & Parent Mentorship)
