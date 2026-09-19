@@ -55,7 +55,7 @@
       --white: #FFFFFF;
 
       /* Educational Brand Gradients (Soft Academic Blue to Cerulean from Logo) */
-      --brand-gradient: linear-gradient(135deg, #3273BC 0%, #6EA0CF 100%);
+      --brand-gradient: linear-gradient(135deg, #3273BC 0%, #F49585 100%);
       --brand-gradient-horizontal: linear-gradient(90deg, #3273BC 0%, #6EA0CF 100%);
       --brand-glow: 0 8px 24px rgba(110, 160, 207, 0.28);
       --card-glow: 0 14px 36px rgba(20, 17, 44, 0.08);
@@ -199,6 +199,7 @@
     .text-gradient {
       background: var(--brand-gradient);
       -webkit-background-clip: text;
+      background-clip: text;
       -webkit-text-fill-color: transparent;
     }
 
@@ -1607,9 +1608,9 @@
 
     .program-price-val {
       font-family: var(--font-heading);
-      font-size: 1.25rem;
+      font-size: 1.05rem;
       font-weight: 800;
-      color: var(--navy);
+      color: var(--edu-blue);
       line-height: 1.2;
     }
 
@@ -2419,46 +2420,50 @@
     .footer {
       background: var(--navy-deep);
       color: rgba(255, 255, 255, 0.7);
-      padding: 48px 0;
+      padding: 54px 0 32px;
       border-top: 1px solid rgba(255, 255, 255, 0.08);
       font-size: 0.9rem;
     }
 
-    .footer-inner {
+    .footer-top-row {
       display: flex;
       align-items: center;
       justify-content: space-between;
       flex-wrap: wrap;
-      gap: 24px;
+      gap: 32px;
+      padding-bottom: 36px;
     }
 
     .footer-brand {
       display: flex;
       flex-direction: column;
       align-items: flex-start;
-      gap: 10px;
+      gap: 8px;
     }
 
     .footer-brand img {
-      height: 42px;
+      height: 44px;
       filter: brightness(0) invert(1);
-      opacity: 0.9;
+      opacity: 0.95;
     }
 
-    .footer-brand-copy {
+    .footer-brand-sub {
       font-size: 0.82rem;
       color: rgba(255, 255, 255, 0.5);
+      letter-spacing: 0.2px;
     }
 
     .footer-links {
       display: flex;
-      gap: 24px;
+      gap: 26px;
       list-style: none;
+      flex-wrap: wrap;
     }
 
     .footer-link {
-      color: rgba(255, 255, 255, 0.7);
+      color: rgba(255, 255, 255, 0.75);
       font-size: 0.9rem;
+      font-weight: 500;
       transition: color var(--transition-smooth);
     }
 
@@ -2466,11 +2471,39 @@
       color: var(--sky-blue);
     }
 
-    .footer-tagline {
-      font-family: var(--font-serif);
-      font-style: italic;
+    .footer-bottom-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      font-size: 0.82rem;
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    .footer-copy-text {
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    .footer-credit-text {
       color: rgba(255, 255, 255, 0.6);
-      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .footer-credit-link {
+      color: var(--sky-blue);
+      text-decoration: none;
+      font-weight: 600;
+      transition: color var(--transition-smooth);
+    }
+
+    .footer-credit-link:hover {
+      color: var(--yellow);
+      text-decoration: underline;
     }
 
     /* ==========================================================================
@@ -2659,9 +2692,20 @@
         grid-template-columns: 1fr;
       }
 
-      .footer-inner {
+      .footer-top-row {
         flex-direction: column;
         align-items: flex-start;
+        gap: 24px;
+      }
+
+      .footer-links {
+        gap: 14px 20px;
+      }
+
+      .footer-bottom-bar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
       }
     }
 
@@ -3829,6 +3873,413 @@
         font-size: 0.86rem;
       }
     }
+
+    /* Utility & Component Classes to eliminate inline styles */
+    .mobile-cta-item {
+      display: none;
+    }
+
+    .mobile-cta-link {
+      padding: 12px 24px;
+      width: 100%;
+      text-align: center;
+    }
+
+    .avatar-sky {
+      background: #4BB8E8;
+    }
+
+    .avatar-purple {
+      background: #9B7EC8;
+    }
+
+    .avatar-pink {
+      background: #E8417A;
+    }
+
+    .hero-showcase-card {
+      cursor: pointer;
+    }
+
+    .hero-badge-cambridge {
+      background: rgba(110, 160, 207, 0.25);
+      color: var(--sky-blue);
+    }
+
+    .hero-play-circle {
+      width: 58px;
+      height: 58px;
+    }
+
+    .hero-live-green {
+      background: #10B981;
+    }
+
+    .hero-caption-cta {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: rgba(255, 255, 255, 0.85);
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .trust-icon-sky {
+      color: var(--sky-blue);
+    }
+
+    .trust-icon-purple {
+      color: var(--purple);
+    }
+
+    .trust-icon-pink {
+      color: var(--pink);
+    }
+
+    .trust-icon-yellow {
+      color: var(--yellow);
+    }
+
+    .why-icon-sky {
+      color: var(--sky-blue);
+    }
+
+    .why-icon-purple {
+      color: var(--purple);
+    }
+
+    .why-icon-pink {
+      color: var(--pink);
+    }
+
+    .why-icon-orange {
+      color: var(--orange);
+    }
+
+    .shape-pos-1 {
+      top: 10%;
+      left: 8%;
+    }
+
+    .shape-pos-2 {
+      top: 60%;
+      right: 5%;
+    }
+
+    .shape-pos-3 {
+      bottom: 12%;
+      left: 45%;
+    }
+
+    .badge-icon-lms {
+      background: rgba(110, 160, 207, 0.18);
+      color: #2E6EB8;
+    }
+
+    .badge-icon-traits {
+      background: rgba(182, 129, 177, 0.2);
+      color: #8C4E87;
+    }
+
+    .cutout-icon-sky {
+      color: var(--sky-blue);
+    }
+
+    .cutout-icon-purple {
+      color: var(--purple);
+    }
+
+    .cutout-icon-pink {
+      color: var(--pink);
+    }
+
+    .cutout-actions-row {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .video-modal-preview-box {
+      width: 100%;
+      height: 180px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .video-modal-preview-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .video-modal-preview-gradient {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(20, 17, 44, 0.05) 0%, rgba(20, 17, 44, 0.4) 100%);
+    }
+
+    .video-modal-preview-badge {
+      position: absolute;
+      bottom: 12px;
+      left: 16px;
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      padding: 5px 14px;
+      border-radius: var(--radius-pill);
+      font-size: 0.8rem;
+      font-weight: 800;
+      color: var(--navy);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .video-modal-preview-dot {
+      display: inline-block;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #25D366;
+    }
+
+    .video-modal-body-pad {
+      padding: 24px 28px 28px;
+    }
+
+    .video-modal-heading {
+      font-family: var(--font-heading);
+      font-size: 1.45rem;
+      font-weight: 800;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+
+    .video-modal-subtext {
+      font-size: 0.95rem;
+      color: var(--gray-text);
+      line-height: 1.6;
+      max-width: 500px;
+      margin: 0 auto 20px auto;
+    }
+
+    .video-modal-features-card {
+      background: #F8F9FD;
+      border-radius: 16px;
+      padding: 22px 24px;
+      border: 1px solid #ECEEF6;
+      margin-bottom: 24px;
+      text-align: left;
+    }
+
+    .video-modal-features-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+
+    .video-modal-features-dot {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--sky-blue);
+    }
+
+    .video-modal-features-label {
+      font-family: var(--font-heading);
+      font-size: 0.88rem;
+      font-weight: 800;
+      color: var(--navy);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .video-modal-features-items {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .video-modal-feature-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.92rem;
+      color: var(--navy);
+      font-weight: 600;
+    }
+
+    .video-modal-check {
+      color: #25D366;
+      font-size: 1.1rem;
+      font-weight: 800;
+    }
+
+    .video-modal-btn-demo {
+      padding: 12px 26px;
+    }
+
+    .video-modal-btn-close {
+      padding: 12px 22px;
+      border-color: #D6DAE8;
+      color: var(--navy);
+    }
+
+    .benefit-icon-purple {
+      color: var(--purple);
+      background: rgba(155, 126, 200, 0.16);
+    }
+
+    .benefit-icon-pink {
+      color: var(--pink);
+      background: rgba(232, 65, 122, 0.16);
+    }
+
+    .btn-self-start {
+      align-self: flex-start;
+    }
+
+    .step-time-sky {
+      color: var(--sky-blue);
+    }
+
+    .step-time-pink {
+      color: var(--pink);
+    }
+
+    .step-time-orange {
+      color: var(--orange);
+    }
+
+    .step-time-yellow {
+      color: var(--yellow);
+    }
+
+    .routine-banner-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .tag-mb-12 {
+      margin-bottom: 12px;
+    }
+
+    .admissions-cat-card .btn {
+      width: 100%;
+      text-align: center;
+      justify-content: center;
+    }
+
+    .admissions-inclusive-banner .section-tag {
+      margin-bottom: 10px;
+    }
+
+    .admissions-inclusive-banner h3 {
+      font-size: 1.55rem;
+      font-weight: 800;
+      color: var(--white);
+      margin-bottom: 8px;
+    }
+
+    .admissions-inclusive-banner p {
+      font-size: 0.92rem;
+      color: rgba(255, 255, 255, 0.8);
+      line-height: 1.55;
+    }
+
+    .sibling-benefit-banner {
+      font-size: 0.84rem;
+      color: var(--yellow);
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .sibling-benefit-icon {
+      flex-shrink: 0;
+    }
+
+    .enroll-steps-title {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--white);
+      margin-bottom: 4px;
+    }
+
+    .btn-enroll-wa {
+      width: 100%;
+      text-align: center;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 6px;
+    }
+
+    .testimonial-header-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 14px;
+    }
+
+    .pill-verified {
+      font-size: 0.72rem;
+      padding: 4px 10px;
+      background: rgba(250, 210, 78, 0.15);
+      color: var(--yellow);
+      border: 1px solid rgba(250, 210, 78, 0.3);
+    }
+
+    .pill-cambridge {
+      font-size: 0.72rem;
+      padding: 4px 10px;
+      background: rgba(75, 184, 232, 0.15);
+      color: var(--sky-blue);
+      border: 1px solid rgba(75, 184, 232, 0.3);
+    }
+
+    .pill-overseas {
+      font-size: 0.72rem;
+      padding: 4px 10px;
+      background: rgba(232, 65, 122, 0.15);
+      color: var(--pink);
+      border: 1px solid rgba(232, 65, 122, 0.3);
+    }
+
+    .contact-icon-wa {
+      color: #25D366;
+    }
+
+    .contact-icon-yellow {
+      color: var(--yellow);
+    }
+
+    .btn-chat-wa {
+      align-self: flex-start;
+      gap: 8px;
+    }
+
+    .form-wa-link {
+      display: inline-block;
+      margin-top: 8px;
+      color: #4BB8E8;
+      text-decoration: underline;
+      font-weight: 700;
+    }
+
+    .video-card-frame {
+      padding: 0;
+      outline: none;
+      font-family: inherit;
+      text-align: left;
+      display: block;
+    }
   </style>
 </head>
 
@@ -3851,9 +4302,8 @@
         <li><a href="#programs" class="nav-link">Programs</a></li>
         <li><a href="#fees" class="nav-link">Admissions</a></li>
         <li><a href="#faqs" class="nav-link">FAQs</a></li>
-        <li style="display: none;" class="mobile-cta-item">
-          <a href="#contact" class="btn btn-gradient"
-            style="padding: 12px 24px; width: 100%; text-align: center;">Enroll Now</a>
+        <li class="mobile-cta-item">
+          <a href="#contact" class="btn btn-gradient mobile-cta-link">Enroll Now</a>
         </li>
       </ul>
 
@@ -3876,7 +4326,7 @@
   <section class="hero" id="hero">
     <!-- Ambient Video Background Layer -->
     <div class="hero-video-backdrop" aria-hidden="true">
-      <video class="hero-bg-video" autoplay muted loop playsinline poster="images/iq.webp">
+      <video class="hero-bg-video" muted loop playsinline poster="images/iq.webp">
         <source src="videos/hero-bg.mp4" type="video/mp4">
         <source
           src="https://assets.mixkit.co/videos/preview/mixkit-little-girl-studying-with-a-laptop-at-home-43038-large.mp4"
@@ -3954,17 +4404,16 @@
         <!-- Social Proof Micro-Strip -->
         <div class="hero-mini-trust">
           <div class="hero-avatars">
-            <div class="hero-avatar-circle" style="background: #4BB8E8;">IQ</div>
-            <div class="hero-avatar-circle" style="background: #9B7EC8;">CA</div>
-            <div class="hero-avatar-circle" style="background: #E8417A;">PK</div>
+            <div class="hero-avatar-circle avatar-sky">IQ</div>
+            <div class="hero-avatar-circle avatar-purple">CA</div>
+            <div class="hero-avatar-circle avatar-pink">PK</div>
           </div>
           <span>Trusted by home schooling families across Pakistan &amp; Overseas</span>
         </div>
       </div>
 
       <!-- Right Hero Visual: Modern Interactive Classroom Preview Showcase -->
-      <div class="hero-showcase-card" id="heroVideoTrigger" style="cursor: pointer;"
-        title="Click to Watch Classroom Preview">
+      <div class="hero-showcase-card" id="heroVideoTrigger" title="Click to Watch Classroom Preview">
         <div class="hero-media-wrap">
           <img src="images/iq.webp"
             onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=1000&q=80';"
@@ -3973,7 +4422,7 @@
 
           <!-- Top Clean SVG Badge (No Emojis) -->
           <div class="hero-glass-badge hero-glass-badge-top">
-            <span class="hero-glass-badge-icon" style="background: rgba(110, 160, 207, 0.25); color: var(--sky-blue);">
+            <span class="hero-glass-badge-icon hero-badge-cambridge">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
                 stroke-linecap="round" stroke-linejoin="round">
                 <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
@@ -3985,24 +4434,19 @@
 
           <!-- Interactive Center Play Prompt -->
           <div class="hero-play-prompt">
-            <div class="play-btn-circle" style="width: 58px; height: 58px;">
+            <div class="play-btn-circle hero-play-circle">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                 <polygon points="5 3 19 12 5 21 5 3"></polygon>
               </svg>
-              <div class="play-pulse-ring" style="width: 58px; height: 58px;"></div>
-              <div class="play-pulse-ring-2" style="width: 58px; height: 58px;"></div>
+              <div class="play-pulse-ring hero-play-circle"></div>
+              <div class="play-pulse-ring-2 hero-play-circle"></div>
             </div>
             <span class="hero-play-text">Preview Virtual Classroom</span>
           </div>
 
           <!-- Bottom Session Status Pill -->
           <div class="hero-media-caption">
-            <span class="hero-caption-live">
-              <span class="live-dot-core" style="background: #10B981;"></span>
-              Live Interactive Zoom Cohorts
-            </span>
-            <span
-              style="font-size: 0.78rem; font-weight: 700; color: rgba(255, 255, 255, 0.85); display: flex; align-items: center; gap: 4px;">
+            <span class="hero-caption-cta">
               Watch Tour &rarr;
             </span>
           </div>
@@ -4018,7 +4462,7 @@
     <div class="container trust-strip-inner">
       <!-- 1. Cambridge Aligned -->
       <div class="trust-item">
-        <div class="trust-icon" style="color: var(--sky-blue);">
+        <div class="trust-icon trust-icon-sky">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
             stroke-linecap="round" stroke-linejoin="round">
             <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
@@ -4033,7 +4477,7 @@
 
       <!-- 2. British Council Pathway -->
       <div class="trust-item">
-        <div class="trust-icon" style="color: var(--purple);">
+        <div class="trust-icon trust-icon-purple">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
             stroke-linecap="round" stroke-linejoin="round">
             <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
@@ -4048,7 +4492,7 @@
 
       <!-- 3. Trained Navigators -->
       <div class="trust-item">
-        <div class="trust-icon" style="color: var(--pink);">
+        <div class="trust-icon trust-icon-pink">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
             stroke-linecap="round" stroke-linejoin="round">
             <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
@@ -4065,7 +4509,7 @@
 
       <!-- 4. 100% Home Learning -->
       <div class="trust-item">
-        <div class="trust-icon" style="color: var(--yellow);">
+        <div class="trust-icon trust-icon-yellow">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
             stroke-linecap="round" stroke-linejoin="round">
             <circle cx="12" cy="12" r="10"></circle>
@@ -4101,7 +4545,7 @@
         <article class="why-pastel-card pastel-sky">
           <div>
             <div class="why-pastel-top">
-              <div class="why-pastel-icon" style="color: var(--sky-blue);">
+              <div class="why-pastel-icon why-icon-sky">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
                   stroke-linecap="round" stroke-linejoin="round">
                   <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
@@ -4127,7 +4571,7 @@
         <article class="why-pastel-card pastel-purple">
           <div>
             <div class="why-pastel-top">
-              <div class="why-pastel-icon" style="color: var(--purple);">
+              <div class="why-pastel-icon why-icon-purple">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
                   stroke-linecap="round" stroke-linejoin="round">
                   <polygon
@@ -4154,7 +4598,7 @@
         <article class="why-pastel-card pastel-pink">
           <div>
             <div class="why-pastel-top">
-              <div class="why-pastel-icon" style="color: var(--pink);">
+              <div class="why-pastel-icon why-icon-pink">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
                   stroke-linecap="round" stroke-linejoin="round">
                   <path
@@ -4181,7 +4625,7 @@
         <article class="why-pastel-card pastel-orange">
           <div>
             <div class="why-pastel-top">
-              <div class="why-pastel-icon" style="color: var(--orange);">
+              <div class="why-pastel-icon why-icon-orange">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
                   stroke-linecap="round" stroke-linejoin="round">
                   <line x1="18" y1="20" x2="18" y2="10"></line>
@@ -4213,9 +4657,9 @@
   <section class="section-cutout" id="student-profile">
     <!-- Subtle Background Floating Shapes -->
     <div class="bg-floating-shapes" aria-hidden="true">
-      <div class="shape shape-1" style="top: 10%; left: 8%;">★</div>
-      <div class="shape shape-3" style="top: 60%; right: 5%;">○</div>
-      <div class="shape shape-5" style="bottom: 12%; left: 45%;">△</div>
+      <div class="shape shape-1 shape-pos-1">★</div>
+      <div class="shape shape-3 shape-pos-2">○</div>
+      <div class="shape shape-5 shape-pos-3">△</div>
     </div>
 
     <div class="container cutout-grid">
@@ -4223,31 +4667,31 @@
       <div class="video-showcase-wrap">
         <div class="cutout-morph-blob"></div>
 
-        <div class="video-card-frame" id="videoTriggerCard" role="button" aria-label="Watch Online Classroom Demo">
+        <button type="button" class="video-card-frame" id="videoTriggerCard" aria-label="Watch Online Classroom Demo">
           <img src="images/class.webp" alt="IQ Navigators Virtual Online Classroom Session" class="video-thumb-img">
-          <div class="video-overlay"></div>
+          <span class="video-overlay"></span>
 
           <!-- Glowing Pulsing Play Button -->
-          <div class="video-play-btn">
-            <div class="play-pulse-ring"></div>
-            <div class="play-pulse-ring-2"></div>
-            <div class="play-btn-circle">
+          <span class="video-play-btn">
+            <span class="play-pulse-ring"></span>
+            <span class="play-pulse-ring-2"></span>
+            <span class="play-btn-circle">
               <svg viewBox="0 0 24 24" fill="currentColor">
                 <polygon points="6 3 20 12 6 21 6 3"></polygon>
               </svg>
-            </div>
-          </div>
+            </span>
+          </span>
 
           <!-- Bottom Bar -->
-          <div class="video-bottom-bar">
+          <span class="video-bottom-bar">
             <span>Cambridge Digital LMS Demo</span>
             <span class="video-bottom-pill">2:45 Min Tour</span>
-          </div>
-        </div>
+          </span>
+        </button>
 
         <!-- Floating Badge 1: Top Left -->
         <div class="cutout-badge cutout-badge-1">
-          <div class="cutout-badge-icon" style="background: rgba(110, 160, 207, 0.18); color: #2E6EB8;">
+          <div class="cutout-badge-icon badge-icon-lms">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
               stroke-linecap="round" stroke-linejoin="round">
               <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
@@ -4260,7 +4704,7 @@
 
         <!-- Floating Badge 2: Right -->
         <div class="cutout-badge cutout-badge-2">
-          <div class="cutout-badge-icon" style="background: rgba(182, 129, 177, 0.2); color: #8C4E87;">
+          <div class="cutout-badge-icon badge-icon-traits">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
               stroke-linecap="round" stroke-linejoin="round">
               <polygon
@@ -4284,7 +4728,7 @@
         <div class="cutout-features">
           <!-- Feature 1 -->
           <div class="cutout-feature-item">
-            <div class="cutout-feature-icon" style="color: var(--sky-blue);">
+            <div class="cutout-feature-icon cutout-icon-sky">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                 stroke-linecap="round" stroke-linejoin="round">
                 <circle cx="12" cy="12" r="10"></circle>
@@ -4301,7 +4745,7 @@
 
           <!-- Feature 2 -->
           <div class="cutout-feature-item">
-            <div class="cutout-feature-icon" style="color: var(--purple);">
+            <div class="cutout-feature-icon cutout-icon-purple">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                 stroke-linecap="round" stroke-linejoin="round">
                 <path
@@ -4318,7 +4762,7 @@
 
           <!-- Feature 3 -->
           <div class="cutout-feature-item">
-            <div class="cutout-feature-icon" style="color: var(--pink);">
+            <div class="cutout-feature-icon cutout-icon-pink">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                 stroke-linecap="round" stroke-linejoin="round">
                 <circle cx="12" cy="12" r="10"></circle>
@@ -4333,7 +4777,7 @@
           </div>
         </div>
 
-        <div class="cutout-actions" style="display: flex; gap: 16px; flex-wrap: wrap;">
+        <div class="cutout-actions cutout-actions-row">
           <a href="#student-life" class="btn btn-gradient">See A Day in the Life</a>
           <a href="#programs" class="btn btn-outline">Explore All Programs</a>
         </div>
@@ -4346,67 +4790,46 @@
     aria-label="IQ Navigators Online Classroom Tour">
     <div class="video-modal-content">
       <button type="button" class="video-modal-close" id="closeVideoModal" aria-label="Close Video">&times;</button>
-      <div class="video-modal-preview" style="width: 100%; height: 180px; overflow: hidden; position: relative;">
-        <img src="images/class.webp" alt="IQ Navigators Online Classroom Session"
-          style="width: 100%; height: 100%; object-fit: cover; display: block;">
-        <div
-          style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(20, 17, 44, 0.05) 0%, rgba(20, 17, 44, 0.4) 100%);">
-        </div>
-        <div
-          style="position: absolute; bottom: 12px; left: 16px; background: rgba(255, 255, 255, 0.94); backdrop-filter: blur(8px); padding: 5px 14px; border-radius: var(--radius-pill); font-size: 0.8rem; font-weight: 800; color: var(--navy); display: inline-flex; align-items: center; gap: 6px;">
-          <span style="display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: #25D366;"></span>
+      <div class="video-modal-preview video-modal-preview-box">
+        <img src="images/class.webp" alt="IQ Navigators Online Classroom Session" class="video-modal-preview-img">
+        <div class="video-modal-preview-gradient"></div>
+        <div class="video-modal-preview-badge">
+          <span class="video-modal-preview-dot"></span>
           Live Classroom Session
         </div>
       </div>
-      <div class="video-modal-body" style="padding: 24px 28px 28px;">
-        <h3
-          style="font-family: var(--font-heading); font-size: 1.45rem; font-weight: 800; color: var(--navy); margin-bottom: 8px;">
-          Experience the IQ Navigators Online Classroom</h3>
-        <p
-          style="font-size: 0.95rem; color: var(--gray-text); line-height: 1.6; max-width: 500px; margin: 0 auto 20px auto;">
+      <div class="video-modal-body video-modal-body-pad">
+        <h3 class="video-modal-heading">Experience the IQ Navigators Online Classroom</h3>
+        <p class="video-modal-subtext">
           Watch how certified Navigators lead interactive Cambridge lessons, assign digital worksheets, and support home
           students with 1-on-1 feedback.
         </p>
 
-        <div
-          style="background: #F8F9FD; border-radius: 16px; padding: 22px 24px; border: 1px solid #ECEEF6; margin-bottom: 24px; text-align: left;">
-          <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 14px;">
-            <span
-              style="display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--sky-blue);"></span>
-            <span
-              style="font-family: var(--font-heading); font-size: 0.88rem; font-weight: 800; color: var(--navy); text-transform: uppercase; letter-spacing: 0.05em;">Interactive
-              Platform Features:</span>
+        <div class="video-modal-features-card">
+          <div class="video-modal-features-header">
+            <span class="video-modal-features-dot"></span>
+            <span class="video-modal-features-label">Interactive Platform Features:</span>
           </div>
-          <ul style="list-style: none; display: flex; flex-direction: column; gap: 10px;">
-            <li
-              style="display: flex; align-items: center; gap: 10px; font-size: 0.92rem; color: var(--navy); font-weight: 600;">
-              <span style="color: #25D366; font-size: 1.1rem; font-weight: 800;">✓</span> Small groups with individual
-              teacher attention
+          <ul class="video-modal-features-items">
+            <li class="video-modal-feature-row">
+              <span class="video-modal-check">✓</span> Small groups with individual teacher attention
             </li>
-            <li
-              style="display: flex; align-items: center; gap: 10px; font-size: 0.92rem; color: var(--navy); font-weight: 600;">
-              <span style="color: #25D366; font-size: 1.1rem; font-weight: 800;">✓</span> Cambridge Checkpoint &amp;
-              IGCSE standard modules
+            <li class="video-modal-feature-row">
+              <span class="video-modal-check">✓</span> Cambridge Checkpoint &amp; IGCSE standard modules
             </li>
-            <li
-              style="display: flex; align-items: center; gap: 10px; font-size: 0.92rem; color: var(--navy); font-weight: 600;">
-              <span style="color: #25D366; font-size: 1.1rem; font-weight: 800;">✓</span> Character development &amp;
-              ethical values discussions
+            <li class="video-modal-feature-row">
+              <span class="video-modal-check">✓</span> Character development &amp; ethical values discussions
             </li>
-            <li
-              style="display: flex; align-items: center; gap: 10px; font-size: 0.92rem; color: var(--navy); font-weight: 600;">
-              <span style="color: #25D366; font-size: 1.1rem; font-weight: 800;">✓</span> 100% accessible across
-              Pakistan and Overseas
+            <li class="video-modal-feature-row">
+              <span class="video-modal-check">✓</span> 100% accessible across Pakistan and Overseas
             </li>
           </ul>
         </div>
 
-        <div class="video-modal-actions" style="display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;">
+        <div class="video-modal-actions">
           <a href="https://wa.me/923000000000?text=Hello%2C%20I%20would%20like%20to%20book%20a%20Free%20Live%20Demo%20Session%20for%20my%20child."
-            target="_blank" rel="noopener" class="btn btn-gradient" style="padding: 12px 26px;">Book a Free Live Demo
-            Class</a>
-          <button type="button" class="btn btn-outline" id="closeModalBtn"
-            style="padding: 12px 22px; border-color: #D6DAE8; color: var(--navy);">Close Preview</button>
+            target="_blank" rel="noopener" class="btn btn-gradient video-modal-btn-demo">Book a Free Live Demo Class</a>
+          <button type="button" class="btn btn-outline video-modal-btn-close" id="closeModalBtn">Close Preview</button>
         </div>
       </div>
     </div>
@@ -4547,7 +4970,7 @@
         </div>
 
         <div class="approach-photo-frame">
-          <img src="images/parent-mentorship.jpg" alt="Pakistani mother mentoring child in online homeschooling"
+          <img src="images/parent-mentorship.webp" alt="Pakistani mother mentoring child in online homeschooling"
             class="approach-img"
             onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=1200&q=80';">
           <div class="approach-photo-badge">
@@ -4583,7 +5006,7 @@
           </div>
 
           <div class="benefit-item">
-            <div class="benefit-icon" style="color: var(--purple); background: rgba(155, 126, 200, 0.16);">
+            <div class="benefit-icon benefit-icon-purple">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
                 stroke-linecap="round" stroke-linejoin="round">
                 <polyline points="20 6 9 17 4 12"></polyline>
@@ -4597,7 +5020,7 @@
           </div>
 
           <div class="benefit-item">
-            <div class="benefit-icon" style="color: var(--pink); background: rgba(232, 65, 122, 0.16);">
+            <div class="benefit-icon benefit-icon-pink">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
                 stroke-linecap="round" stroke-linejoin="round">
                 <polyline points="20 6 9 17 4 12"></polyline>
@@ -4611,7 +5034,7 @@
           </div>
         </div>
 
-        <a href="#contact" class="btn btn-gradient" style="align-self: flex-start;">Speak With an Academic Counselor</a>
+        <a href="#contact" class="btn btn-gradient btn-self-start">Speak With an Academic Counselor</a>
       </div>
     </div>
   </section>
@@ -4786,7 +5209,7 @@
               <div class="program-bottom-row">
                 <div class="program-price-wrap">
                   <span class="program-price-label">Admissions</span>
-                  <span class="program-price-val" style="font-size:1.05rem; color:var(--edu-blue);">Open for
+                  <span class="program-price-val">Open for
                     Enrollment</span>
                   <span class="program-price-cycle">Mon to Thu &middot; 1.5 hrs/day</span>
                 </div>
@@ -4860,7 +5283,7 @@
               <div class="program-bottom-row">
                 <div class="program-price-wrap">
                   <span class="program-price-label">Admissions</span>
-                  <span class="program-price-val" style="font-size:1.05rem; color:var(--yellow);">Open for
+                  <span class="program-price-val">Open for
                     Enrollment</span>
                   <span class="program-price-cycle">Mon to Thu &middot; 2 hrs/day</span>
                 </div>
@@ -4931,7 +5354,7 @@
               <div class="program-bottom-row">
                 <div class="program-price-wrap">
                   <span class="program-price-label">Admissions</span>
-                  <span class="program-price-val" style="font-size:1.05rem; color:var(--edu-blue);">Open for
+                  <span class="program-price-val">Open for
                     Enrollment</span>
                   <span class="program-price-cycle">Mon to Thu &middot; 2 hrs/day</span>
                 </div>
@@ -4951,7 +5374,7 @@
                 <span class="age-pill">Ages 10–13+</span>
               </div>
               <div class="program-card-img-tag">
-                <span class="program-badge-featured" style="background: var(--sky-blue);">Cambridge</span>
+                <span class="program-badge-featured badge-sky">Cambridge</span>
               </div>
             </div>
             <div class="program-card-body">
@@ -5006,7 +5429,7 @@
               <div class="program-bottom-row">
                 <div class="program-price-wrap">
                   <span class="program-price-label">Admissions</span>
-                  <span class="program-price-val" style="font-size:1.05rem; color:var(--edu-blue);">Open for
+                  <span class="program-price-val">Open for
                     Enrollment</span>
                   <span class="program-price-cycle">British Council Pathway</span>
                 </div>
@@ -5063,7 +5486,7 @@
               <div class="program-bottom-row">
                 <div class="program-price-wrap">
                   <span class="program-price-label">Admissions</span>
-                  <span class="program-price-val" style="font-size:1.05rem; color:var(--edu-blue);">Open for
+                  <span class="program-price-val">Open for
                     Enrollment</span>
                   <span class="program-price-cycle">Interactive Zoom Cohort</span>
                 </div>
@@ -5100,7 +5523,7 @@
               <div class="program-bottom-row">
                 <div class="program-price-wrap">
                   <span class="program-price-label">Admissions</span>
-                  <span class="program-price-val" style="font-size:1.05rem; color:var(--edu-blue);">Open for
+                  <span class="program-price-val">Open for
                     Enrollment</span>
                   <span class="program-price-cycle">Weekend Interactive Track</span>
                 </div>
@@ -5137,7 +5560,7 @@
               <div class="program-bottom-row">
                 <div class="program-price-wrap">
                   <span class="program-price-label">Admissions</span>
-                  <span class="program-price-val" style="font-size:1.05rem; color:var(--edu-blue);">Open for
+                  <span class="program-price-val">Open for
                     Enrollment</span>
                   <span class="program-price-cycle">Morning &amp; Evening Batches</span>
                 </div>
@@ -5174,7 +5597,7 @@
               <div class="program-bottom-row">
                 <div class="program-price-wrap">
                   <span class="program-price-label">Admissions</span>
-                  <span class="program-price-val" style="font-size:1.05rem; color:var(--edu-blue);">Open for
+                  <span class="program-price-val">Open for
                     Enrollment</span>
                   <span class="program-price-cycle">Students &amp; Professionals</span>
                 </div>
@@ -5211,7 +5634,7 @@
               <div class="program-bottom-row">
                 <div class="program-price-wrap">
                   <span class="program-price-label">Admissions</span>
-                  <span class="program-price-val" style="font-size:1.05rem; color:var(--edu-blue);">Open for
+                  <span class="program-price-val">Open for
                     Enrollment</span>
                   <span class="program-price-cycle">Housewives &amp; Mothers</span>
                 </div>
@@ -5268,7 +5691,7 @@
               <div class="program-bottom-row">
                 <div class="program-price-wrap">
                   <span class="program-price-label">Admissions</span>
-                  <span class="program-price-val" style="font-size:1.05rem; color:var(--edu-blue);">Open for
+                  <span class="program-price-val">Open for
                     Enrollment</span>
                   <span class="program-price-cycle">Ages 7–10 Studio</span>
                 </div>
@@ -5305,7 +5728,7 @@
               <div class="program-bottom-row">
                 <div class="program-price-wrap">
                   <span class="program-price-label">Admissions</span>
-                  <span class="program-price-val" style="font-size:1.05rem; color:var(--edu-blue);">Open for
+                  <span class="program-price-val">Open for
                     Enrollment</span>
                   <span class="program-price-cycle">Ages 10–15 Studio</span>
                 </div>
@@ -5342,7 +5765,7 @@
               <div class="program-bottom-row">
                 <div class="program-price-wrap">
                   <span class="program-price-label">Admissions</span>
-                  <span class="program-price-val" style="font-size:1.05rem; color:var(--edu-blue);">Open for
+                  <span class="program-price-val">Open for
                     Enrollment</span>
                   <span class="program-price-cycle">Students &amp; Professionals</span>
                 </div>
@@ -5399,7 +5822,7 @@
               <div class="program-bottom-row">
                 <div class="program-price-wrap">
                   <span class="program-price-label">Admissions</span>
-                  <span class="program-price-val" style="font-size:1.05rem; color:var(--edu-blue);">Open for
+                  <span class="program-price-val">Open for
                     Enrollment</span>
                   <span class="program-price-cycle">Beginner Friendly Cohort</span>
                 </div>
@@ -5436,7 +5859,7 @@
               <div class="program-bottom-row">
                 <div class="program-price-wrap">
                   <span class="program-price-label">Admissions</span>
-                  <span class="program-price-val" style="font-size:1.05rem; color:var(--edu-blue);">Open for
+                  <span class="program-price-val">Open for
                     Enrollment</span>
                   <span class="program-price-cycle">6 Weeks Hands-on Track</span>
                 </div>
@@ -5473,7 +5896,7 @@
               <div class="program-bottom-row">
                 <div class="program-price-wrap">
                   <span class="program-price-label">Admissions</span>
-                  <span class="program-price-val" style="font-size:1.05rem; color:var(--edu-blue);">Open for
+                  <span class="program-price-val">Open for
                     Enrollment</span>
                   <span class="program-price-cycle">Mon to Thu Cohort</span>
                 </div>
@@ -5530,7 +5953,7 @@
               <div class="program-bottom-row">
                 <div class="program-price-wrap">
                   <span class="program-price-label">Admissions</span>
-                  <span class="program-price-val" style="font-size:1.05rem; color:var(--edu-blue);">Open for
+                  <span class="program-price-val">Open for
                     Enrollment</span>
                   <span class="program-price-cycle">Fri &amp; Sat Cohort</span>
                 </div>
@@ -5567,7 +5990,7 @@
               <div class="program-bottom-row">
                 <div class="program-price-wrap">
                   <span class="program-price-label">Admissions</span>
-                  <span class="program-price-val" style="font-size:1.05rem; color:var(--edu-blue);">Open for
+                  <span class="program-price-val">Open for
                     Enrollment</span>
                   <span class="program-price-cycle">2 Days a Week</span>
                 </div>
@@ -5604,7 +6027,7 @@
               <div class="program-bottom-row">
                 <div class="program-price-wrap">
                   <span class="program-price-label">Admissions</span>
-                  <span class="program-price-val" style="font-size:1.05rem; color:var(--edu-blue);">Open for
+                  <span class="program-price-val">Open for
                     Enrollment</span>
                   <span class="program-price-cycle">12 Weeks Track</span>
                 </div>
@@ -5642,28 +6065,28 @@
         </div>
 
         <div class="timeline-step">
-          <span class="step-time" style="color: var(--sky-blue);">10:30 AM</span>
+          <span class="step-time step-time-sky">10:30 AM</span>
           <h3 class="step-heading">Navigate</h3>
           <p class="step-text">Live 1-on-1 interaction with certified Navigators for questions, instant feedback &amp;
             goal setting.</p>
         </div>
 
         <div class="timeline-step">
-          <span class="step-time" style="color: var(--pink);">12:00 PM</span>
+          <span class="step-time step-time-pink">12:00 PM</span>
           <h3 class="step-heading">Break &amp; Rest</h3>
           <p class="step-text">Wholesome midday break for home-cooked lunch, quiet rest, midday prayer, and family
             conversation.</p>
         </div>
 
         <div class="timeline-step">
-          <span class="step-time" style="color: var(--orange);">02:00 PM</span>
+          <span class="step-time step-time-orange">02:00 PM</span>
           <h3 class="step-heading">Applied STEM &amp; Projects</h3>
           <p class="step-text">Hands-on science explorations, digital literacy, coding challenges, and interactive
             learning tasks.</p>
         </div>
 
         <div class="timeline-step">
-          <span class="step-time" style="color: var(--yellow);">04:00 PM</span>
+          <span class="step-time step-time-yellow">04:00 PM</span>
           <h3 class="step-heading">Activities &amp; Review</h3>
           <p class="step-text">Daily study review, independent reading assignments, physical fitness activities, sports,
             and relaxed family balance.</p>
@@ -5673,11 +6096,10 @@
       <!-- Bottom Visual Banner: Student Life Card -->
       <div class="routine-banner">
         <div class="routine-banner-art">
-          <img src="images/iq2.webp" alt="Homeschooling Student at IQ Navigators"
-            style="width: 100%; height: 100%; object-fit: cover; display: block;">
+          <img src="images/iq2.webp" alt="Homeschooling Student at IQ Navigators" class="routine-banner-img">
         </div>
         <div class="routine-banner-content">
-          <span class="section-tag light" style="margin-bottom: 12px;">Balanced Homeschooling</span>
+          <span class="section-tag light tag-mb-12">Balanced Homeschooling</span>
           <h3 class="routine-banner-title">Real Cambridge standards without school commute stress</h3>
           <p class="routine-banner-desc">
             Your child saves hours in traffic every morning, learning in a safe, emotionally supportive home environment
@@ -5742,8 +6164,7 @@
               </li>
             </ul>
           </div>
-          <a href="#contact" class="btn btn-gradient"
-            style="width: 100%; text-align: center; justify-content: center;">Inquire Academic Track</a>
+          <a href="#contact" class="btn btn-gradient">Inquire Academic Track</a>
         </div>
 
         <!-- 2. Language & Creative Writing -->
@@ -5781,8 +6202,7 @@
               </li>
             </ul>
           </div>
-          <a href="#contact" class="btn btn-gradient"
-            style="width: 100%; text-align: center; justify-content: center;">Inquire Language Track</a>
+          <a href="#contact" class="btn btn-gradient">Inquire Language Track</a>
         </div>
 
         <!-- 3. Tech, AI & Future Skills -->
@@ -5823,18 +6243,16 @@
               </li>
             </ul>
           </div>
-          <a href="#contact" class="btn btn-gradient"
-            style="width: 100%; text-align: center; justify-content: center;">Inquire Tech Bootcamps</a>
+          <a href="#contact" class="btn btn-gradient">Inquire Tech Bootcamps</a>
         </div>
       </div>
 
       <!-- Row 2: Balanced All-Inclusive Perks + 3-Step Enrollment Guide -->
       <div class="admissions-inclusive-banner">
         <div>
-          <span class="section-tag light" style="margin-bottom: 10px;">All-Inclusive Benefits</span>
-          <h3 style="font-size: 1.55rem; font-weight: 800; color: var(--white); margin-bottom: 8px;">What's included in
-            every enrollment</h3>
-          <p style="font-size: 0.92rem; color: rgba(255, 255, 255, 0.8); line-height: 1.55;">
+          <span class="section-tag light">All-Inclusive Benefits</span>
+          <h3>What's included in every enrollment</h3>
+          <p>
             Everything needed for comprehensive, supported home education with zero hidden requirements.
           </p>
 
@@ -5877,9 +6295,8 @@
             </div>
           </div>
 
-          <div
-            style="font-size: 0.84rem; color: var(--yellow); font-weight: 600; display: flex; align-items: center; gap: 8px;">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;">
+          <div class="sibling-benefit-banner">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" class="sibling-benefit-icon">
               <polygon
                 points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
               </polygon>
@@ -5891,8 +6308,7 @@
 
         <!-- Right Side: 3-Step Enrollment Path Card -->
         <div class="enroll-steps-card">
-          <div style="font-size: 1.05rem; font-weight: 800; color: var(--white); margin-bottom: 4px;">Simple 3-Step
-            Admission</div>
+          <div class="enroll-steps-title">Simple 3-Step Admission</div>
 
           <div class="enroll-step-row">
             <div class="enroll-step-num">1</div>
@@ -5920,8 +6336,7 @@
           </div>
 
           <a href="https://wa.me/923000000000?text=Hello%2C%20I%20would%20like%20to%20inquire%20about%20IQ%20Navigators%20admissions"
-            target="_blank" rel="noopener" class="btn btn-outline-white"
-            style="width: 100%; text-align: center; justify-content: center; gap: 8px; margin-top: 6px;">
+            target="_blank" rel="noopener" class="btn btn-outline-white btn-enroll-wa">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
               stroke-linecap="round" stroke-linejoin="round">
               <path
@@ -5954,11 +6369,9 @@
         <!-- Testimonial 1 -->
         <div class="testimonial-card">
           <div>
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
+            <div class="testimonial-header-row">
               <div class="stars-bar">★★★★★</div>
-              <span class="age-pill"
-                style="font-size: 0.72rem; padding: 4px 10px; background: rgba(250, 210, 78, 0.15); color: var(--yellow); border: 1px solid rgba(250, 210, 78, 0.3);">Verified
-                Family</span>
+              <span class="age-pill pill-verified">Verified Family</span>
             </div>
             <p class="testimonial-quote">
               "Transitioning to IQ Navigators was the best decision for our daughter. Her Navigator gives her individual
@@ -5978,11 +6391,9 @@
         <!-- Testimonial 2 -->
         <div class="testimonial-card">
           <div>
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
+            <div class="testimonial-header-row">
               <div class="stars-bar">★★★★★</div>
-              <span class="age-pill"
-                style="font-size: 0.72rem; padding: 4px 10px; background: rgba(75, 184, 232, 0.15); color: var(--sky-blue); border: 1px solid rgba(75, 184, 232, 0.3);">Cambridge
-                Track</span>
+              <span class="age-pill pill-cambridge">Cambridge Track</span>
             </div>
             <p class="testimonial-quote">
               "The Cambridge alignment is truly rigorous. My son’s analytical math skills improved drastically within
@@ -6002,11 +6413,9 @@
         <!-- Testimonial 3 -->
         <div class="testimonial-card">
           <div>
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
+            <div class="testimonial-header-row">
               <div class="stars-bar">★★★★★</div>
-              <span class="age-pill"
-                style="font-size: 0.72rem; padding: 4px 10px; background: rgba(232, 65, 122, 0.15); color: var(--pink); border: 1px solid rgba(232, 65, 122, 0.3);">Overseas
-                UAE</span>
+              <span class="age-pill pill-overseas">Overseas UAE</span>
             </div>
             <p class="testimonial-quote">
               "Living abroad in Dubai, we wanted British Cambridge standards without losing our Islamic values and Urdu
@@ -6129,24 +6538,24 @@
             </div>
             <div>
               <div class="contact-label">Phone</div>
-              <a href="tel:+923000000000" class="contact-val">+92 300 000 0000</a>
+              <a href="tel:+923000000000" class="contact-val">+92&nbsp;300&nbsp;000&nbsp;0000</a>
             </div>
           </div>
 
           <!-- WhatsApp -->
           <div class="contact-item">
-            <div class="contact-icon" style="color: #25D366;">
+            <div class="contact-icon contact-icon-wa">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                 stroke-linecap="round" stroke-linejoin="round">
                 <path
-                  d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z">
+                  d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z">
                 </path>
               </svg>
             </div>
             <div>
               <div class="contact-label">WhatsApp</div>
               <a href="https://wa.me/923000000000?text=Hello%2C%20I%20would%20like%20to%20inquire%20about%20IQ%20Navigators%20admissions"
-                target="_blank" rel="noopener" class="contact-val">+92 300 000 0000</a>
+                target="_blank" rel="noopener" class="contact-val">+92&nbsp;300&nbsp;000&nbsp;0000</a>
             </div>
           </div>
 
@@ -6167,7 +6576,7 @@
 
           <!-- Location -->
           <div class="contact-item">
-            <div class="contact-icon" style="color: var(--yellow);">
+            <div class="contact-icon contact-icon-yellow">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                 stroke-linecap="round" stroke-linejoin="round">
                 <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
@@ -6182,7 +6591,7 @@
         </div>
 
         <a href="https://wa.me/923000000000?text=Assalam-o-Alaikum%2C%20I%20want%20to%20inquire%20about%20IQ%20Navigators%20admissions"
-          target="_blank" rel="noopener" class="btn btn-outline-white" style="align-self: flex-start; gap: 8px;">
+          target="_blank" rel="noopener" class="btn btn-outline-white btn-chat-wa">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
             stroke-linecap="round" stroke-linejoin="round">
             <path
@@ -6246,25 +6655,34 @@
        8. FOOTER
        ========================================================================== -->
   <footer class="footer">
-    <div class="container footer-inner">
-      <div class="footer-brand">
-        <img src="logos/Side-logo-png.png" alt="IQ Navigators — Raising Intellectuals"
-          onerror="this.src='logos/Main-logo-png.png'">
-        <span class="footer-brand-copy">&copy; 2026 IQ Navigators. All rights reserved.</span>
+    <div class="container">
+      <!-- Top Row: Brand & Quick Navigation -->
+      <div class="footer-top-row">
+        <div class="footer-brand">
+          <img src="logos/Side-logo-png.png" alt="IQ Navigators — Raising Intellectuals"
+            onerror="this.src='logos/Main-logo-png.png'">
+          <span class="footer-brand-sub">Online Cambridge Student Learning &middot; Ages 3–16</span>
+        </div>
+
+        <ul class="footer-links">
+          <li><a href="#why-us" class="footer-link">Why Us</a></li>
+          <li><a href="#dimensions" class="footer-link">Our Model</a></li>
+          <li><a href="#student-profile" class="footer-link">Virtual Tour</a></li>
+          <li><a href="#programs" class="footer-link">Programs</a></li>
+          <li><a href="#student-life" class="footer-link">Student Life</a></li>
+          <li><a href="#fees" class="footer-link">Admissions</a></li>
+          <li><a href="#contact" class="footer-link">Contact</a></li>
+        </ul>
       </div>
 
-      <ul class="footer-links">
-        <li><a href="#why-us" class="footer-link">Why Us</a></li>
-        <li><a href="#dimensions" class="footer-link">Our Model</a></li>
-        <li><a href="#student-profile" class="footer-link">Virtual Tour</a></li>
-        <li><a href="#programs" class="footer-link">Programs</a></li>
-        <li><a href="#student-life" class="footer-link">Student Life</a></li>
-        <li><a href="#fees" class="footer-link">Admissions</a></li>
-        <li><a href="#contact" class="footer-link">Contact</a></li>
-      </ul>
-
-      <div class="footer-tagline">
-        Raising Intellectuals &middot; Pakistan
+      <!-- Bottom Bar (Sub-Footer): Copyright & Creaxe Credit Link -->
+      <div class="footer-bottom-bar">
+        <span class="footer-copy-text">&copy; 2026 IQ Navigators. All rights reserved.</span>
+        <span class="footer-credit-text">
+          Developed by <a href="https://creaxe.com" target="_blank" rel="noopener" class="footer-credit-link">Creaxe
+            Branding and Digital Solutions
+          </a>
+        </span>
       </div>
     </div>
   </footer>
@@ -6358,7 +6776,7 @@
           formFeedback.innerHTML = `
             <strong>Thank you, ${parentName}!</strong><br>
             Your inquiry has been received. Our admissions team will connect with you shortly via WhatsApp.<br>
-            <a href="https://wa.me/923000000000?text=Hello%2C%20my%20name%20is%20${encodeURIComponent(parentName)}.%20I%20am%20inquiring%20about%20${encodeURIComponent(interestedProgram)}%20for%20my%20${encodeURIComponent(childAge)}%20year%20old%20child." target="_blank" style="display:inline-block; margin-top:8px; color:#4BB8E8; text-decoration:underline; font-weight:700;">
+            <a href="https://wa.me/923000000000?text=Hello%2C%20my%20name%20is%20${encodeURIComponent(parentName)}.%20I%20am%20inquiring%20about%20${encodeURIComponent(interestedProgram)}%20for%20my%20${encodeURIComponent(childAge)}%20year%20old%20child." target="_blank" class="form-wa-link">
               Click here to chat instantly on WhatsApp &rarr;
             </a>
           `;
@@ -6428,6 +6846,12 @@
             btn.scrollIntoView({ behavior: 'smooth', inline: 'nearest', block: 'nearest' });
           });
         });
+      }
+
+      // 8. Auto-play hero background video (muted)
+      const heroBgVideo = document.querySelector('.hero-bg-video');
+      if (heroBgVideo) {
+        heroBgVideo.play().catch(() => { });
       }
     });
   </script>
