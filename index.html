@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>IQ Navigators | Raising Intellectuals — Online Home Schooling in Pakistan</title>
+  <title>IQ Navigators | Raising Intellectuals — Online Home Schooling</title>
   <meta name="description"
     content="IQ Navigators is a structured, Cambridge-aligned 100% online home schooling institution in Pakistan from Early Years through O Levels, rooted in Islamic values.">
 
@@ -21,21 +21,34 @@
        ========================================================================== */
     :root {
       /* Official Brand Color Palette (Directly from IQ Navigators SCSS Hex Codes) */
-      --navy: #14112C;           /* $#14112c: Deep Midnight Navy (Primary Background & Typography) */
-      --navy-deep: #0E0C1F;      /* Deeper Midnight Navy */
-      --navy-surface: #1E1A3D;   /* Dark Navy Card Surface */
-      --navy-card: #191535;      /* Dark Navy Card Background */
-      
-      --sky-blue: #6EA0CF;       /* $#6ea0cf: Official Cerulean Blue */
-      --edu-blue: #3273BC;       /* Signature Academic Blue (Accessible tone of $#6ea0cf for buttons) */
-      --edu-blue-hover: #14112C; /* Button hover state */
-      
-      --purple: #B681B1;         /* $#b681b1: Official Mauve / Purple */
-      --pink: #E4669A;           /* $#e4669a: Official Rose / Pink */
-      --coral: #F49585;          /* $#f49585: Official Soft Coral */
-      --orange: #FABB6D;         /* $#fabb6d: Official Warm Amber */
-      --yellow: #FAD24E;         /* $#fad24e: Official Star Yellow / Gold */
-      --gray: #CCCCCC;           /* $#cccccc: Official Silver Gray */
+      --navy: #14112C;
+      /* $#14112c: Deep Midnight Navy (Primary Background & Typography) */
+      --navy-deep: #0E0C1F;
+      /* Deeper Midnight Navy */
+      --navy-surface: #1E1A3D;
+      /* Dark Navy Card Surface */
+      --navy-card: #191535;
+      /* Dark Navy Card Background */
+
+      --sky-blue: #6EA0CF;
+      /* $#6ea0cf: Official Cerulean Blue */
+      --edu-blue: #3273BC;
+      /* Signature Academic Blue (Accessible tone of $#6ea0cf for buttons) */
+      --edu-blue-hover: #14112C;
+      /* Button hover state */
+
+      --purple: #B681B1;
+      /* $#b681b1: Official Mauve / Purple */
+      --pink: #E4669A;
+      /* $#e4669a: Official Rose / Pink */
+      --coral: #F49585;
+      /* $#f49585: Official Soft Coral */
+      --orange: #FABB6D;
+      /* $#fabb6d: Official Warm Amber */
+      --yellow: #FAD24E;
+      /* $#fad24e: Official Star Yellow / Gold */
+      --gray: #CCCCCC;
+      /* $#cccccc: Official Silver Gray */
       --gray-light: #ECEEF6;
       --gray-text: #5D5A75;
       --light-bg: #F8F9FF;
@@ -399,12 +412,38 @@
        ========================================================================== */
     .hero {
       position: relative;
-      padding-top: 145px;
-      padding-bottom: 80px;
+      padding-top: 155px;
+      padding-bottom: 95px;
       overflow: hidden;
-      background-color: var(--white);
-      background-image: radial-gradient(rgba(30, 27, 58, 0.05) 1.2px, transparent 1.2px);
-      background-size: 28px 28px;
+      background-color: var(--navy);
+      color: var(--white);
+    }
+
+    /* Ambient Video Background Layer */
+    .hero-video-backdrop {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .hero-bg-video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      opacity: 0.32;
+      filter: saturate(1.15) brightness(0.85);
+    }
+
+    .hero-video-scrim {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 75% 30%, rgba(20, 17, 44, 0.65) 0%, rgba(14, 12, 31, 0.94) 75%);
     }
 
     /* Soft Animated Background Blobs */
@@ -412,7 +451,7 @@
       position: absolute;
       border-radius: 50%;
       filter: blur(85px);
-      opacity: 0.45;
+      opacity: 0.35;
       z-index: 0;
       pointer-events: none;
       animation: floatBlobs 12s ease-in-out infinite alternate;
@@ -423,7 +462,7 @@
       left: 8%;
       width: 420px;
       height: 420px;
-      background: rgba(75, 184, 232, 0.45);
+      background: rgba(75, 184, 232, 0.3);
     }
 
     .hero-blob-2 {
@@ -431,7 +470,7 @@
       right: 4%;
       width: 480px;
       height: 480px;
-      background: rgba(155, 126, 200, 0.38);
+      background: rgba(155, 126, 200, 0.25);
       animation-delay: -3s;
     }
 
@@ -440,7 +479,7 @@
       left: 32%;
       width: 360px;
       height: 360px;
-      background: rgba(232, 65, 122, 0.3);
+      background: rgba(232, 65, 122, 0.2);
       animation-delay: -6s;
     }
 
@@ -515,27 +554,90 @@
       letter-spacing: -0.01em;
     }
 
-    .pulse-dot {
+    /* Lumina-Inspired Live Pulsing Status Badge */
+    .hero-live-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 7px 18px 7px 12px;
+      border-radius: var(--radius-pill);
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.2);
+      margin-bottom: 22px;
+      cursor: default;
+      transition: all var(--transition-fast);
+    }
+
+    .hero-live-badge:hover {
+      border-color: rgba(110, 160, 207, 0.6);
+      background: rgba(255, 255, 255, 0.16);
+    }
+
+    .live-dot-wrap {
+      position: relative;
+      display: flex;
+      width: 10px;
+      height: 10px;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .live-ping-circle {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background: #10B981;
+      opacity: 0.75;
+      animation: livePing 1.8s cubic-bezier(0, 0, 0.2, 1) infinite;
+    }
+
+    .live-dot-core {
+      position: relative;
       width: 8px;
       height: 8px;
       border-radius: 50%;
-      background: #4BB8E8;
-      box-shadow: 0 0 0 0 rgba(75, 184, 232, 0.7);
-      animation: pulseDot 2s infinite;
+      background: #059669;
     }
 
-    @keyframes pulseDot {
-      0% {
-        box-shadow: 0 0 0 0 rgba(75, 184, 232, 0.7);
-      }
+    @keyframes livePing {
 
-      70% {
-        box-shadow: 0 0 0 10px rgba(75, 184, 232, 0);
-      }
-
+      75%,
       100% {
-        box-shadow: 0 0 0 0 rgba(75, 184, 232, 0);
+        transform: scale(2.4);
+        opacity: 0;
       }
+    }
+
+    .hero-live-text {
+      font-size: 0.82rem;
+      font-weight: 800;
+      color: var(--white);
+      letter-spacing: 0.02em;
+    }
+
+    /* Trust indicators under hero CTAs */
+    .hero-trust-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 22px;
+    }
+
+    .trust-pill-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: rgba(255, 255, 255, 0.92);
+    }
+
+    .trust-pill-item svg {
+      color: var(--sky-blue);
     }
 
     .hero-title {
@@ -543,14 +645,14 @@
       font-size: clamp(36px, 5vw, 58px);
       font-weight: 800;
       line-height: 1.12;
-      color: var(--navy);
+      color: var(--white);
       letter-spacing: -0.03em;
       margin-bottom: 20px;
     }
 
     .hero-subtext {
       font-size: 1.15rem;
-      color: var(--gray-text);
+      color: rgba(255, 255, 255, 0.85);
       line-height: 1.65;
       margin-bottom: 34px;
       max-width: 540px;
@@ -564,13 +666,26 @@
       margin-bottom: 28px;
     }
 
+    .hero .btn-outline {
+      border-color: rgba(255, 255, 255, 0.38);
+      color: var(--white);
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(8px);
+    }
+
+    .hero .btn-outline:hover {
+      border-color: var(--white);
+      background: rgba(255, 255, 255, 0.18);
+      color: var(--white);
+    }
+
     /* Trust Pill Under Hero Actions */
     .hero-mini-trust {
       display: flex;
       align-items: center;
       gap: 12px;
       font-size: 0.85rem;
-      color: var(--gray-text);
+      color: rgba(255, 255, 255, 0.78);
       font-weight: 600;
     }
 
@@ -598,188 +713,156 @@
       margin-left: 0;
     }
 
-    /* Hero Right Visual: Elegant Academic Pathway & LMS Card */
-    .hero-card {
-      background: var(--white);
-      border-radius: var(--radius-card);
-      padding: 36px 32px;
-      box-shadow: 0 16px 40px rgba(30, 27, 58, 0.08);
-      border: 1px solid rgba(30, 27, 58, 0.08);
+    /* Hero Right Visual: Modern Interactive Classroom Preview Card */
+    .hero-showcase-card {
       position: relative;
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-radius: 24px;
+      padding: 14px;
+      box-shadow: 0 30px 70px rgba(0, 0, 0, 0.45);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      transition: transform var(--transition-smooth), box-shadow var(--transition-smooth), border-color var(--transition-smooth);
     }
 
-    .hero-card::before {
-      content: '';
+    .hero-showcase-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 36px 80px rgba(0, 0, 0, 0.55);
+      border-color: rgba(110, 160, 207, 0.5);
+    }
+
+    .hero-media-wrap {
+      position: relative;
+      width: 100%;
+      height: 400px;
+      border-radius: 18px;
+      overflow: hidden;
+      background: var(--navy);
+    }
+
+    .hero-media-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .hero-showcase-card:hover .hero-media-img {
+      transform: scale(1.04);
+    }
+
+    .hero-media-overlay {
       position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 5px;
-      border-top-left-radius: var(--radius-card);
-      border-top-right-radius: var(--radius-card);
-      background: var(--brand-gradient-horizontal);
+      inset: 0;
+      background: linear-gradient(180deg, rgba(20, 17, 44, 0.35) 0%, rgba(20, 17, 44, 0.15) 45%, rgba(20, 17, 44, 0.9) 100%);
+      pointer-events: none;
     }
 
-    .hero-card-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 24px;
-      padding-bottom: 16px;
-      border-bottom: 1px solid rgba(30, 27, 58, 0.06);
-    }
-
-    .hero-card-title-wrap {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .hero-card-title {
-      font-size: 1.25rem;
-      font-weight: 800;
-      color: var(--navy);
-      letter-spacing: -0.01em;
-    }
-
-    .hero-card-sub {
-      font-size: 0.8rem;
-      color: var(--gray-text);
-      font-weight: 500;
-      margin-top: 2px;
-    }
-
-    .hero-card-tag {
-      font-size: 0.75rem;
-      font-weight: 700;
-      color: var(--sky-blue);
-      background: rgba(75, 184, 232, 0.12);
-      padding: 6px 14px;
+    /* Floating SVG Badges on Hero Showcase */
+    .hero-glass-badge {
+      position: absolute;
+      z-index: 3;
+      background: rgba(20, 17, 44, 0.8);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      padding: 8px 16px;
       border-radius: var(--radius-pill);
-      border: 1px solid rgba(75, 184, 232, 0.25);
-    }
-
-    .levels-list {
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-      margin-bottom: 28px;
-    }
-
-    .level-item {
-      display: flex;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      display: inline-flex;
       align-items: center;
-      justify-content: space-between;
-      padding: 16px 20px;
-      background: var(--light-bg);
-      border-radius: var(--radius-md);
-      border: 1px solid rgba(30, 27, 58, 0.05);
-      transition: transform var(--transition-smooth), border-color var(--transition-smooth), box-shadow var(--transition-smooth);
-    }
-
-    .level-item:hover {
-      border-color: rgba(155, 126, 200, 0.4);
-      transform: translateX(6px);
-      box-shadow: 0 6px 18px rgba(30, 27, 58, 0.05);
-    }
-
-    .level-item.featured-level {
-      background: linear-gradient(135deg, rgba(155, 126, 200, 0.08), rgba(75, 184, 232, 0.08));
-      border-color: rgba(155, 126, 200, 0.25);
-    }
-
-    .level-item-left {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-    }
-
-    .level-icon-box {
-      width: 42px;
-      height: 42px;
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
-
-    .level-info {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .level-name {
-      font-size: 1rem;
-      font-weight: 800;
-      color: var(--navy);
-    }
-
-    .level-age {
+      gap: 10px;
       font-size: 0.82rem;
-      color: var(--gray-text);
-      font-weight: 500;
-    }
-
-    .level-badge {
-      font-size: 0.78rem;
       font-weight: 700;
-      padding: 6px 14px;
-      border-radius: var(--radius-pill);
+      color: var(--white);
       white-space: nowrap;
     }
 
-    .badge-early {
-      background: rgba(75, 184, 232, 0.15);
-      color: #157FAE;
+    .hero-glass-badge-top {
+      top: 18px;
+      left: 18px;
     }
 
-    .badge-primary {
-      background: rgba(155, 126, 200, 0.18);
-      color: #6D4BB0;
+    .hero-glass-badge-icon {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      flex-shrink: 0;
     }
 
-    .badge-middle {
-      background: rgba(232, 65, 122, 0.15);
-      color: #C21D54;
-    }
-
-    .badge-foundation {
-      background: rgba(245, 166, 35, 0.18);
-      color: #C07907;
-    }
-
-    /* Stats strip at bottom of card */
-    .hero-stats {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-      padding-top: 22px;
-      border-top: 1px solid rgba(30, 27, 58, 0.08);
+    /* Interactive Center Play Prompt */
+    .hero-play-prompt {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 4;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
       text-align: center;
+      pointer-events: auto;
+      cursor: pointer;
     }
 
-    .stat-val {
-      font-family: var(--font-heading);
-      font-size: 1.25rem;
-      font-weight: 800;
-      color: var(--navy);
-      display: block;
+    .hero-play-text {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--white);
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+      background: rgba(20, 17, 44, 0.65);
+      backdrop-filter: blur(8px);
+      padding: 5px 16px;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      transition: all var(--transition-smooth);
     }
 
-    .stat-lbl {
-      font-size: 0.78rem;
-      color: var(--gray-text);
-      font-weight: 600;
-      margin-top: 2px;
+    .hero-showcase-card:hover .hero-play-text {
+      background: rgba(50, 115, 188, 0.85);
+      border-color: rgba(255, 255, 255, 0.5);
+    }
+
+    .hero-media-caption {
+      position: absolute;
+      bottom: 18px;
+      left: 18px;
+      right: 18px;
+      z-index: 3;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: var(--white);
+    }
+
+    .hero-caption-live {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(16, 185, 129, 0.25);
+      border: 1px solid rgba(16, 185, 129, 0.45);
+      backdrop-filter: blur(8px);
+      color: #6EE7B7;
+      font-size: 0.76rem;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: var(--radius-pill);
     }
 
     /* ==========================================================================
-       TRUST & CREDIBILITY STRIP (Inspired by Wolsey Hall Oxford)
+       TRUST & ACCREDITATION STRIP (Streamlined Cambridge & British Council)
        ========================================================================== */
     .trust-strip {
       background: var(--navy);
       color: var(--white);
-      padding: 28px 0;
+      padding: 26px 0;
       border-top: 1px solid rgba(255, 255, 255, 0.08);
       border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     }
@@ -794,7 +877,7 @@
     .trust-item {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 14px;
     }
 
     .trust-icon {
@@ -811,14 +894,14 @@
     }
 
     .trust-title {
-      font-size: 0.92rem;
+      font-size: 0.95rem;
       font-weight: 800;
       color: var(--white);
       line-height: 1.25;
     }
 
     .trust-sub {
-      font-size: 0.76rem;
+      font-size: 0.78rem;
       color: rgba(255, 255, 255, 0.72);
       margin-top: 2px;
     }
@@ -906,10 +989,21 @@
       line-height: 1;
     }
 
-    .pastel-sky .why-pastel-num { color: var(--sky-blue); }
-    .pastel-purple .why-pastel-num { color: var(--purple); }
-    .pastel-pink .why-pastel-num { color: var(--pink); }
-    .pastel-orange .why-pastel-num { color: var(--orange); }
+    .pastel-sky .why-pastel-num {
+      color: var(--sky-blue);
+    }
+
+    .pastel-purple .why-pastel-num {
+      color: var(--purple);
+    }
+
+    .pastel-pink .why-pastel-num {
+      color: var(--pink);
+    }
+
+    .pastel-orange .why-pastel-num {
+      color: var(--orange);
+    }
 
     .why-pastel-title {
       font-family: var(--font-heading);
@@ -953,6 +1047,8 @@
     .section-approach {
       padding: 90px 0;
       background: var(--light-bg);
+      position: relative;
+      overflow: hidden;
     }
 
     .approach-grid {
@@ -962,12 +1058,55 @@
       align-items: center;
     }
 
+    .approach-visual-wrap {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+    }
+
+    /* Angled Geometric Square & Morph Backdrop */
+    .approach-angled-backdrop {
+      position: absolute;
+      inset: -24px -22px -24px -22px;
+      z-index: 0;
+      pointer-events: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .approach-angled-svg {
+      width: 100%;
+      height: 100%;
+      overflow: visible;
+      filter: drop-shadow(0 16px 36px rgba(75, 184, 232, 0.18));
+      animation: approachAngledFloat 10s ease-in-out infinite alternate;
+    }
+
+    @keyframes approachAngledFloat {
+      0% {
+        transform: translateY(0px) rotate(0deg);
+      }
+
+      50% {
+        transform: translateY(-7px) rotate(0.8deg) scale(1.01);
+      }
+
+      100% {
+        transform: translateY(0px) rotate(0deg);
+      }
+    }
+
     .approach-photo-frame {
       position: relative;
+      z-index: 1;
+      width: 100%;
       border-radius: var(--radius-card);
       overflow: hidden;
-      box-shadow: var(--shadow-hover);
-      border: 1px solid rgba(30, 27, 58, 0.08);
+      box-shadow: 0 20px 48px rgba(20, 17, 44, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.85);
       background: var(--white);
     }
 
@@ -1049,43 +1188,239 @@
     }
 
     /* ==========================================================================
-       4. PROGRAMS SECTION
+       4. PROGRAMS SECTION & INTERACTIVE TABS
        ========================================================================== */
     .section-programs {
       padding: 100px 0;
-      background-color: var(--white);
+      background-color: #F8FAFD;
+      position: relative;
+    }
+
+    /* Modern Category Tabs Bar */
+    .programs-tabs-wrapper {
+      margin: 36px 0 32px;
+      display: flex;
+      justify-content: flex-start;
+      width: 100%;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      padding: 6px 16px 14px;
+      scrollbar-width: none;
+    }
+
+    .programs-tabs-wrapper::-webkit-scrollbar {
+      display: none;
+    }
+
+    .program-tabs-nav {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 8px;
+      background: var(--white);
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(30, 27, 58, 0.1);
+      box-shadow: 0 4px 20px rgba(20, 17, 44, 0.06);
+      flex-shrink: 0;
+      margin: 0 auto;
+    }
+
+    .program-tab-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 22px;
+      border-radius: var(--radius-pill);
+      border: none;
+      background: transparent;
+      color: var(--navy);
+      font-family: var(--font-body);
+      font-size: 0.92rem;
+      font-weight: 700;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all var(--transition-smooth);
+    }
+
+    .program-tab-btn:hover {
+      color: var(--edu-blue);
+      background: rgba(50, 115, 188, 0.08);
+    }
+
+    .program-tab-btn.active {
+      background: var(--edu-blue);
+      color: var(--white);
+      box-shadow: 0 6px 18px rgba(50, 115, 188, 0.28);
+    }
+
+    .program-tab-btn .tab-badge {
+      font-size: 0.72rem;
+      padding: 2px 8px;
+      border-radius: var(--radius-pill);
+      background: rgba(20, 17, 44, 0.08);
+      color: var(--navy);
+    }
+
+    .program-tab-btn.active .tab-badge {
+      background: rgba(255, 255, 255, 0.22);
+      color: var(--white);
+    }
+
+    /* Tab Panes */
+    .program-tab-pane {
+      display: none;
+      animation: tabFadeUp 0.38s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    .program-tab-pane.active {
+      display: block;
+    }
+
+    @keyframes tabFadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(12px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Category Intro Strip inside Tab */
+    .tab-intro-banner {
+      background: var(--light-bg);
+      border-radius: 18px;
+      padding: 18px 24px;
+      margin-bottom: 28px;
+      border: 1px solid rgba(30, 27, 58, 0.06);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .tab-intro-text h3 {
+      font-size: 1.12rem;
+      font-weight: 800;
+      color: var(--navy);
+      margin-bottom: 4px;
+    }
+
+    .tab-intro-text p {
+      font-size: 0.88rem;
+      color: var(--gray-text);
+      margin: 0;
+    }
+
+    .tab-intro-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .tab-intro-pill {
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 5px 12px;
+      border-radius: var(--radius-pill);
+      background: var(--white);
+      color: var(--navy);
+      border: 1px solid rgba(30, 27, 58, 0.08);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
     }
 
     .programs-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 32px;
+      gap: 28px;
+    }
+
+    .programs-grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
     }
 
     .program-card {
       background: var(--white);
-      border-radius: var(--radius-card);
-      padding: 38px 34px;
+      border-radius: 20px;
+      padding: 0;
       border: 1px solid rgba(30, 27, 58, 0.08);
-      box-shadow: var(--shadow-subtle);
+      box-shadow: 0 4px 20px rgba(20, 17, 44, 0.06);
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      transition: transform var(--transition-smooth), box-shadow var(--transition-smooth);
       position: relative;
+      overflow: hidden;
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
     }
 
     .program-card:hover {
       transform: translateY(-6px);
-      box-shadow: var(--shadow-hover);
+      box-shadow: 0 20px 45px rgba(20, 17, 44, 0.12);
+      border-color: rgba(50, 115, 188, 0.35);
     }
 
-    /* Featured Dark Card */
     .program-card.featured {
       background: var(--navy);
       color: var(--white);
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      box-shadow: 0 16px 40px rgba(30, 27, 58, 0.25);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      box-shadow: 0 20px 50px rgba(20, 17, 44, 0.35);
+    }
+
+    /* Program Card Top Visual Banner (Inspired by Lumina Global School) */
+    .program-card-img-wrap {
+      position: relative;
+      height: 185px;
+      width: 100%;
+      overflow: hidden;
+      background: var(--navy);
+    }
+
+    .program-card-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .program-card:hover .program-card-img {
+      transform: scale(1.08);
+    }
+
+    .program-card-img-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(20, 17, 44, 0.75) 0%, rgba(20, 17, 44, 0.2) 60%, transparent 100%);
+      pointer-events: none;
+    }
+
+    .program-card-img-badge {
+      position: absolute;
+      bottom: 12px;
+      left: 14px;
+      z-index: 2;
+    }
+
+    .program-card-img-tag {
+      position: absolute;
+      top: 12px;
+      right: 14px;
+      z-index: 2;
+    }
+
+    .program-card-body {
+      padding: 26px 24px 22px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      justify-content: space-between;
     }
 
     .program-card.featured .program-title {
@@ -1093,13 +1428,7 @@
     }
 
     .program-card.featured .program-desc {
-      color: rgba(255, 255, 255, 0.8);
-    }
-
-    .program-card.featured .pill-tag {
-      background: rgba(255, 255, 255, 0.12);
-      color: var(--white);
-      border: 1px solid rgba(255, 255, 255, 0.18);
+      color: rgba(255, 255, 255, 0.82);
     }
 
     .program-badge-featured {
@@ -1112,27 +1441,7 @@
       padding: 5px 14px;
       border-radius: var(--radius-pill);
       display: inline-block;
-    }
-
-    .program-top {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      margin-bottom: 20px;
-    }
-
-    .program-icon-box {
-      width: 56px;
-      height: 56px;
-      border-radius: 16px;
-      background: var(--light-bg);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .program-card.featured .program-icon-box {
-      background: rgba(255, 255, 255, 0.12);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
     }
 
     .age-pill {
@@ -1140,73 +1449,187 @@
       font-weight: 700;
       padding: 6px 14px;
       border-radius: var(--radius-pill);
-      background: rgba(75, 184, 232, 0.14);
-      color: #0E7CAE;
+      background: rgba(255, 255, 255, 0.92);
+      color: var(--navy);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+      backdrop-filter: blur(4px);
     }
 
     .program-card.featured .age-pill {
-      background: rgba(245, 166, 35, 0.22);
-      color: var(--yellow);
+      background: rgba(250, 210, 78, 0.92);
+      color: var(--navy);
     }
 
     .program-title {
-      font-size: 1.45rem;
+      font-size: 1.35rem;
       font-weight: 800;
       color: var(--navy);
-      margin-bottom: 12px;
+      margin-bottom: 10px;
     }
 
     .program-desc {
-      font-size: 0.98rem;
+      font-size: 0.94rem;
       color: var(--gray-text);
-      line-height: 1.6;
-      margin-bottom: 20px;
+      line-height: 1.55;
+      margin-bottom: 18px;
     }
 
-    /* CambriLearn-Style Pathway Key Specs Grid */
-    .pathway-meta-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
-      margin-bottom: 22px;
+    /* Course Schedule Bar */
+    .course-schedule-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 18px;
+    }
+
+    .schedule-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 5px 12px;
+      border-radius: var(--radius-pill);
+      background: rgba(110, 160, 207, 0.14);
+      color: #1A548E;
+    }
+
+    .schedule-badge.time {
+      background: rgba(244, 149, 133, 0.16);
+      color: #B43C29;
+    }
+
+    .schedule-badge.flexible {
+      background: rgba(182, 129, 177, 0.16);
+      color: #6D2C66;
+    }
+
+    .schedule-badge.days {
+      background: rgba(250, 187, 109, 0.18);
+      color: #9E5B00;
+    }
+
+    .program-card.featured .schedule-badge {
+      background: rgba(255, 255, 255, 0.14);
+      color: var(--white);
+    }
+
+    /* Subtracks & Levels List */
+    .course-subtracks {
+      margin: 14px 0 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .subtrack-row {
       background: var(--light-bg);
-      border-radius: 14px;
-      padding: 14px 16px;
-      border: 1px solid rgba(30, 27, 58, 0.05);
+      border-radius: 12px;
+      padding: 10px 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      font-size: 0.88rem;
     }
 
-    .program-card.featured .pathway-meta-grid {
+    .program-card.featured .subtrack-row {
       background: rgba(255, 255, 255, 0.08);
-      border-color: rgba(255, 255, 255, 0.12);
     }
 
-    .meta-cell {
+    .subtrack-name {
+      font-weight: 700;
+      color: var(--navy);
       display: flex;
       flex-direction: column;
       gap: 2px;
     }
 
-    .meta-label {
-      font-size: 0.72rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-      color: var(--gray-text);
+    .program-card.featured .subtrack-name {
+      color: var(--white);
     }
 
-    .program-card.featured .meta-label {
+    .subtrack-fee {
+      font-weight: 800;
+      color: var(--edu-blue);
+      font-family: var(--font-heading);
+      white-space: nowrap;
+      text-align: right;
+    }
+
+    .program-card.featured .subtrack-fee {
+      color: var(--yellow);
+    }
+
+    .subtrack-note {
+      font-size: 0.74rem;
+      color: var(--gray-text);
+      display: block;
+      font-weight: 500;
+    }
+
+    .program-card.featured .subtrack-note {
       color: rgba(255, 255, 255, 0.65);
     }
 
-    .meta-value {
-      font-size: 0.85rem;
-      font-weight: 700;
-      color: var(--navy);
-      line-height: 1.3;
+    /* Program Bottom Row */
+    .program-bottom-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      margin-top: auto;
+      padding-top: 18px;
+      border-top: 1px solid rgba(30, 27, 58, 0.08);
+      flex-wrap: wrap;
     }
 
-    .program-card.featured .meta-value {
-      color: var(--white);
+    .program-card.featured .program-bottom-row {
+      border-top-color: rgba(255, 255, 255, 0.12);
+    }
+
+    .program-price-wrap {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .program-price-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--gray-text);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .program-card.featured .program-price-label {
+      color: rgba(255, 255, 255, 0.65);
+    }
+
+    .program-price-val {
+      font-family: var(--font-heading);
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--navy);
+      line-height: 1.2;
+    }
+
+    .program-card.featured .program-price-val {
+      color: var(--yellow);
+    }
+
+    .program-price-cycle {
+      font-size: 0.75rem;
+      color: var(--gray-text);
+      font-weight: 500;
+    }
+
+    .program-card.featured .program-price-cycle {
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    .program-card-btn {
+      padding: 10px 20px;
+      font-size: 0.88rem;
     }
 
     .program-tags {
@@ -1214,7 +1637,7 @@
       flex-wrap: wrap;
       gap: 8px;
       margin-top: auto;
-      padding-top: 20px;
+      padding-top: 18px;
       border-top: 1px solid rgba(30, 27, 58, 0.06);
     }
 
@@ -1223,125 +1646,214 @@
     }
 
     .pill-tag {
-      font-size: 0.8rem;
+      font-size: 0.78rem;
       font-weight: 600;
-      padding: 6px 12px;
+      padding: 5px 12px;
       border-radius: var(--radius-pill);
       background: var(--light-bg);
       color: var(--navy);
       border: 1px solid rgba(30, 27, 58, 0.06);
     }
 
+    .program-card.featured .pill-tag {
+      background: rgba(255, 255, 255, 0.12);
+      color: var(--white);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+    }
+
     /* ==========================================================================
-       5. FEE STRUCTURE SECTION
+       5. ADMISSIONS & ENROLLMENT SECTION (Balanced 3-Category Grid + Inclusive Banner)
        ========================================================================== */
     .section-fees {
-      padding: 100px 0;
+      padding: 95px 0;
       background: var(--light-bg);
     }
 
-    .fees-grid {
+    .admissions-category-grid {
       display: grid;
-      grid-template-columns: 1.25fr 0.95fr;
-      gap: 40px;
-      align-items: stretch;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-bottom: 36px;
     }
 
-    .fees-table-card {
+    .admissions-cat-card {
       background: var(--white);
-      border-radius: var(--radius-card);
+      border-radius: 20px;
+      padding: 28px 24px;
       border: 1px solid rgba(30, 27, 58, 0.08);
-      box-shadow: var(--shadow-subtle);
-      padding: 34px;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .fees-table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-bottom: 20px;
-    }
-
-    .fees-table th {
-      text-align: left;
-      font-size: 0.85rem;
-      font-weight: 800;
-      color: var(--gray-text);
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      padding: 14px 16px;
-      border-bottom: 2px solid var(--light-bg);
-    }
-
-    .fees-table td {
-      padding: 18px 16px;
-      font-size: 0.98rem;
-      border-bottom: 1px solid var(--light-bg);
-    }
-
-    .fees-table tr:last-child td {
-      border-bottom: none;
-    }
-
-    .program-name-cell {
-      font-weight: 700;
-      color: var(--navy);
-    }
-
-    .fee-status-cell {
-      text-align: right;
-    }
-
-    .fee-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 0.82rem;
-      font-weight: 700;
-      color: var(--pink);
-      background: rgba(232, 65, 122, 0.08);
-      padding: 6px 14px;
-      border-radius: var(--radius-pill);
-      text-decoration: none;
-      transition: background var(--transition-smooth);
-    }
-
-    .fee-badge:hover {
-      background: rgba(232, 65, 122, 0.16);
-    }
-
-    .fees-note {
-      margin-top: auto;
-      padding: 14px 18px;
-      background: var(--light-bg);
-      border-radius: var(--radius-md);
-      font-size: 0.88rem;
-      color: var(--gray-text);
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .fees-note svg {
-      flex-shrink: 0;
-      color: var(--orange);
-    }
-
-    /* Included Items Card */
-    .fees-included-card {
-      background: var(--navy);
-      border-radius: var(--radius-card);
-      padding: 38px 34px;
-      color: var(--white);
+      border-top: 4px solid transparent;
+      box-shadow: 0 10px 30px rgba(20, 17, 44, 0.06);
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      position: relative;
-      overflow: hidden;
+      transition: transform var(--transition-smooth), box-shadow var(--transition-smooth), border-color var(--transition-smooth);
     }
 
-    .fees-included-card::before {
+    .admissions-cat-card.cat-sky {
+      border-top-color: var(--edu-blue);
+    }
+
+    .admissions-cat-card.cat-purple {
+      border-top-color: var(--purple);
+    }
+
+    .admissions-cat-card.cat-pink {
+      border-top-color: var(--pink);
+    }
+
+    .admissions-cat-card.cat-sky:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 45px rgba(50, 115, 188, 0.15);
+      border-color: rgba(50, 115, 188, 0.4);
+    }
+
+    .admissions-cat-card.cat-purple:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 45px rgba(182, 129, 177, 0.18);
+      border-color: rgba(182, 129, 177, 0.4);
+    }
+
+    .admissions-cat-card.cat-pink:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 45px rgba(228, 102, 154, 0.18);
+      border-color: rgba(228, 102, 154, 0.4);
+    }
+
+    .admissions-cat-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 18px;
+    }
+
+    .admissions-cat-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .admissions-cat-card.cat-sky .admissions-cat-icon {
+      background: rgba(110, 160, 207, 0.18);
+      color: var(--edu-blue);
+    }
+
+    .admissions-cat-card.cat-purple .admissions-cat-icon {
+      background: rgba(182, 129, 177, 0.18);
+      color: #8C4E87;
+    }
+
+    .admissions-cat-card.cat-pink .admissions-cat-icon {
+      background: rgba(228, 102, 154, 0.18);
+      color: #C0336F;
+    }
+
+    .admissions-cat-badge {
+      font-size: 0.74rem;
+      font-weight: 800;
+      padding: 5px 12px;
+      border-radius: var(--radius-pill);
+      letter-spacing: 0.02em;
+    }
+
+    .admissions-cat-card.cat-sky .admissions-cat-badge {
+      color: #1F5A9E;
+      background: rgba(110, 160, 207, 0.14);
+      border: 1px solid rgba(110, 160, 207, 0.35);
+    }
+
+    .admissions-cat-card.cat-purple .admissions-cat-badge {
+      color: #8C4E87;
+      background: rgba(182, 129, 177, 0.14);
+      border: 1px solid rgba(182, 129, 177, 0.35);
+    }
+
+    .admissions-cat-card.cat-pink .admissions-cat-badge {
+      color: #C0336F;
+      background: rgba(228, 102, 154, 0.14);
+      border: 1px solid rgba(228, 102, 154, 0.35);
+    }
+
+    .admissions-cat-title {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--navy);
+      margin-bottom: 6px;
+    }
+
+    .admissions-cat-desc {
+      font-size: 0.9rem;
+      color: var(--gray-text);
+      line-height: 1.55;
+      margin-bottom: 18px;
+    }
+
+    .admissions-track-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 22px;
+    }
+
+    .admissions-track-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 14px;
+      background: var(--light-bg);
+      border-radius: 10px;
+      font-size: 0.86rem;
+      border: 1px solid rgba(30, 27, 58, 0.04);
+    }
+
+    .admissions-track-item strong {
+      color: var(--navy);
+      font-weight: 700;
+    }
+
+    .admissions-track-age {
+      font-size: 0.76rem;
+      font-weight: 700;
+      white-space: nowrap;
+      padding: 3px 8px;
+      border-radius: 6px;
+    }
+
+    .admissions-cat-card.cat-sky .admissions-track-age {
+      color: var(--edu-blue);
+      background: rgba(110, 160, 207, 0.1);
+    }
+
+    .admissions-cat-card.cat-purple .admissions-track-age {
+      color: #8C4E87;
+      background: rgba(182, 129, 177, 0.1);
+    }
+
+    .admissions-cat-card.cat-pink .admissions-track-age {
+      color: #C0336F;
+      background: rgba(228, 102, 154, 0.1);
+    }
+
+    /* All-Inclusive & 3-Step Enrollment Banner */
+    .admissions-inclusive-banner {
+      background: var(--navy);
+      border-radius: 22px;
+      padding: 40px 42px;
+      color: var(--white);
+      position: relative;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1.2fr 0.95fr;
+      gap: 40px;
+      align-items: center;
+      box-shadow: 0 20px 50px rgba(20, 17, 44, 0.25);
+    }
+
+    .admissions-inclusive-banner::before {
       content: '';
       position: absolute;
       top: 0;
@@ -1351,49 +1863,70 @@
       background: var(--brand-gradient-horizontal);
     }
 
-    .included-header {
+    .inclusive-perks-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-top: 22px;
       margin-bottom: 24px;
     }
 
-    .included-title {
-      font-size: 1.4rem;
-      font-weight: 800;
-      color: var(--white);
-      margin-bottom: 8px;
-    }
-
-    .included-subtitle {
-      font-size: 0.95rem;
-      color: rgba(255, 255, 255, 0.75);
-    }
-
-    .included-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-      margin-bottom: 30px;
-    }
-
-    .included-item {
+    .inclusive-perk-item {
       display: flex;
       align-items: center;
-      gap: 14px;
-      font-size: 0.96rem;
+      gap: 10px;
+      font-size: 0.92rem;
       color: rgba(255, 255, 255, 0.9);
       font-weight: 500;
     }
 
-    .check-icon {
-      width: 22px;
-      height: 22px;
-      border-radius: 50%;
-      background: rgba(75, 184, 232, 0.2);
+    .inclusive-perk-item svg {
       color: var(--sky-blue);
+      flex-shrink: 0;
+    }
+
+    .enroll-steps-card {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 18px;
+      padding: 26px 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .enroll-step-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+    }
+
+    .enroll-step-num {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: var(--edu-blue);
+      color: var(--white);
       display: flex;
       align-items: center;
       justify-content: center;
+      font-size: 0.82rem;
+      font-weight: 800;
       flex-shrink: 0;
+      box-shadow: 0 2px 8px rgba(50, 115, 188, 0.35);
+    }
+
+    .enroll-step-title {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: var(--white);
+      margin-bottom: 2px;
+    }
+
+    .enroll-step-desc {
+      font-size: 0.82rem;
+      color: rgba(255, 255, 255, 0.72);
+      line-height: 1.45;
     }
 
     /* ==========================================================================
@@ -1504,31 +2037,73 @@
        ========================================================================== */
     .section-testimonials {
       padding: 100px 0;
-      background: var(--light-bg);
+      background: linear-gradient(180deg, #14112c 0%, #1a1638 100%);
+      color: var(--white);
       position: relative;
+      overflow: hidden;
+    }
+
+    .section-testimonials::before {
+      content: '';
+      position: absolute;
+      top: -40px;
+      right: -40px;
+      width: 320px;
+      height: 320px;
+      background: radial-gradient(circle, rgba(110, 160, 207, 0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .section-testimonials::after {
+      content: '';
+      position: absolute;
+      bottom: -40px;
+      left: -40px;
+      width: 280px;
+      height: 280px;
+      background: radial-gradient(circle, rgba(250, 210, 78, 0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .section-testimonials .section-title {
+      color: var(--white);
+    }
+
+    .section-testimonials .section-subtitle {
+      color: rgba(255, 255, 255, 0.76);
+    }
+
+    .section-testimonials .section-tag {
+      background: rgba(250, 210, 78, 0.12);
+      color: var(--yellow);
+      border: 1px solid rgba(250, 210, 78, 0.28);
     }
 
     .testimonials-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 28px;
+      position: relative;
+      z-index: 1;
     }
 
     .testimonial-card {
-      background: var(--white);
-      border-radius: var(--radius-card);
+      background: rgba(25, 21, 53, 0.85);
+      border-radius: 20px;
       padding: 34px 28px;
-      border: 1px solid rgba(30, 27, 58, 0.06);
-      box-shadow: var(--shadow-subtle);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.3);
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      transition: transform var(--transition-smooth), box-shadow var(--transition-smooth);
+      backdrop-filter: blur(8px);
+      transition: transform var(--transition-smooth), box-shadow var(--transition-smooth), border-color var(--transition-smooth);
     }
 
     .testimonial-card:hover {
-      transform: translateY(-5px);
-      box-shadow: var(--shadow-hover);
+      transform: translateY(-6px);
+      box-shadow: 0 24px 55px rgba(0, 0, 0, 0.45);
+      border-color: rgba(250, 210, 78, 0.4);
     }
 
     .stars-bar {
@@ -1536,14 +2111,17 @@
       display: flex;
       gap: 4px;
       margin-bottom: 16px;
+      font-size: 1.15rem;
+      letter-spacing: 2px;
+      text-shadow: 0 0 12px rgba(250, 210, 78, 0.4);
     }
 
     .testimonial-quote {
       font-family: var(--font-serif);
       font-style: italic;
-      font-size: 1.02rem;
-      color: var(--navy);
-      line-height: 1.65;
+      font-size: 1.04rem;
+      color: rgba(255, 255, 255, 0.92);
+      line-height: 1.7;
       margin-bottom: 22px;
     }
 
@@ -1552,12 +2130,12 @@
       align-items: center;
       gap: 12px;
       padding-top: 16px;
-      border-top: 1px solid rgba(30, 27, 58, 0.06);
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
     }
 
     .author-avatar {
-      width: 44px;
-      height: 44px;
+      width: 46px;
+      height: 46px;
       border-radius: 50%;
       background: var(--brand-gradient);
       color: var(--white);
@@ -1566,17 +2144,30 @@
       justify-content: center;
       font-weight: 800;
       font-size: 1rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    .author-avatar-img {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid rgba(250, 210, 78, 0.5);
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+      flex-shrink: 0;
     }
 
     .author-name {
-      font-size: 0.95rem;
+      font-size: 0.98rem;
       font-weight: 800;
-      color: var(--navy);
+      color: var(--white);
     }
 
     .author-location {
       font-size: 0.8rem;
-      color: var(--gray-text);
+      color: var(--yellow);
+      font-weight: 600;
+      margin-top: 2px;
     }
 
     /* ==========================================================================
@@ -1923,6 +2514,17 @@
         grid-template-columns: 1fr;
       }
 
+      .admissions-category-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .admissions-inclusive-banner {
+        grid-template-columns: 1fr;
+        gap: 32px;
+        padding: 32px 26px;
+      }
+
       .steps-line {
         display: none;
       }
@@ -2013,6 +2615,30 @@
         font-size: 2.3rem;
       }
 
+      .hero-media-wrap {
+        height: 280px;
+      }
+
+      .hero-glass-badge {
+        padding: 7px 12px;
+        font-size: 0.76rem;
+      }
+
+      .hero-glass-badge-top {
+        top: 10px;
+        left: 10px;
+      }
+
+      .hero-glass-badge-bottom {
+        bottom: 12px;
+        right: 10px;
+      }
+
+      .inclusive-perks-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+
       .trust-strip-inner {
         grid-template-columns: 1fr;
       }
@@ -2042,6 +2668,30 @@
     @media (max-width: 480px) {
       .hero-card {
         padding: 24px 18px;
+      }
+
+      .hero-media-wrap {
+        height: 240px;
+      }
+
+      .hero-showcase-footer {
+        gap: 6px;
+      }
+
+      .hero-showcase-stat-val {
+        font-size: 1.15rem;
+      }
+
+      .hero-showcase-stat-lbl {
+        font-size: 0.68rem;
+      }
+
+      .admissions-cat-card {
+        padding: 22px 18px;
+      }
+
+      .admissions-inclusive-banner {
+        padding: 24px 16px;
       }
 
       .level-item {
@@ -2177,9 +2827,9 @@
     }
 
     .dim-card {
-      min-height: 310px;
+      min-height: 340px;
       border-radius: 20px;
-      padding: 32px 24px;
+      padding: 0;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -2187,6 +2837,7 @@
       background: var(--white);
       border: 1px solid rgba(255, 255, 255, 0.9);
       box-shadow: 0 16px 36px rgba(0, 0, 0, 0.22);
+      overflow: hidden;
       border-top: 4px solid transparent;
       transition: transform var(--transition-smooth), box-shadow var(--transition-smooth);
     }
@@ -2194,6 +2845,33 @@
     .dim-card:hover {
       transform: translateY(-8px);
       box-shadow: 0 24px 48px rgba(0, 0, 0, 0.32);
+    }
+
+    .dim-card-img-wrap {
+      position: relative;
+      height: 140px;
+      width: 100%;
+      overflow: hidden;
+      background: var(--navy);
+    }
+
+    .dim-card-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .dim-card:hover .dim-card-img {
+      transform: scale(1.08);
+    }
+
+    .dim-card-img-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(20, 17, 44, 0.85) 0%, rgba(20, 17, 44, 0.2) 60%, transparent 100%);
+      pointer-events: none;
     }
 
     .dim-card.dim-sky {
@@ -2213,18 +2891,26 @@
     }
 
     .dim-card-top {
+      position: absolute;
+      top: 10px;
+      left: 12px;
+      right: 12px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      margin-bottom: 24px;
+      z-index: 2;
     }
 
     .dim-num {
       font-family: var(--font-heading);
-      font-size: 2.3rem;
+      font-size: 1.15rem;
       font-weight: 800;
       line-height: 1;
-      letter-spacing: -0.02em;
+      background: rgba(255, 255, 255, 0.95);
+      color: var(--navy);
+      padding: 4px 10px;
+      border-radius: var(--radius-pill);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
     }
 
     .dim-sky .dim-num {
@@ -2241,6 +2927,14 @@
 
     .dim-orange .dim-num {
       color: var(--orange);
+    }
+
+    .dim-card-content {
+      padding: 20px 20px 22px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      justify-content: flex-start;
     }
 
     .dim-pill {
@@ -2977,9 +3671,56 @@
       .cutout-badge-2 {
         right: 10px;
       }
+
+      .programs-grid,
+      .programs-grid-3 {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+
+      .programs-tabs-wrapper {
+        justify-content: flex-start;
+        overflow-x: auto;
+        padding-left: 16px;
+        padding-right: 16px;
+        padding-bottom: 8px;
+      }
+
+      .program-tabs-nav {
+        justify-content: flex-start;
+        width: max-content;
+        margin: 0;
+      }
     }
 
     @media (max-width: 768px) {
+      .program-tab-btn {
+        padding: 9px 15px;
+        font-size: 0.84rem;
+      }
+
+      .program-card {
+        padding: 0;
+      }
+
+      .program-card-body {
+        padding: 22px 18px 20px;
+      }
+
+      .tab-intro-banner {
+        padding: 16px 18px;
+      }
+
+      .subtrack-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+      }
+
+      .subtrack-fee {
+        text-align: left;
+      }
+
       .section-cutout {
         padding: 60px 0;
       }
@@ -3108,7 +3849,7 @@
         <li><a href="#why-us" class="nav-link">Why Us</a></li>
         <li><a href="#dimensions" class="nav-link">Our Model</a></li>
         <li><a href="#programs" class="nav-link">Programs</a></li>
-        <li><a href="#fees" class="nav-link">Fees</a></li>
+        <li><a href="#fees" class="nav-link">Admissions</a></li>
         <li><a href="#faqs" class="nav-link">FAQs</a></li>
         <li style="display: none;" class="mobile-cta-item">
           <a href="#contact" class="btn btn-gradient"
@@ -3121,7 +3862,7 @@
         <a href="#contact" class="btn btn-gradient">Enroll Now</a>
       </div>
 
-      <button class="hamburger" id="hamburgerBtn" aria-label="Toggle Navigation Menu">
+      <button type="button" class="hamburger" id="hamburgerBtn" aria-label="Toggle Navigation Menu">
         <span></span>
         <span></span>
         <span></span>
@@ -3130,9 +3871,20 @@
   </header>
 
   <!-- ==========================================================================
-       2. HERO SECTION
+       2. HERO SECTION (Ambient Video Hero Backdrop - Option B)
        ========================================================================== -->
   <section class="hero" id="hero">
+    <!-- Ambient Video Background Layer -->
+    <div class="hero-video-backdrop" aria-hidden="true">
+      <video class="hero-bg-video" autoplay muted loop playsinline poster="images/iq.webp">
+        <source src="videos/hero-bg.mp4" type="video/mp4">
+        <source
+          src="https://assets.mixkit.co/videos/preview/mixkit-little-girl-studying-with-a-laptop-at-home-43038-large.mp4"
+          type="video/mp4">
+      </video>
+      <div class="hero-video-scrim"></div>
+    </div>
+
     <!-- Soft Animated Color Blobs -->
     <div class="hero-blob hero-blob-1"></div>
     <div class="hero-blob hero-blob-2"></div>
@@ -3151,11 +3903,14 @@
     <div class="container hero-grid">
       <!-- Left Hero Content -->
       <div class="hero-content">
-        <!-- CambriLearn-Inspired Institutional Scope Strip -->
-        <!-- <div class="hero-scope-strip">
-          <span class="scope-pill">Cambridge-Aligned</span>
-          <span class="scope-text">Online Private School &middot; Ages 4 to 13 &middot; Pakistan &amp; Overseas</span>
-        </div> -->
+        <!-- Lumina-Inspired Live Pulsing Status Badge -->
+        <div class="hero-live-badge">
+          <span class="live-dot-wrap">
+            <span class="live-ping-circle"></span>
+            <span class="live-dot-core"></span>
+          </span>
+          <span class="hero-live-text">Admissions Open 2026–27 &middot; Pakistan &amp; Overseas</span>
+        </div>
 
         <h1 class="hero-title">
           Raising Intellectuals <span class="text-gradient">One Child at a Time</span>
@@ -3171,6 +3926,31 @@
           <a href="#contact" class="btn btn-outline">Talk to Us</a>
         </div>
 
+        <!-- Trust Indicators (Lumina Inspired) -->
+        <div class="hero-trust-pills">
+          <span class="trust-pill-item">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+              stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+            Cambridge Aligned
+          </span>
+          <span class="trust-pill-item">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+              stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+            1-on-1 Navigators
+          </span>
+          <span class="trust-pill-item">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+              stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+            Flexible Time Slots
+          </span>
+        </div>
+
         <!-- Social Proof Micro-Strip -->
         <div class="hero-mini-trust">
           <div class="hero-avatars">
@@ -3180,114 +3960,51 @@
           </div>
           <span>Trusted by home schooling families across Pakistan &amp; Overseas</span>
         </div>
-
-        <!-- Editorial Notes (Inspired by European Edtech Aesthetic) -->
-        <div class="hero-notes">
-          <div class="hero-note-item"><strong>01</strong>Personalized Pathways</div>
-          <div class="hero-note-item"><strong>02</strong>Trained Navigators</div>
-          <div class="hero-note-item"><strong>03</strong>Cambridge Standard</div>
-        </div>
       </div>
 
-      <!-- Right Hero Visual: Clean, Spacious Academic Pathway LMS Card -->
-      <div class="hero-card">
-        <div class="hero-card-header">
-          <div class="hero-card-title-wrap">
-            <h2 class="hero-card-title">Academic Pathway</h2>
-            <span class="hero-card-sub">Structured Online Cambridge Curriculum</span>
-          </div>
-          <span class="hero-card-tag">Ages 4 to 13 · 100% Online</span>
-        </div>
+      <!-- Right Hero Visual: Modern Interactive Classroom Preview Showcase -->
+      <div class="hero-showcase-card" id="heroVideoTrigger" style="cursor: pointer;"
+        title="Click to Watch Classroom Preview">
+        <div class="hero-media-wrap">
+          <img src="images/iq.webp"
+            onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=1000&q=80';"
+            class="hero-media-img" alt="IQ Navigators Online Cambridge Classroom Demo" loading="eager">
+          <div class="hero-media-overlay"></div>
 
-        <div class="levels-list">
-          <!-- Early Years -->
-          <div class="level-item">
-            <div class="level-item-left">
-              <div class="level-icon-box" style="background: rgba(75, 184, 232, 0.15); color: #157FAE;">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                  stroke-linecap="round" stroke-linejoin="round">
-                  <circle cx="12" cy="12" r="10"></circle>
-                  <path d="M8 14s1.5 2 4 2 4-2 4-2"></path>
-                  <line x1="9" y1="9" x2="9.01" y2="9"></line>
-                  <line x1="15" y1="9" x2="15.01" y2="9"></line>
-                </svg>
-              </div>
-              <div class="level-info">
-                <span class="level-name">Early Years</span>
-                <span class="level-age">Ages 4–6 · Kindergarten Foundation</span>
-              </div>
+          <!-- Top Clean SVG Badge (No Emojis) -->
+          <div class="hero-glass-badge hero-glass-badge-top">
+            <span class="hero-glass-badge-icon" style="background: rgba(110, 160, 207, 0.25); color: var(--sky-blue);">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                <path d="M6 12v5c0 2 3 3 6 3s6-1 6-3v-5"></path>
+              </svg>
+            </span>
+            <span>Cambridge Aligned &middot; Ages 3–16</span>
+          </div>
+
+          <!-- Interactive Center Play Prompt -->
+          <div class="hero-play-prompt">
+            <div class="play-btn-circle" style="width: 58px; height: 58px;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <polygon points="5 3 19 12 5 21 5 3"></polygon>
+              </svg>
+              <div class="play-pulse-ring" style="width: 58px; height: 58px;"></div>
+              <div class="play-pulse-ring-2" style="width: 58px; height: 58px;"></div>
             </div>
-            <span class="level-badge badge-early">Beginner &amp; Advance</span>
+            <span class="hero-play-text">Preview Virtual Classroom</span>
           </div>
 
-          <!-- Primary Level (Featured) -->
-          <div class="level-item featured-level">
-            <div class="level-item-left">
-              <div class="level-icon-box" style="background: rgba(155, 126, 200, 0.2); color: #6D4BB0;">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                  stroke-linecap="round" stroke-linejoin="round">
-                  <polygon
-                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
-                  </polygon>
-                </svg>
-              </div>
-              <div class="level-info">
-                <span class="level-name">Primary Level</span>
-                <span class="level-age">Ages 6–8 · Cambridge Primary</span>
-              </div>
-            </div>
-            <span class="level-badge badge-primary">Beginner &amp; Advance</span>
-          </div>
-
-          <!-- Middle Years -->
-          <div class="level-item">
-            <div class="level-item-left">
-              <div class="level-icon-box" style="background: rgba(232, 65, 122, 0.15); color: #C21D54;">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                  stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
-                </svg>
-              </div>
-              <div class="level-info">
-                <span class="level-name">Middle Years</span>
-                <span class="level-age">Ages 8–10 · Lower Secondary</span>
-              </div>
-            </div>
-            <span class="level-badge badge-middle">O Level Prep</span>
-          </div>
-
-          <!-- Foundation Course -->
-          <div class="level-item">
-            <div class="level-item-left">
-              <div class="level-icon-box" style="background: rgba(245, 166, 35, 0.18); color: #C07907;">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                  stroke-linecap="round" stroke-linejoin="round">
-                  <circle cx="12" cy="12" r="10"></circle>
-                  <polyline points="12 6 12 12 16 14"></polyline>
-                </svg>
-              </div>
-              <div class="level-info">
-                <span class="level-name">Foundation Course</span>
-                <span class="level-age">Ages 12–13 · Intensive Bridge</span>
-              </div>
-            </div>
-            <span class="level-badge badge-foundation">6 or 9 Months</span>
-          </div>
-        </div>
-
-        <!-- 3 Stats Strip -->
-        <div class="hero-stats">
-          <div class="stat-col">
-            <span class="stat-val">100%</span>
-            <span class="stat-lbl">Online LMS</span>
-          </div>
-          <div class="stat-col">
-            <span class="stat-val">5+</span>
-            <span class="stat-lbl">Programs</span>
-          </div>
-          <div class="stat-col">
-            <span class="stat-val">Cambridge</span>
-            <span class="stat-lbl">Aligned</span>
+          <!-- Bottom Session Status Pill -->
+          <div class="hero-media-caption">
+            <span class="hero-caption-live">
+              <span class="live-dot-core" style="background: #10B981;"></span>
+              Live Interactive Zoom Cohorts
+            </span>
+            <span
+              style="font-size: 0.78rem; font-weight: 700; color: rgba(255, 255, 255, 0.85); display: flex; align-items: center; gap: 4px;">
+              Watch Tour &rarr;
+            </span>
           </div>
         </div>
       </div>
@@ -3295,7 +4012,7 @@
   </section>
 
   <!-- ==========================================================================
-       TRUST & ACCREDITATION STRIP (Cambridge & British Council Pathway)
+       TRUST & ACCREDITATION STRIP (Streamlined Cambridge & British Council)
        ========================================================================== -->
   <section class="trust-strip">
     <div class="container trust-strip-inner">
@@ -3380,88 +4097,37 @@
 
       <!-- 4 Compact Horizontal Pastel Cards in 1 Row -->
       <div class="why-cards-row">
-        <!-- 01. Personalized Pacing -->
+        <!-- 01. Zero Commute Fatigue -->
         <article class="why-pastel-card pastel-sky">
           <div>
             <div class="why-pastel-top">
               <div class="why-pastel-icon" style="color: var(--sky-blue);">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
                   stroke-linecap="round" stroke-linejoin="round">
-                  <circle cx="12" cy="12" r="10"></circle>
-                  <polyline points="12 6 12 12 16 14"></polyline>
+                  <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                  <polyline points="9 22 9 12 15 12 15 22"></polyline>
                 </svg>
               </div>
               <span class="why-pastel-num">01</span>
             </div>
-            <h3 class="why-pastel-title">Personalized Pacing</h3>
+            <h3 class="why-pastel-title">Zero Commute Fatigue</h3>
             <p class="why-pastel-desc">
-              Pacing calibrated to your child's developmental readiness, eliminating rigid 30-student classroom stress and commute fatigue.
+              Save 2+ hours wasted daily in morning traffic and crowded school vans. Children study with fresh minds in
+              a relaxed, safe home environment.
             </p>
           </div>
           <div class="why-pastel-pills">
-            <span class="pastel-pill">Beginner &rarr; Advance</span>
-            <span class="pastel-pill">Self-Paced</span>
-            <span class="pastel-pill">Zero Commute</span>
+            <span class="pastel-pill">No Van Rush</span>
+            <span class="pastel-pill">Fresh Minds</span>
+            <span class="pastel-pill">Safe at Home</span>
           </div>
         </article>
 
-        <!-- 02. Trained Navigators -->
+        <!-- 02. Deep Conceptual Mastery -->
         <article class="why-pastel-card pastel-purple">
           <div>
             <div class="why-pastel-top">
               <div class="why-pastel-icon" style="color: var(--purple);">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                  stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                  <circle cx="9" cy="7" r="4"></circle>
-                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-                </svg>
-              </div>
-              <span class="why-pastel-num">02</span>
-            </div>
-            <h3 class="why-pastel-title">Trained Navigators</h3>
-            <p class="why-pastel-desc">
-              Dedicated educators trained in positive reinforcement and child psychology, providing continuous 1-on-1 mentorship.
-            </p>
-          </div>
-          <div class="why-pastel-pills">
-            <span class="pastel-pill">Small Cohorts</span>
-            <span class="pastel-pill">Active Feedback</span>
-            <span class="pastel-pill">Parent Updates</span>
-          </div>
-        </article>
-
-        <!-- 03. British Council Pathway -->
-        <article class="why-pastel-card pastel-pink">
-          <div>
-            <div class="why-pastel-top">
-              <div class="why-pastel-icon" style="color: var(--pink);">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                  stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-                  <polyline points="9 12 11 14 15 10"></polyline>
-                </svg>
-              </div>
-              <span class="why-pastel-num">03</span>
-            </div>
-            <h3 class="why-pastel-title">British Council Pathway</h3>
-            <p class="why-pastel-desc">
-              Curriculum rigorously mapped to Cambridge frameworks for private candidate entry in Checkpoint, IGCSE &amp; O Levels.
-            </p>
-          </div>
-          <div class="why-pastel-pills">
-            <span class="pastel-pill">Cambridge Standard</span>
-            <span class="pastel-pill">Exam Readiness</span>
-            <span class="pastel-pill">Termly Reports</span>
-          </div>
-        </article>
-
-        <!-- 04. Moral Character & Ethics -->
-        <article class="why-pastel-card pastel-orange">
-          <div>
-            <div class="why-pastel-top">
-              <div class="why-pastel-icon" style="color: var(--orange);">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
                   stroke-linecap="round" stroke-linejoin="round">
                   <polygon
@@ -3469,17 +4135,72 @@
                   </polygon>
                 </svg>
               </div>
-              <span class="why-pastel-num">04</span>
+              <span class="why-pastel-num">02</span>
             </div>
-            <h3 class="why-pastel-title">Moral Character &amp; Ethics</h3>
+            <h3 class="why-pastel-title">Inquiry Over Ratta</h3>
             <p class="why-pastel-desc">
-              Integrating 9 essential ethical habits and Islamic moral values directly into everyday learning to nurture grounded leaders.
+              Eliminating rote memorization and mechanical exam cramming. Students build authentic analytical thinking
+              through inquiry-based Cambridge modules.
+            </p>
+          </div>
+          <div class="why-pastel-pills">
+            <span class="pastel-pill">Critical Thinking</span>
+            <span class="pastel-pill">Inquiry Driven</span>
+            <span class="pastel-pill">Real Mastery</span>
+          </div>
+        </article>
+
+        <!-- 03. Daily Islamic Tarbiyah -->
+        <article class="why-pastel-card pastel-pink">
+          <div>
+            <div class="why-pastel-top">
+              <div class="why-pastel-icon" style="color: var(--pink);">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path
+                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
+                  </path>
+                </svg>
+              </div>
+              <span class="why-pastel-num">03</span>
+            </div>
+            <h3 class="why-pastel-title">Daily Islamic Tarbiyah</h3>
+            <p class="why-pastel-desc">
+              Embedding 9 core ethical habits (truthfulness, neatness, adab) into daily learning, shielding children
+              from negative peer pressures.
             </p>
           </div>
           <div class="why-pastel-pills">
             <span class="pastel-pill">9 Character Traits</span>
-            <span class="pastel-pill">Islamic Values</span>
-            <span class="pastel-pill">STEM &amp; Projects</span>
+            <span class="pastel-pill">Islamic Ethos</span>
+            <span class="pastel-pill">Positive Conduct</span>
+          </div>
+        </article>
+
+        <!-- 04. Parent-Navigator Clarity -->
+        <article class="why-pastel-card pastel-orange">
+          <div>
+            <div class="why-pastel-top">
+              <div class="why-pastel-icon" style="color: var(--orange);">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="18" y1="20" x2="18" y2="10"></line>
+                  <line x1="12" y1="20" x2="12" y2="4"></line>
+                  <line x1="6" y1="20" x2="6" y2="14"></line>
+                </svg>
+              </div>
+              <span class="why-pastel-num">04</span>
+            </div>
+            <h3 class="why-pastel-title">Parent-Navigator Clarity</h3>
+            <p class="why-pastel-desc">
+              No mystery about how your child is performing until exam day. Enjoy continuous Navigator feedback and
+              termly indicator report cards.
+            </p>
+          </div>
+          <div class="why-pastel-pills">
+            <span class="pastel-pill">Indicator Reports</span>
+            <span class="pastel-pill">Termly Feedback</span>
+            <span class="pastel-pill">Zero Blind Spots</span>
           </div>
         </article>
       </div>
@@ -3624,7 +4345,7 @@
   <div class="video-modal" id="videoModal" role="dialog" aria-modal="true"
     aria-label="IQ Navigators Online Classroom Tour">
     <div class="video-modal-content">
-      <button class="video-modal-close" id="closeVideoModal" aria-label="Close Video">&times;</button>
+      <button type="button" class="video-modal-close" id="closeVideoModal" aria-label="Close Video">&times;</button>
       <div class="video-modal-preview" style="width: 100%; height: 180px; overflow: hidden; position: relative;">
         <img src="images/class.webp" alt="IQ Navigators Online Classroom Session"
           style="width: 100%; height: 100%; object-fit: cover; display: block;">
@@ -3708,49 +4429,73 @@
       <div class="four-dimensions-grid">
         <!-- 01 Academic Mastery -->
         <article class="dim-card dim-sky">
-          <div class="dim-card-top">
-            <span class="dim-num">01</span>
-            <span class="dim-pill">Cambridge Aligned</span>
+          <div class="dim-card-img-wrap">
+            <img src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=600&q=80"
+              alt="Academic Mastery Cambridge Learning" class="dim-card-img" loading="lazy">
+            <div class="dim-card-img-overlay"></div>
+            <div class="dim-card-top">
+              <span class="dim-num">01</span>
+              <span class="dim-pill">Cambridge Aligned</span>
+            </div>
           </div>
           <div class="dim-card-content">
             <h3 class="dim-title">Academic Mastery</h3>
-            <p class="dim-desc">Strong Cambridge-aligned foundations across English, Urdu, Mathematics, and Science with inquiry-based learning.</p>
+            <p class="dim-desc">Strong Cambridge-aligned foundations across English, Urdu, Mathematics, and Science with
+              inquiry-based learning.</p>
           </div>
         </article>
 
         <!-- 02 Technical & AI -->
         <article class="dim-card dim-purple">
-          <div class="dim-card-top">
-            <span class="dim-num">02</span>
-            <span class="dim-pill">Future Ready</span>
+          <div class="dim-card-img-wrap">
+            <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=600&q=80"
+              alt="Technical and AI Skills" class="dim-card-img" loading="lazy">
+            <div class="dim-card-img-overlay"></div>
+            <div class="dim-card-top">
+              <span class="dim-num">02</span>
+              <span class="dim-pill">Future Ready</span>
+            </div>
           </div>
           <div class="dim-card-content">
             <h3 class="dim-title">Technical &amp; AI</h3>
-            <p class="dim-desc">Coding fundamentals, Artificial Intelligence bootcamps, digital literacy, and modern tools for 21st-century problem solving.</p>
+            <p class="dim-desc">Coding fundamentals, Artificial Intelligence bootcamps, digital literacy, and modern
+              tools for 21st-century problem solving.</p>
           </div>
         </article>
 
         <!-- 03 Moral Character & Ethics -->
         <article class="dim-card dim-pink">
-          <div class="dim-card-top">
-            <span class="dim-num">03</span>
-            <span class="dim-pill">Ethical Growth</span>
+          <div class="dim-card-img-wrap">
+            <img src="https://images.unsplash.com/photo-1491841550275-ad7854e35ca6?auto=format&fit=crop&w=600&q=80"
+              alt="Moral Character and Islamic Ethics" class="dim-card-img" loading="lazy">
+            <div class="dim-card-img-overlay"></div>
+            <div class="dim-card-top">
+              <span class="dim-num">03</span>
+              <span class="dim-pill">Ethical Growth</span>
+            </div>
           </div>
           <div class="dim-card-content">
             <h3 class="dim-title">Moral Character</h3>
-            <p class="dim-desc">Cultivating 9 essential character traits: courtesy, neatness, truthfulness, self-control, empathy, and sound ethical foundations.</p>
+            <p class="dim-desc">Cultivating 9 essential character traits: courtesy, neatness, truthfulness,
+              self-control, empathy, and sound ethical foundations.</p>
           </div>
         </article>
 
         <!-- 04 Hard Skills -->
         <article class="dim-card dim-orange">
-          <div class="dim-card-top">
-            <span class="dim-num">04</span>
-            <span class="dim-pill">Applied Mastery</span>
+          <div class="dim-card-img-wrap">
+            <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=600&q=80"
+              alt="Hard Skills and Hands-on Science" class="dim-card-img" loading="lazy">
+            <div class="dim-card-img-overlay"></div>
+            <div class="dim-card-top">
+              <span class="dim-num">04</span>
+              <span class="dim-pill">Applied Mastery</span>
+            </div>
           </div>
           <div class="dim-card-content">
             <h3 class="dim-title">Hard Skills</h3>
-            <p class="dim-desc">Practical competencies, independent research projects, cognitive confidence, and demonstrable student portfolios.</p>
+            <p class="dim-desc">Practical competencies, independent research projects, cognitive confidence, and
+              demonstrable student portfolios.</p>
           </div>
         </article>
       </div>
@@ -3762,15 +4507,54 @@
        ========================================================================== -->
   <section class="section-approach" id="approach">
     <div class="container approach-grid">
-      <!-- Left Photo Frame -->
-      <div class="approach-photo-frame">
-        <img src="images/parent-mentorship.jpg" alt="Pakistani mother mentoring child in online homeschooling"
-          class="approach-img"
-          onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=1200&q=80';">
-        <div class="approach-photo-badge">
-          <div class="approach-photo-badge-title">Empowering Parents &amp; Children</div>
-          <div class="approach-photo-badge-desc">Structured learning plans that let families enjoy education without
-            classroom burnout.</div>
+      <!-- Left Visual Wrap with Layered Angled Geometric Square & Morph Backdrop -->
+      <div class="approach-visual-wrap">
+        <!-- Angled Geometric Square & Dotted Pattern SVG Backdrop -->
+        <div class="approach-angled-backdrop" aria-hidden="true">
+          <svg class="approach-angled-svg" viewBox="0 0 540 460" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="approachGradMain" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#4BB8E8" stop-opacity="0.25" />
+                <stop offset="50%" stop-color="#9B7EC8" stop-opacity="0.28" />
+                <stop offset="100%" stop-color="#E8417A" stop-opacity="0.22" />
+              </linearGradient>
+              <linearGradient id="approachStrokeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#4BB8E8" stop-opacity="0.65" />
+                <stop offset="50%" stop-color="#9B7EC8" stop-opacity="0.5" />
+                <stop offset="100%" stop-color="#E8417A" stop-opacity="0.55" />
+              </linearGradient>
+              <pattern id="approachGridDots" x="0" y="0" width="16" height="16" patternUnits="userSpaceOnUse">
+                <circle cx="2.5" cy="2.5" r="1.5" fill="#3273bc" fill-opacity="0.25" />
+              </pattern>
+            </defs>
+
+            <!-- Top-Right Geometric Dots Matrix -->
+            <rect x="420" y="8" width="100" height="90" fill="url(#approachGridDots)" rx="8" />
+
+            <!-- Bottom-Left Geometric Dots Matrix -->
+            <rect x="10" y="370" width="110" height="80" fill="url(#approachGridDots)" rx="8" />
+
+            <!-- Layer 1: Outer Angled Rounded Square (Rotated -5.5deg) -->
+            <rect x="20" y="16" width="500" height="428" rx="34" fill="url(#approachGradMain)"
+              stroke="url(#approachStrokeGrad)" stroke-width="2.5" stroke-dasharray="8 6"
+              transform="rotate(-5.5 270 230)" />
+
+            <!-- Layer 2: Inner Accent Rounded Square (Rotated -2.5deg for Dimensional Depth) -->
+            <rect x="30" y="24" width="480" height="412" rx="30" fill="url(#approachGradMain)" fill-opacity="0.35"
+              stroke="url(#approachStrokeGrad)" stroke-width="1" stroke-opacity="0.4"
+              transform="rotate(-2.5 270 230)" />
+          </svg>
+        </div>
+
+        <div class="approach-photo-frame">
+          <img src="images/parent-mentorship.jpg" alt="Pakistani mother mentoring child in online homeschooling"
+            class="approach-img"
+            onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=1200&q=80';">
+          <div class="approach-photo-badge">
+            <div class="approach-photo-badge-title">Empowering Parents &amp; Children</div>
+            <div class="approach-photo-badge-desc">Structured learning plans that let families enjoy education without
+              classroom burnout.</div>
+          </div>
         </div>
       </div>
 
@@ -3833,247 +4617,1004 @@
   </section>
 
   <!-- ==========================================================================
-       4. PROGRAMS SECTION
+       4. PROGRAMS SECTION (Interactive Category Tabs & Complete Course Catalog)
        ========================================================================== -->
   <section class="section-programs" id="programs">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag">Our Programs</span>
-        <h2 class="section-title">A path for every learner</h2>
+        <span class="section-tag">Academic &amp; Skill Programs</span>
+        <h2 class="section-title">Structured Pathways for <span class="text-gradient">Every Learner</span></h2>
         <p class="section-subtitle">
-          Designed specifically to meet children at their developmental readiness and nurture deep conceptual
-          understanding.
+          From structured Cambridge-aligned homeschooling to future-ready coding, creative writing, and spoken English
+          confidence.
         </p>
       </div>
 
-      <div class="programs-grid">
-        <!-- 1. Early Years -->
-        <div class="program-card">
-          <div class="program-top">
-            <div class="program-icon-box" style="color: var(--sky-blue);">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="10"></circle>
-                <path d="M8 14s1.5 2 4 2 4-2 4-2"></path>
-                <line x1="9" y1="9" x2="9.01" y2="9"></line>
-                <line x1="15" y1="9" x2="15.01" y2="9"></line>
-              </svg>
-            </div>
-            <span class="age-pill">Ages 4–6</span>
-          </div>
-          <div>
-            <h3 class="program-title">Early Years</h3>
-            <p class="program-desc">
-              Structured into <strong>Beginner &amp; Advance</strong> stages. Covers bilingual literacy (English &amp;
-              Urdu), mathematical and logical concepts, creative arts, physical development, and Islamic ethical values.
-            </p>
-          </div>
-
-          <!-- Academic Pathway Specs -->
-          <div class="pathway-meta-grid">
-            <div class="meta-cell">
-              <span class="meta-label">Duration</span>
-              <span class="meta-value">1 Academic Year</span>
-            </div>
-            <div class="meta-cell">
-              <span class="meta-label">Assessment</span>
-              <span class="meta-value">Qualitative Diagnostic Report</span>
-            </div>
-            <div class="meta-cell">
-              <span class="meta-label">Core Curriculum</span>
-              <span class="meta-value">Bilingual Literacy &amp; Math</span>
-            </div>
-            <div class="meta-cell">
-              <span class="meta-label">Next Milestone</span>
-              <span class="meta-value">Cambridge Primary Readiness</span>
-            </div>
-          </div>
-
-          <div class="program-tags">
-            <span class="pill-tag">Beginner &rarr; Advance</span>
-            <span class="pill-tag">English &amp; Urdu Literacy</span>
-            <span class="pill-tag">Logical Math &amp; Shapes</span>
-            <span class="pill-tag">Islamic Values</span>
-            <span class="pill-tag">Indicator Reporting</span>
-          </div>
-        </div>
-
-        <!-- 2. Primary Level (FEATURED DARK CARD) -->
-        <div class="program-card featured">
-          <div class="program-top">
-            <div class="program-icon-box" style="color: var(--yellow);">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round">
-                <polygon
-                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
-                </polygon>
-              </svg>
-            </div>
-            <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 8px;">
-              <span class="program-badge-featured">Featured Program</span>
-              <span class="age-pill">Ages 6–8</span>
-            </div>
-          </div>
-          <div>
-            <h3 class="program-title">Primary Level</h3>
-            <p class="program-desc">
-              Our flagship program across <strong>Primary Beginner &amp; Advance</strong>. Focuses on deep language
-              fluency, reading comprehension, creative writing, mental mathematics, and 9 essential personal traits
-              (confidence, neatness, courtesy, and self-control).
-            </p>
-          </div>
-
-          <!-- Academic Pathway Specs -->
-          <div class="pathway-meta-grid">
-            <div class="meta-cell">
-              <span class="meta-label">Duration</span>
-              <span class="meta-value">1 Academic Year</span>
-            </div>
-            <div class="meta-cell">
-              <span class="meta-label">Assessment</span>
-              <span class="meta-value">Termly Grades (A+ to D) + 9 Traits</span>
-            </div>
-            <div class="meta-cell">
-              <span class="meta-label">Core Curriculum</span>
-              <span class="meta-value">Advanced English, Math &amp; Urdu</span>
-            </div>
-            <div class="meta-cell">
-              <span class="meta-label">Next Milestone</span>
-              <span class="meta-value">Cambridge Primary Checkpoint</span>
-            </div>
-          </div>
-
-          <div class="program-tags">
-            <span class="pill-tag">Beginner &rarr; Advance</span>
-            <span class="pill-tag">Advanced English &amp; Urdu</span>
-            <span class="pill-tag">Mental Ability &amp; Math</span>
-            <span class="pill-tag">Character Building (9 Traits)</span>
-            <span class="pill-tag">Grade-Based Reports (A+ to D)</span>
-          </div>
-        </div>
-
-        <!-- 3. Middle Years -->
-        <div class="program-card">
-          <div class="program-top">
-            <div class="program-icon-box" style="color: var(--pink);">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round">
-                <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
-              </svg>
-            </div>
-            <span class="age-pill">Ages 8–10</span>
-          </div>
-          <div>
-            <h3 class="program-title">Middle Years</h3>
-            <p class="program-desc">
-              Comprehensive academic training leading directly to <strong>Cambridge O Level / IGCSE</strong> entry.
-              Rigorous analytical problem solving, reasoning, evaluating in Mathematics, advanced language expression,
-              and holistic learner evaluation.
-            </p>
-          </div>
-
-          <!-- Academic Pathway Specs -->
-          <div class="pathway-meta-grid">
-            <div class="meta-cell">
-              <span class="meta-label">Duration</span>
-              <span class="meta-value">1 Academic Year / Multi-Stage</span>
-            </div>
-            <div class="meta-cell">
-              <span class="meta-label">Assessment</span>
-              <span class="meta-value">Cambridge Scale (A★ to U)</span>
-            </div>
-            <div class="meta-cell">
-              <span class="meta-label">Core Curriculum</span>
-              <span class="meta-value">Analytical Math, Science, English</span>
-            </div>
-            <div class="meta-cell">
-              <span class="meta-label">Next Milestone</span>
-              <span class="meta-value">British Council O Level / IGCSE</span>
-            </div>
-          </div>
-
-          <div class="program-tags">
-            <span class="pill-tag">Direct O Level / IGCSE Prep</span>
-            <span class="pill-tag">Analytical Math Reasoning</span>
-            <span class="pill-tag">Advanced Expression</span>
-            <span class="pill-tag">Behavioral &amp; Parental Evaluation</span>
-            <!-- <span class="pill-tag">Grading Scale (A★ to U)</span> -->
-          </div>
-        </div>
-
-        <!-- 4. Foundation Course -->
-        <div class="program-card">
-          <div class="program-top">
-            <div class="program-icon-box" style="color: var(--orange);">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="10"></circle>
-                <polyline points="12 6 12 12 16 14"></polyline>
-              </svg>
-            </div>
-            <span class="age-pill">Ages 12–13</span>
-          </div>
-          <div>
-            <h3 class="program-title">Foundation Course</h3>
-            <p class="program-desc">
-              Targeted bridge modules for students whose Mathematics, English, or Urdu concepts require reinforcement
-              before stepping into O Level. Available in flexible 6-month or 9-month subject tracks with official
-              completion certificates.
-            </p>
-          </div>
-
-          <!-- Academic Pathway Specs -->
-          <div class="pathway-meta-grid">
-            <div class="meta-cell">
-              <span class="meta-label">Duration</span>
-              <span class="meta-value">6 or 9 Months Accelerated</span>
-            </div>
-            <div class="meta-cell">
-              <span class="meta-label">Assessment</span>
-              <span class="meta-value">Concept Diagnostic &amp; Exam</span>
-            </div>
-            <div class="meta-cell">
-              <span class="meta-label">Target Focus</span>
-              <span class="meta-value">Math, English, or Urdu Bridge</span>
-            </div>
-            <div class="meta-cell">
-              <span class="meta-label">Next Milestone</span>
-              <span class="meta-value">Direct Cambridge O Level Entry</span>
-            </div>
-          </div>
-
-          <div class="program-tags">
-            <span class="pill-tag">O Level Bridge Modules</span>
-            <span class="pill-tag">Mathematics Track</span>
-            <span class="pill-tag">English Track</span>
-            <span class="pill-tag">Urdu Track</span>
-            <span class="pill-tag">6 or 9 Months Duration</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- 5. Short Courses & AI Bootcamps Strip -->
-      <div
-        style="margin-top: 36px; background: var(--white); border-radius: var(--radius-card); padding: 28px 32px; border: 1px solid rgba(30, 27, 58, 0.08); box-shadow: var(--shadow-subtle); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px;">
-        <div style="display: flex; align-items: center; gap: 20px;">
-          <div
-            style="width: 52px; height: 52px; border-radius: 14px; background: rgba(155, 126, 200, 0.16); color: var(--purple); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      <!-- Modern Interactive Category Filter Tabs -->
+      <div class="programs-tabs-wrapper">
+        <div class="program-tabs-nav" role="tablist" aria-label="Course Category Tabs">
+          <button type="button" class="program-tab-btn active" data-tab="tab-core" role="tab" aria-selected="true">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+              <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+            </svg>
+            <span>Core Academic</span>
+            <span class="tab-badge">Homeschooling</span>
+          </button>
+          <button type="button" class="program-tab-btn" data-tab="tab-english" role="tab" aria-selected="false">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+            </svg>
+            <span>English &amp; Spoken</span>
+            <span class="tab-badge">5 Courses</span>
+          </button>
+          <button type="button" class="program-tab-btn" data-tab="tab-writing" role="tab" aria-selected="false">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 19l7-7 3 3-7 7-3-3z"></path>
+              <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path>
+              <path d="M2 2l7.586 7.586"></path>
+              <circle cx="11" cy="11" r="2"></circle>
+            </svg>
+            <span>Creative Writing</span>
+            <span class="tab-badge">3 Levels</span>
+          </button>
+          <button type="button" class="program-tab-btn" data-tab="tab-tech" role="tab" aria-selected="false">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
               stroke-linecap="round" stroke-linejoin="round">
               <polyline points="16 18 22 12 16 6"></polyline>
               <polyline points="8 6 2 12 8 18"></polyline>
             </svg>
+            <span>Tech &amp; AI</span>
+            <span class="tab-badge">Bootcamps</span>
+          </button>
+          <button type="button" class="program-tab-btn" data-tab="tab-skills" role="tab" aria-selected="false">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+              stroke-linecap="round" stroke-linejoin="round">
+              <polygon
+                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+              </polygon>
+            </svg>
+            <span>Specialized Skills</span>
+            <span class="tab-badge">Math &amp; Science</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- ====================================================================
+           TAB 1: CORE ACADEMIC PROGRAMS (HOMESCHOOLING)
+           ==================================================================== -->
+      <div class="program-tab-pane active" id="tab-core" role="tabpanel">
+        <div class="tab-intro-banner">
+          <div class="tab-intro-text">
+            <h3>Core Academic Programs (Homeschooling)</h3>
+            <p>Main academic homeschooling tracks delivered 100% online via Zoom with certified Navigators and
+              Cambridge-aligned curricula.</p>
           </div>
-          <div>
-            <h4 style="font-size: 1.15rem; font-weight: 800; color: var(--navy); margin-bottom: 4px;">Short Courses
-              &amp; AI Bootcamps</h4>
-            <p style="font-size: 0.92rem; color: var(--gray-text); margin: 0;">Skill-based programs including Artificial
-              Intelligence Bootcamps, Coding &amp; Tech modules, and Language mastery with certified completion.</p>
+          <div class="tab-intro-pills">
+            <span class="tab-intro-pill">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+              Live Interactive Zoom
+            </span>
+            <span class="tab-intro-pill">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              Indicator Report Cards
+            </span>
+            <span class="tab-intro-pill">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+              </svg>
+              Cambridge Progression
+            </span>
           </div>
         </div>
-        <a href="#contact" class="btn btn-outline" style="padding: 10px 22px; font-size: 0.88rem;">Inquire About Tech
-          Courses</a>
+
+        <div class="programs-grid">
+          <!-- 1. Early Years Programs -->
+          <div class="program-card">
+            <div class="program-card-img-wrap">
+              <img src="images/early-years.webp"
+                onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=800&q=80';"
+                class="program-card-img" alt="Early Years Programs (Ages 3–6)" loading="lazy">
+              <div class="program-card-img-overlay"></div>
+              <div class="program-card-img-badge">
+                <span class="age-pill">Ages 3–6</span>
+              </div>
+            </div>
+            <div class="program-card-body">
+              <div>
+                <h3 class="program-title">Early Years Programs</h3>
+                <p class="program-desc">
+                  A joyful start to lifelong learning fostering bilingual literacy, early mathematical and logical
+                  concepts, sensory exploration, and Islamic ethical values.
+                </p>
+
+                <div class="course-schedule-bar">
+                  <span class="schedule-badge days">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                      stroke-width="2.5">
+                      <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                      <line x1="16" y1="2" x2="16" y2="6"></line>
+                      <line x1="8" y1="2" x2="8" y2="6"></line>
+                      <line x1="3" y1="10" x2="21" y2="10"></line>
+                    </svg>
+                    Monday to Thursday
+                  </span>
+                  <span class="schedule-badge time">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                      stroke-width="2.5">
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <polyline points="12 6 12 12 16 14"></polyline>
+                    </svg>
+                    1.5 Hours / day
+                  </span>
+                  <span class="schedule-badge flexible">
+                    Flexible Slots Available
+                  </span>
+                </div>
+
+                <div class="course-subtracks">
+                  <div class="subtrack-row">
+                    <div class="subtrack-name">
+                      <span>Tiny Treasures (Ages 3–4)</span>
+                      <span class="subtrack-note">A joyful start to play-based learning</span>
+                    </div>
+                  </div>
+                  <div class="subtrack-row">
+                    <div class="subtrack-name">
+                      <span>Early Beginners (Ages 4–5)</span>
+                      <span class="subtrack-note">No Placement Test &middot; Reserve seat with 50%</span>
+                    </div>
+                  </div>
+                  <div class="subtrack-row">
+                    <div class="subtrack-name">
+                      <span>Early Advanced (Ages 5–6)</span>
+                      <span class="subtrack-note">Placement Test Needed</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="program-bottom-row">
+                <div class="program-price-wrap">
+                  <span class="program-price-label">Admissions</span>
+                  <span class="program-price-val" style="font-size:1.05rem; color:var(--edu-blue);">Open for
+                    Enrollment</span>
+                  <span class="program-price-cycle">Mon to Thu &middot; 1.5 hrs/day</span>
+                </div>
+                <a href="#contact" class="btn btn-gradient program-card-btn">Enroll Early Years</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2. Primary Years Programs (FEATURED) -->
+          <div class="program-card featured">
+            <div class="program-card-img-wrap">
+              <img src="images/hero-student.webp"
+                onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=800&q=80';"
+                class="program-card-img" alt="Primary Years Programs (Ages 6–8)" loading="lazy">
+              <div class="program-card-img-overlay"></div>
+              <div class="program-card-img-badge">
+                <span class="age-pill">Ages 6–8</span>
+              </div>
+              <div class="program-card-img-tag">
+                <span class="program-badge-featured">Flagship Primary</span>
+              </div>
+            </div>
+            <div class="program-card-body">
+              <div>
+                <h3 class="program-title">Primary Years Programs</h3>
+                <p class="program-desc">
+                  Core primary homeschooling focusing on deep linguistic fluency, reading comprehension, creative
+                  writing, mental mathematics, and 9 essential personal character traits.
+                </p>
+
+                <div class="course-schedule-bar">
+                  <span class="schedule-badge days">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                      stroke-width="2.5">
+                      <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                      <line x1="16" y1="2" x2="16" y2="6"></line>
+                      <line x1="8" y1="2" x2="8" y2="6"></line>
+                      <line x1="3" y1="10" x2="21" y2="10"></line>
+                    </svg>
+                    Monday to Thursday
+                  </span>
+                  <span class="schedule-badge time">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                      stroke-width="2.5">
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <polyline points="12 6 12 12 16 14"></polyline>
+                    </svg>
+                    2 Hours / day
+                  </span>
+                  <span class="schedule-badge flexible">
+                    Morning &amp; Afternoon Slots
+                  </span>
+                </div>
+
+                <div class="course-subtracks">
+                  <div class="subtrack-row">
+                    <div class="subtrack-name">
+                      <span>Primary Beginners (Ages 6–7)</span>
+                      <span class="subtrack-note">English, Urdu &amp; Mathematics</span>
+                    </div>
+                  </div>
+                  <div class="subtrack-row">
+                    <div class="subtrack-name">
+                      <span>Primary Advanced (Ages 7–8)</span>
+                      <span class="subtrack-note">English, Urdu &amp; Mathematics &middot; Trait Reports</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="program-bottom-row">
+                <div class="program-price-wrap">
+                  <span class="program-price-label">Admissions</span>
+                  <span class="program-price-val" style="font-size:1.05rem; color:var(--yellow);">Open for
+                    Enrollment</span>
+                  <span class="program-price-cycle">Mon to Thu &middot; 2 hrs/day</span>
+                </div>
+                <a href="#contact" class="btn btn-gradient program-card-btn">Enroll Primary</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3. Middle Years Program -->
+          <div class="program-card">
+            <div class="program-card-img-wrap">
+              <img src="images/middle-years.webp"
+                onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=800&q=80';"
+                class="program-card-img" alt="Middle Years Program (Ages 8–10)" loading="lazy">
+              <div class="program-card-img-overlay"></div>
+              <div class="program-card-img-badge">
+                <span class="age-pill">Ages 8–10</span>
+              </div>
+            </div>
+            <div class="program-card-body">
+              <div>
+                <h3 class="program-title">Middle Years Program</h3>
+                <p class="program-desc">
+                  Lower secondary Cambridge preparation fostering rigorous problem solving, evaluating in Mathematics,
+                  analytical thinking, and elective science tracks.
+                </p>
+
+                <div class="course-schedule-bar">
+                  <span class="schedule-badge days">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                      stroke-width="2.5">
+                      <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                      <line x1="16" y1="2" x2="16" y2="6"></line>
+                      <line x1="8" y1="2" x2="8" y2="6"></line>
+                      <line x1="3" y1="10" x2="21" y2="10"></line>
+                    </svg>
+                    Monday to Thursday
+                  </span>
+                  <span class="schedule-badge time">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                      stroke-width="2.5">
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <polyline points="12 6 12 12 16 14"></polyline>
+                    </svg>
+                    2 Hours / day
+                  </span>
+                  <span class="schedule-badge flexible">
+                    Flexible Academic Slots
+                  </span>
+                </div>
+
+                <div class="course-subtracks">
+                  <div class="subtrack-row">
+                    <div class="subtrack-name">
+                      <span>Compulsory Subjects Core</span>
+                      <span class="subtrack-note">English, Urdu &amp; Mathematics</span>
+                    </div>
+                  </div>
+                  <div class="subtrack-row">
+                    <div class="subtrack-name">
+                      <span>Optional Science Subjects</span>
+                      <span class="subtrack-note">Physics, Chemistry, Biology, Computer</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="program-bottom-row">
+                <div class="program-price-wrap">
+                  <span class="program-price-label">Admissions</span>
+                  <span class="program-price-val" style="font-size:1.05rem; color:var(--edu-blue);">Open for
+                    Enrollment</span>
+                  <span class="program-price-cycle">Mon to Thu &middot; 2 hrs/day</span>
+                </div>
+                <a href="#contact" class="btn btn-gradient program-card-btn">Enroll Middle Years</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- 4. Cambridge Learning (O Level & IGCSE) -->
+          <div class="program-card">
+            <div class="program-card-img-wrap">
+              <img src="images/class-o-leval.webp"
+                onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80';"
+                class="program-card-img" alt="Cambridge Learning (O Level & IGCSE)" loading="lazy">
+              <div class="program-card-img-overlay"></div>
+              <div class="program-card-img-badge">
+                <span class="age-pill">Ages 10–13+</span>
+              </div>
+              <div class="program-card-img-tag">
+                <span class="program-badge-featured" style="background: var(--sky-blue);">Cambridge</span>
+              </div>
+            </div>
+            <div class="program-card-body">
+              <div>
+                <h3 class="program-title">Cambridge Learning (O Level &amp; IGCSE)</h3>
+                <p class="program-desc">
+                  Structured Cambridge pathways designed for private candidates. Rigorous subject mastery, past paper
+                  drilling, exam techniques, and certified academic readiness.
+                </p>
+
+                <div class="course-schedule-bar">
+                  <span class="schedule-badge days">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                      stroke-width="2.5">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                    British Council Aligned
+                  </span>
+                  <span class="schedule-badge flexible">
+                    Flexible Subject Timetables
+                  </span>
+                </div>
+
+                <div class="course-subtracks">
+                  <div class="subtrack-row">
+                    <div class="subtrack-name">
+                      <span>Pre-O Level / Pre-IGCSE (Ages 10–12 | 1 Year)</span>
+                      <span class="subtrack-note">Maths, English, Urdu (Core)</span>
+                    </div>
+                  </div>
+                  <div class="subtrack-row">
+                    <div class="subtrack-name">
+                      <span>Pre-O Level Science Electives</span>
+                      <span class="subtrack-note">Physics, Chemistry, Biology, Computer</span>
+                    </div>
+                  </div>
+                  <div class="subtrack-row">
+                    <div class="subtrack-name">
+                      <span>O Level / IGCSE (Ages 13+)</span>
+                      <span class="subtrack-note">Subject-Wise Regular Academic Track</span>
+                    </div>
+                  </div>
+                  <div class="subtrack-row">
+                    <div class="subtrack-name">
+                      <span>O Level Exam Preparation Track</span>
+                      <span class="subtrack-note">Intensive past-paper drills &amp; exam techniques</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="program-bottom-row">
+                <div class="program-price-wrap">
+                  <span class="program-price-label">Admissions</span>
+                  <span class="program-price-val" style="font-size:1.05rem; color:var(--edu-blue);">Open for
+                    Enrollment</span>
+                  <span class="program-price-cycle">British Council Pathway</span>
+                </div>
+                <a href="#contact" class="btn btn-gradient program-card-btn">Inquire Cambridge</a>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
+
+      <!-- ====================================================================
+           TAB 2: ENGLISH LANGUAGE & SPOKEN COURSES
+           ==================================================================== -->
+      <div class="program-tab-pane" id="tab-english" role="tabpanel">
+        <div class="tab-intro-banner">
+          <div class="tab-intro-text">
+            <h3>English Language &amp; Spoken Courses</h3>
+            <p>Interactive communicative courses tailored for young readers, kids, aspiring students, professionals, and
+              mothers.</p>
+          </div>
+          <div class="tab-intro-pills">
+            <span class="tab-intro-pill">Speaking Fluency</span>
+            <span class="tab-intro-pill">Accent &amp; Pronunciation</span>
+            <span class="tab-intro-pill">Live Interactive Zoom</span>
+          </div>
+        </div>
+
+        <div class="programs-grid-3">
+          <!-- 1. Reading Course -->
+          <div class="program-card">
+            <div class="program-card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=800&q=80"
+                class="program-card-img" alt="Reading Course (Ages 8–10)" loading="lazy">
+              <div class="program-card-img-overlay"></div>
+              <div class="program-card-img-badge">
+                <span class="age-pill">Ages 8–10</span>
+              </div>
+              <div class="program-card-img-tag">
+                <span class="pill-tag">3 Months</span>
+              </div>
+            </div>
+            <div class="program-card-body">
+              <div>
+                <h3 class="program-title">Reading Course</h3>
+                <p class="program-desc">
+                  Phonics reinforcement, vocabulary expansion, guided reading comprehension, and pronunciation accuracy
+                  for young learners.
+                </p>
+                <div class="course-schedule-bar">
+                  <span class="schedule-badge days">Tue &amp; Wed</span>
+                  <span class="schedule-badge time">5:00 PM – 6:00 PM</span>
+                </div>
+              </div>
+              <div class="program-bottom-row">
+                <div class="program-price-wrap">
+                  <span class="program-price-label">Admissions</span>
+                  <span class="program-price-val" style="font-size:1.05rem; color:var(--edu-blue);">Open for
+                    Enrollment</span>
+                  <span class="program-price-cycle">Interactive Zoom Cohort</span>
+                </div>
+                <a href="#contact" class="btn btn-gradient program-card-btn">Enroll Now</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2. Spoken English For Kids -->
+          <div class="program-card">
+            <div class="program-card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?auto=format&fit=crop&w=800&q=80"
+                class="program-card-img" alt="Spoken English For Kids (Ages 8–10)" loading="lazy">
+              <div class="program-card-img-overlay"></div>
+              <div class="program-card-img-badge">
+                <span class="age-pill">Ages 8–10</span>
+              </div>
+              <div class="program-card-img-tag">
+                <span class="pill-tag">Weekend Batch</span>
+              </div>
+            </div>
+            <div class="program-card-body">
+              <div>
+                <h3 class="program-title">Spoken English For Kids</h3>
+                <p class="program-desc">
+                  Fun interactive speaking drills, storytelling, role-playing, and everyday conversational confidence to
+                  eliminate hesitation.
+                </p>
+                <div class="course-schedule-bar">
+                  <span class="schedule-badge days">Fri &amp; Sat (2 Days)</span>
+                  <span class="schedule-badge time">2:00 PM – 3:00 PM</span>
+                </div>
+              </div>
+              <div class="program-bottom-row">
+                <div class="program-price-wrap">
+                  <span class="program-price-label">Admissions</span>
+                  <span class="program-price-val" style="font-size:1.05rem; color:var(--edu-blue);">Open for
+                    Enrollment</span>
+                  <span class="program-price-cycle">Weekend Interactive Track</span>
+                </div>
+                <a href="#contact" class="btn btn-outline program-card-btn">Inquire Schedule</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3. 9-Month Spoken English -->
+          <div class="program-card">
+            <div class="program-card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=800&q=80"
+                class="program-card-img" alt="9-Month Spoken English (Ages 11+ & Adults)" loading="lazy">
+              <div class="program-card-img-overlay"></div>
+              <div class="program-card-img-badge">
+                <span class="age-pill">Ages 11+ &amp; Adults</span>
+              </div>
+              <div class="program-card-img-tag">
+                <span class="pill-tag">9 Months</span>
+              </div>
+            </div>
+            <div class="program-card-body">
+              <div>
+                <h3 class="program-title">9-Month Spoken English</h3>
+                <p class="program-desc">
+                  Comprehensive step-by-step fluency program progressing from core grammar and vocabulary to eloquent
+                  speech and presentation skills.
+                </p>
+                <div class="course-schedule-bar">
+                  <span class="schedule-badge days">Flexible Batches</span>
+                  <span class="schedule-badge time">Morning &amp; Evening Slots</span>
+                </div>
+              </div>
+              <div class="program-bottom-row">
+                <div class="program-price-wrap">
+                  <span class="program-price-label">Admissions</span>
+                  <span class="program-price-val" style="font-size:1.05rem; color:var(--edu-blue);">Open for
+                    Enrollment</span>
+                  <span class="program-price-cycle">Morning &amp; Evening Batches</span>
+                </div>
+                <a href="#contact" class="btn btn-gradient program-card-btn">Enroll Now</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- 4. English Conversation Class -->
+          <div class="program-card">
+            <div class="program-card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1531497865144-0464ef8fb9a9?auto=format&fit=crop&w=800&q=80"
+                class="program-card-img" alt="English Conversation Class (Students & Professionals)" loading="lazy">
+              <div class="program-card-img-overlay"></div>
+              <div class="program-card-img-badge">
+                <span class="age-pill">Students &amp; Professionals</span>
+              </div>
+              <div class="program-card-img-tag">
+                <span class="pill-tag">3 Months</span>
+              </div>
+            </div>
+            <div class="program-card-body">
+              <div>
+                <h3 class="program-title">English Conversation Class</h3>
+                <p class="program-desc">
+                  Professional communicative confidence, workplace dialogue, public speaking mastery, and active group
+                  discussions.
+                </p>
+                <div class="course-schedule-bar">
+                  <span class="schedule-badge days">Mon to Wed</span>
+                  <span class="schedule-badge time">6:00 PM – 7:00 PM</span>
+                </div>
+              </div>
+              <div class="program-bottom-row">
+                <div class="program-price-wrap">
+                  <span class="program-price-label">Admissions</span>
+                  <span class="program-price-val" style="font-size:1.05rem; color:var(--edu-blue);">Open for
+                    Enrollment</span>
+                  <span class="program-price-cycle">Students &amp; Professionals</span>
+                </div>
+                <a href="#contact" class="btn btn-gradient program-card-btn">Enroll Now</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- 5. Confidence Boost (Spoken) -->
+          <div class="program-card">
+            <div class="program-card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80"
+                class="program-card-img" alt="Confidence Boost Spoken English (Housewives & Mothers)" loading="lazy">
+              <div class="program-card-img-overlay"></div>
+              <div class="program-card-img-badge">
+                <span class="age-pill">Housewives &amp; Mothers</span>
+              </div>
+              <div class="program-card-img-tag">
+                <span class="pill-tag">3 Months</span>
+              </div>
+            </div>
+            <div class="program-card-body">
+              <div>
+                <h3 class="program-title">Confidence Boost (Spoken)</h3>
+                <p class="program-desc">
+                  A warm, encouraging environment designed specially for mothers to build fluent English speaking skills
+                  and support their children's schooling.
+                </p>
+                <div class="course-schedule-bar">
+                  <span class="schedule-badge days">Thu &amp; Fri</span>
+                  <span class="schedule-badge time">5:30 PM – 6:30 PM</span>
+                </div>
+              </div>
+              <div class="program-bottom-row">
+                <div class="program-price-wrap">
+                  <span class="program-price-label">Admissions</span>
+                  <span class="program-price-val" style="font-size:1.05rem; color:var(--edu-blue);">Open for
+                    Enrollment</span>
+                  <span class="program-price-cycle">Housewives &amp; Mothers</span>
+                </div>
+                <a href="#contact" class="btn btn-gradient program-card-btn">Enroll Now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ====================================================================
+           TAB 3: CREATIVE WRITING COURSES
+           ==================================================================== -->
+      <div class="program-tab-pane" id="tab-writing" role="tabpanel">
+        <div class="tab-intro-banner">
+          <div class="tab-intro-text">
+            <h3>Creative Writing Courses</h3>
+            <p>Empowering young minds to express thoughts with clarity, literary style, narrative structure, and
+              compelling vocabulary.</p>
+          </div>
+          <div class="tab-intro-pills">
+            <span class="tab-intro-pill">Story Building</span>
+            <span class="tab-intro-pill">Essay Architecture</span>
+            <span class="tab-intro-pill">Cambridge Writing Flair</span>
+          </div>
+        </div>
+
+        <div class="programs-grid-3">
+          <!-- 1. Creative Kids Writing Studio -->
+          <div class="program-card">
+            <div class="program-card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=800&q=80"
+                class="program-card-img" alt="Creative Kids Writing Studio (Ages 7–10)" loading="lazy">
+              <div class="program-card-img-overlay"></div>
+              <div class="program-card-img-badge">
+                <span class="age-pill">Ages 7–10</span>
+              </div>
+              <div class="program-card-img-tag">
+                <span class="pill-tag">3 Months</span>
+              </div>
+            </div>
+            <div class="program-card-body">
+              <div>
+                <h3 class="program-title">Creative Kids Writing Studio</h3>
+                <p class="program-desc">
+                  Sparks imagination through character creation, plot twists, sensory descriptions, and fun creative
+                  storytelling exercises.
+                </p>
+                <div class="course-schedule-bar">
+                  <span class="schedule-badge days">Fri, Sat, Sun</span>
+                  <span class="schedule-badge time">7:00 PM – 8:00 PM</span>
+                </div>
+              </div>
+              <div class="program-bottom-row">
+                <div class="program-price-wrap">
+                  <span class="program-price-label">Admissions</span>
+                  <span class="program-price-val" style="font-size:1.05rem; color:var(--edu-blue);">Open for
+                    Enrollment</span>
+                  <span class="program-price-cycle">Ages 7–10 Studio</span>
+                </div>
+                <a href="#contact" class="btn btn-gradient program-card-btn">Enroll Now</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2. Mastering English Writing -->
+          <div class="program-card">
+            <div class="program-card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&w=800&q=80"
+                class="program-card-img" alt="Mastering English Writing (Ages 10–15)" loading="lazy">
+              <div class="program-card-img-overlay"></div>
+              <div class="program-card-img-badge">
+                <span class="age-pill">Ages 10–15</span>
+              </div>
+              <div class="program-card-img-tag">
+                <span class="pill-tag">3 Months</span>
+              </div>
+            </div>
+            <div class="program-card-body">
+              <div>
+                <h3 class="program-title">Mastering English Writing</h3>
+                <p class="program-desc">
+                  Structured composition, argumentative clarity, descriptive finesse, narrative development, and
+                  Cambridge-style literary analysis.
+                </p>
+                <div class="course-schedule-bar">
+                  <span class="schedule-badge days">Fri &amp; Sat</span>
+                  <span class="schedule-badge time">11:00 AM Slot</span>
+                </div>
+              </div>
+              <div class="program-bottom-row">
+                <div class="program-price-wrap">
+                  <span class="program-price-label">Admissions</span>
+                  <span class="program-price-val" style="font-size:1.05rem; color:var(--edu-blue);">Open for
+                    Enrollment</span>
+                  <span class="program-price-cycle">Ages 10–15 Studio</span>
+                </div>
+                <a href="#contact" class="btn btn-gradient program-card-btn">Enroll Now</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3. Effective English & Writing -->
+          <div class="program-card">
+            <div class="program-card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=800&q=80"
+                class="program-card-img" alt="Effective English & Writing (Ages 11+ & Professionals)" loading="lazy">
+              <div class="program-card-img-overlay"></div>
+              <div class="program-card-img-badge">
+                <span class="age-pill">Ages 11+ &amp; Professionals</span>
+              </div>
+              <div class="program-card-img-tag">
+                <span class="pill-tag">3 Months</span>
+              </div>
+            </div>
+            <div class="program-card-body">
+              <div>
+                <h3 class="program-title">Effective English &amp; Writing</h3>
+                <p class="program-desc">
+                  Persuasive written communication, formal essay structure, article synthesis, and professional
+                  editorial expression.
+                </p>
+                <div class="course-schedule-bar">
+                  <span class="schedule-badge days">Mon to Wed</span>
+                  <span class="schedule-badge time">5:00 PM or 6:00 PM</span>
+                </div>
+              </div>
+              <div class="program-bottom-row">
+                <div class="program-price-wrap">
+                  <span class="program-price-label">Admissions</span>
+                  <span class="program-price-val" style="font-size:1.05rem; color:var(--edu-blue);">Open for
+                    Enrollment</span>
+                  <span class="program-price-cycle">Students &amp; Professionals</span>
+                </div>
+                <a href="#contact" class="btn btn-gradient program-card-btn">Enroll Now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ====================================================================
+           TAB 4: TECH, AI & DIGITAL SKILLS COURSES
+           ==================================================================== -->
+      <div class="program-tab-pane" id="tab-tech" role="tabpanel">
+        <div class="tab-intro-banner">
+          <div class="tab-intro-text">
+            <h3>Tech, AI &amp; Digital Skills Bootcamps</h3>
+            <p>Hands-on 21st-century digital competencies transforming young learners from tech consumers into skilled
+              digital creators.</p>
+          </div>
+          <div class="tab-intro-pills">
+            <span class="tab-intro-pill">Hands-on Projects</span>
+            <span class="tab-intro-pill">AI Tools Mastery</span>
+            <span class="tab-intro-pill">Code &amp; Logic</span>
+          </div>
+        </div>
+
+        <div class="programs-grid-3">
+          <!-- 1. Python & AI Bootcamp -->
+          <div class="program-card">
+            <div class="program-card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=800&q=80"
+                class="program-card-img" alt="Python & AI Bootcamp (Kids 11+ & Beginners)" loading="lazy">
+              <div class="program-card-img-overlay"></div>
+              <div class="program-card-img-badge">
+                <span class="age-pill">Kids 11+ &amp; Beginners</span>
+              </div>
+              <div class="program-card-img-tag">
+                <span class="pill-tag">3 Months</span>
+              </div>
+            </div>
+            <div class="program-card-body">
+              <div>
+                <h3 class="program-title">Python &amp; AI Bootcamp</h3>
+                <p class="program-desc">
+                  Core Python coding syntax, algorithmic problem solving, logic development, and practical Artificial
+                  Intelligence intro applications.
+                </p>
+                <div class="course-schedule-bar">
+                  <span class="schedule-badge days">Sat &amp; Sun</span>
+                  <span class="schedule-badge time">4:00 PM – 5:00 PM</span>
+                </div>
+              </div>
+              <div class="program-bottom-row">
+                <div class="program-price-wrap">
+                  <span class="program-price-label">Admissions</span>
+                  <span class="program-price-val" style="font-size:1.05rem; color:var(--edu-blue);">Open for
+                    Enrollment</span>
+                  <span class="program-price-cycle">Beginner Friendly Cohort</span>
+                </div>
+                <a href="#contact" class="btn btn-gradient program-card-btn">Enroll Bootcamp</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2. AI Animation Spark Fusion -->
+          <div class="program-card">
+            <div class="program-card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80"
+                class="program-card-img" alt="AI Animation Spark Fusion (Kids 8–14 & Females)" loading="lazy">
+              <div class="program-card-img-overlay"></div>
+              <div class="program-card-img-badge">
+                <span class="age-pill">Kids (8–14) &amp; Females</span>
+              </div>
+              <div class="program-card-img-tag">
+                <span class="pill-tag">6 Weeks</span>
+              </div>
+            </div>
+            <div class="program-card-body">
+              <div>
+                <h3 class="program-title">AI Animation Spark Fusion</h3>
+                <p class="program-desc">
+                  Visual storytelling with cutting-edge AI tools, generative art, character prompt design, and video
+                  animation production.
+                </p>
+                <div class="course-schedule-bar">
+                  <span class="schedule-badge days">Online Sessions</span>
+                  <span class="schedule-badge flexible">Schedule on Request</span>
+                </div>
+              </div>
+              <div class="program-bottom-row">
+                <div class="program-price-wrap">
+                  <span class="program-price-label">Admissions</span>
+                  <span class="program-price-val" style="font-size:1.05rem; color:var(--edu-blue);">Open for
+                    Enrollment</span>
+                  <span class="program-price-cycle">6 Weeks Hands-on Track</span>
+                </div>
+                <a href="#contact" class="btn btn-gradient program-card-btn">Enroll Now</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3. Web & Software Dev -->
+          <div class="program-card">
+            <div class="program-card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80"
+                class="program-card-img" alt="Web & Software Dev (Ages 14+)" loading="lazy">
+              <div class="program-card-img-overlay"></div>
+              <div class="program-card-img-badge">
+                <span class="age-pill">Ages 14+</span>
+              </div>
+              <div class="program-card-img-tag">
+                <span class="pill-tag">2 Months</span>
+              </div>
+            </div>
+            <div class="program-card-body">
+              <div>
+                <h3 class="program-title">Web &amp; Software Dev</h3>
+                <p class="program-desc">
+                  Build real responsive websites with HTML, CSS, JavaScript basics, mobile UI styling, and essential
+                  software development concepts.
+                </p>
+                <div class="course-schedule-bar">
+                  <span class="schedule-badge days">Mon to Thu</span>
+                  <span class="schedule-badge time">5:00 PM – 6:00 PM</span>
+                </div>
+              </div>
+              <div class="program-bottom-row">
+                <div class="program-price-wrap">
+                  <span class="program-price-label">Admissions</span>
+                  <span class="program-price-val" style="font-size:1.05rem; color:var(--edu-blue);">Open for
+                    Enrollment</span>
+                  <span class="program-price-cycle">Mon to Thu Cohort</span>
+                </div>
+                <a href="#contact" class="btn btn-gradient program-card-btn">Enroll Web Dev</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ====================================================================
+           TAB 5: SPECIALIZED SKILL COURSES
+           ==================================================================== -->
+      <div class="program-tab-pane" id="tab-skills" role="tabpanel">
+        <div class="tab-intro-banner">
+          <div class="tab-intro-text">
+            <h3>Specialized Skill Courses (Maths, Science &amp; Etiquette)</h3>
+            <p>Accelerating cognitive agility, hands-on scientific curiosity, and refined personal character manners.
+            </p>
+          </div>
+          <div class="tab-intro-pills">
+            <span class="tab-intro-pill">Mental Calculation</span>
+            <span class="tab-intro-pill">Science Inquiry</span>
+            <span class="tab-intro-pill">Social Etiquette</span>
+          </div>
+        </div>
+
+        <div class="programs-grid-3">
+          <!-- 1. Mental Maths Summer -->
+          <div class="program-card">
+            <div class="program-card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1509228468518-180dd4864904?auto=format&fit=crop&w=800&q=80"
+                class="program-card-img" alt="Mental Maths Summer (Ages 10+ & Adults)" loading="lazy">
+              <div class="program-card-img-overlay"></div>
+              <div class="program-card-img-badge">
+                <span class="age-pill">Ages 10+ &amp; Adults</span>
+              </div>
+              <div class="program-card-img-tag">
+                <span class="pill-tag">3 Months</span>
+              </div>
+            </div>
+            <div class="program-card-body">
+              <div>
+                <h3 class="program-title">Mental Maths Summer</h3>
+                <p class="program-desc">
+                  High-speed calculation shortcuts, Vedic math methods, numerical agility, and rapid problem-solving
+                  without relying on calculators.
+                </p>
+                <div class="course-schedule-bar">
+                  <span class="schedule-badge days">Fri &amp; Sat</span>
+                  <span class="schedule-badge time">3:00 PM – 4:00 PM</span>
+                </div>
+              </div>
+              <div class="program-bottom-row">
+                <div class="program-price-wrap">
+                  <span class="program-price-label">Admissions</span>
+                  <span class="program-price-val" style="font-size:1.05rem; color:var(--edu-blue);">Open for
+                    Enrollment</span>
+                  <span class="program-price-cycle">Fri &amp; Sat Cohort</span>
+                </div>
+                <a href="#contact" class="btn btn-gradient program-card-btn">Enroll Now</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2. Science - Mr. Spark Universe -->
+          <div class="program-card">
+            <div class="program-card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=800&q=80"
+                class="program-card-img" alt="Science — Mr. Spark Universe (Ages 8–14)" loading="lazy">
+              <div class="program-card-img-overlay"></div>
+              <div class="program-card-img-badge">
+                <span class="age-pill">Ages 8–14</span>
+              </div>
+              <div class="program-card-img-tag">
+                <span class="pill-tag">2 Months</span>
+              </div>
+            </div>
+            <div class="program-card-body">
+              <div>
+                <h3 class="program-title">Science — Mr. Spark Universe</h3>
+                <p class="program-desc">
+                  Thrilling scientific investigations, physics wonders, chemistry experiments, and astronomy adventures
+                  making science unforgettable.
+                </p>
+                <div class="course-schedule-bar">
+                  <span class="schedule-badge days">2 Days a Week</span>
+                  <span class="schedule-badge flexible">Schedule on Request</span>
+                </div>
+              </div>
+              <div class="program-bottom-row">
+                <div class="program-price-wrap">
+                  <span class="program-price-label">Admissions</span>
+                  <span class="program-price-val" style="font-size:1.05rem; color:var(--edu-blue);">Open for
+                    Enrollment</span>
+                  <span class="program-price-cycle">2 Days a Week</span>
+                </div>
+                <a href="#contact" class="btn btn-gradient program-card-btn">Enroll Now</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3. The Art of Etiquette -->
+          <div class="program-card">
+            <div class="program-card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=800&q=80"
+                class="program-card-img" alt="The Art of Etiquette (Students All Ages)" loading="lazy">
+              <div class="program-card-img-overlay"></div>
+              <div class="program-card-img-badge">
+                <span class="age-pill">Students (All Ages)</span>
+              </div>
+              <div class="program-card-img-tag">
+                <span class="pill-tag">12 Weeks</span>
+              </div>
+            </div>
+            <div class="program-card-body">
+              <div>
+                <h3 class="program-title">The Art of Etiquette</h3>
+                <p class="program-desc">
+                  Refined dining manners, polite public interaction, digital communication courtesy, self-confidence,
+                  and graceful conduct.
+                </p>
+                <div class="course-schedule-bar">
+                  <span class="schedule-badge days">2 Classes / Week</span>
+                  <span class="schedule-badge flexible">Flexible Slots</span>
+                </div>
+              </div>
+              <div class="program-bottom-row">
+                <div class="program-price-wrap">
+                  <span class="program-price-label">Admissions</span>
+                  <span class="program-price-val" style="font-size:1.05rem; color:var(--edu-blue);">Open for
+                    Enrollment</span>
+                  <span class="program-price-cycle">12 Weeks Track</span>
+                </div>
+                <a href="#contact" class="btn btn-gradient program-card-btn">Enroll Now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -4149,189 +5690,246 @@
   </section>
 
   <!-- ==========================================================================
-       5. FEE STRUCTURE SECTION
+       5. ADMISSIONS & ENROLLMENT SECTION (Zero Public Fee Display)
        ========================================================================== -->
   <section class="section-fees" id="fees">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag">Fee Structure</span>
-        <h2 class="section-title">Simple, transparent pricing</h2>
+        <span class="section-tag">Admissions &amp; Enrollment</span>
+        <h2 class="section-title">Personalized, transparent admissions</h2>
         <p class="section-subtitle">
-          Affordable online education with uncompromised quality. Reach out to receive a tailored fee schedule for your
-          child.
+          Quality Cambridge-aligned online education with dedicated 1-on-1 mentorship. Reach out to our academic team
+          to explore personalized learning paths and receive complete course details for your child.
         </p>
       </div>
 
-      <div class="fees-grid">
-        <!-- Left Table -->
-        <div class="fees-table-card">
-          <table class="fees-table">
-            <thead>
-              <tr>
-                <th>Program Level</th>
-                <th style="text-align: right;">Fee Details</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td class="program-name-cell">
-                  <strong>Early Years</strong>
-                  <span style="display:block; font-size: 0.8rem; color: var(--gray-text); margin-top: 2px;">Ages 4–6
-                    &middot; Beginner &amp; Advance</span>
-                </td>
-                <td class="fee-status-cell" style="text-align: right;">
-                  <span
-                    style="font-family: var(--font-heading); font-weight: 800; font-size: 1.05rem; color: var(--navy);">PKR
-                    12,000</span>
-                  <span style="font-size: 0.78rem; color: var(--gray-text); display: block;">/ month</span>
-                </td>
-              </tr>
-              <tr>
-                <td class="program-name-cell">
-                  <strong>Primary Level</strong>
-                  <span style="display:block; font-size: 0.8rem; color: var(--gray-text); margin-top: 2px;">Ages 6–8
-                    &middot; Beginner &amp; Advance</span>
-                </td>
-                <td class="fee-status-cell" style="text-align: right;">
-                  <span
-                    style="font-family: var(--font-heading); font-weight: 800; font-size: 1.05rem; color: var(--navy);">PKR
-                    15,000</span>
-                  <span style="font-size: 0.78rem; color: var(--gray-text); display: block;">/ month</span>
-                </td>
-              </tr>
-              <tr>
-                <td class="program-name-cell">
-                  <strong>Middle Years</strong>
-                  <span style="display:block; font-size: 0.8rem; color: var(--gray-text); margin-top: 2px;">Ages 8–10
-                    &middot; Lower Secondary / O Level Prep</span>
-                </td>
-                <td class="fee-status-cell" style="text-align: right;">
-                  <span
-                    style="font-family: var(--font-heading); font-weight: 800; font-size: 1.05rem; color: var(--navy);">PKR
-                    18,000</span>
-                  <span style="font-size: 0.78rem; color: var(--gray-text); display: block;">/ month</span>
-                </td>
-              </tr>
-              <tr>
-                <td class="program-name-cell">
-                  <strong>Foundation Course (6 Months)</strong>
-                  <span style="display:block; font-size: 0.8rem; color: var(--gray-text); margin-top: 2px;">Ages 12–13
-                    &middot; Intensive Academic Bridge</span>
-                </td>
-                <td class="fee-status-cell" style="text-align: right;">
-                  <span
-                    style="font-family: var(--font-heading); font-weight: 800; font-size: 1.05rem; color: var(--navy);">PKR
-                    65,000</span>
-                  <span style="font-size: 0.78rem; color: var(--gray-text); display: block;">full program</span>
-                </td>
-              </tr>
-              <tr>
-                <td class="program-name-cell">
-                  <strong>Foundation Course (9 Months)</strong>
-                  <span style="display:block; font-size: 0.8rem; color: var(--gray-text); margin-top: 2px;">Ages 12–13
-                    &middot; Comprehensive Bridge</span>
-                </td>
-                <td class="fee-status-cell" style="text-align: right;">
-                  <span
-                    style="font-family: var(--font-heading); font-weight: 800; font-size: 1.05rem; color: var(--navy);">PKR
-                    90,000</span>
-                  <span style="font-size: 0.78rem; color: var(--gray-text); display: block;">full program</span>
-                </td>
-              </tr>
-              <tr>
-                <td class="program-name-cell">
-                  <strong>Short Courses &amp; Skill Modules</strong>
-                  <span style="display:block; font-size: 0.8rem; color: var(--gray-text); margin-top: 2px;">Arabic,
-                    Public Speaking, Creative Writing, STEM</span>
-                </td>
-                <td class="fee-status-cell" style="text-align: right;">
-                  <span
-                    style="font-family: var(--font-heading); font-weight: 800; font-size: 1.05rem; color: var(--navy);">From
-                    PKR 7,500</span>
-                  <span style="font-size: 0.78rem; color: var(--gray-text); display: block;">per module</span>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+      <!-- Row 1: 3 Balanced Program Category Cards -->
+      <div class="admissions-category-grid">
+        <!-- 1. Core Academic Pathways -->
+        <div class="admissions-cat-card cat-sky">
+          <div>
+            <div class="admissions-cat-top">
+              <div class="admissions-cat-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                  <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                </svg>
+              </div>
+              <span class="admissions-cat-badge">Admissions Open</span>
+            </div>
+            <h3 class="admissions-cat-title">Core Academic Pathways</h3>
+            <p class="admissions-cat-desc">
+              Cambridge-aligned regular homeschooling tracks delivered via live interactive Zoom with qualified
+              Navigators.
+            </p>
+            <ul class="admissions-track-list">
+              <li class="admissions-track-item">
+                <span><strong>Early Years Programs</strong> (Mon–Thu)</span>
+                <span class="admissions-track-age">Ages 3–6</span>
+              </li>
+              <li class="admissions-track-item">
+                <span><strong>Primary Years</strong> (English, Maths, Urdu)</span>
+                <span class="admissions-track-age">Ages 6–8</span>
+              </li>
+              <li class="admissions-track-item">
+                <span><strong>Middle Years</strong> (Core + Science Electives)</span>
+                <span class="admissions-track-age">Ages 8–10</span>
+              </li>
+              <li class="admissions-track-item">
+                <span><strong>Cambridge O Level / IGCSE Track</strong></span>
+                <span class="admissions-track-age">Ages 10–13+</span>
+              </li>
+            </ul>
+          </div>
+          <a href="#contact" class="btn btn-gradient"
+            style="width: 100%; text-align: center; justify-content: center;">Inquire Academic Track</a>
+        </div>
 
-          <div class="fees-note">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-              stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="12" cy="12" r="10"></circle>
-              <line x1="12" y1="8" x2="12" y2="12"></line>
-              <line x1="12" y1="16" x2="12.01" y2="16"></line>
+        <!-- 2. Language & Creative Writing -->
+        <div class="admissions-cat-card cat-purple">
+          <div>
+            <div class="admissions-cat-top">
+              <div class="admissions-cat-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                </svg>
+              </div>
+              <span class="admissions-cat-badge">Admissions Open</span>
+            </div>
+            <h3 class="admissions-cat-title">Language &amp; Creative Studios</h3>
+            <p class="admissions-cat-desc">
+              Interactive speaking confidence, literary storytelling, persuasive writing, and graceful social manners.
+            </p>
+            <ul class="admissions-track-list">
+              <li class="admissions-track-item">
+                <span><strong>Reading Comprehension Course</strong></span>
+                <span class="admissions-track-age">Ages 8–10</span>
+              </li>
+              <li class="admissions-track-item">
+                <span><strong>Spoken English for Kids</strong> (Weekend)</span>
+                <span class="admissions-track-age">Ages 8–10</span>
+              </li>
+              <li class="admissions-track-item">
+                <span><strong>Creative Kids Writing Studio</strong></span>
+                <span class="admissions-track-age">Ages 7–10</span>
+              </li>
+              <li class="admissions-track-item">
+                <span><strong>The Art of Social Etiquette</strong></span>
+                <span class="admissions-track-age">All Ages</span>
+              </li>
+            </ul>
+          </div>
+          <a href="#contact" class="btn btn-gradient"
+            style="width: 100%; text-align: center; justify-content: center;">Inquire Language Track</a>
+        </div>
+
+        <!-- 3. Tech, AI & Future Skills -->
+        <div class="admissions-cat-card cat-pink">
+          <div>
+            <div class="admissions-cat-top">
+              <div class="admissions-cat-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                  <line x1="8" y1="21" x2="16" y2="21"></line>
+                  <line x1="12" y1="17" x2="12" y2="21"></line>
+                </svg>
+              </div>
+              <span class="admissions-cat-badge">Admissions Open</span>
+            </div>
+            <h3 class="admissions-cat-title">Tech, AI &amp; Future Skills</h3>
+            <p class="admissions-cat-desc">
+              Hands-on practical competencies transforming young learners from tech consumers into skilled digital
+              creators.
+            </p>
+            <ul class="admissions-track-list">
+              <li class="admissions-track-item">
+                <span><strong>Python &amp; AI Coding Bootcamp</strong></span>
+                <span class="admissions-track-age">Kids 11+</span>
+              </li>
+              <li class="admissions-track-item">
+                <span><strong>AI Animation Spark Fusion</strong></span>
+                <span class="admissions-track-age">Ages 8–14</span>
+              </li>
+              <li class="admissions-track-item">
+                <span><strong>Web &amp; Software Development</strong></span>
+                <span class="admissions-track-age">Ages 14+</span>
+              </li>
+              <li class="admissions-track-item">
+                <span><strong>Mental Maths Speed Summer</strong></span>
+                <span class="admissions-track-age">Ages 10+</span>
+              </li>
+            </ul>
+          </div>
+          <a href="#contact" class="btn btn-gradient"
+            style="width: 100%; text-align: center; justify-content: center;">Inquire Tech Bootcamps</a>
+        </div>
+      </div>
+
+      <!-- Row 2: Balanced All-Inclusive Perks + 3-Step Enrollment Guide -->
+      <div class="admissions-inclusive-banner">
+        <div>
+          <span class="section-tag light" style="margin-bottom: 10px;">All-Inclusive Benefits</span>
+          <h3 style="font-size: 1.55rem; font-weight: 800; color: var(--white); margin-bottom: 8px;">What's included in
+            every enrollment</h3>
+          <p style="font-size: 0.92rem; color: rgba(255, 255, 255, 0.8); line-height: 1.55;">
+            Everything needed for comprehensive, supported home education with zero hidden requirements.
+          </p>
+
+          <div class="inclusive-perks-grid">
+            <div class="inclusive-perk-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              <span>Live Zoom sessions with Navigators</span>
+            </div>
+            <div class="inclusive-perk-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              <span>Indicator &amp; Grade-based report cards</span>
+            </div>
+            <div class="inclusive-perk-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              <span>Official Promotion certificates</span>
+            </div>
+            <div class="inclusive-perk-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              <span>Full digital LMS student portal access</span>
+            </div>
+            <div class="inclusive-perk-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              <span>Regular parent progress reviews</span>
+            </div>
+            <div class="inclusive-perk-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              <span>Cambridge-aligned assessments</span>
+            </div>
+          </div>
+
+          <div
+            style="font-size: 0.84rem; color: var(--yellow); font-weight: 600; display: flex; align-items: center; gap: 8px;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;">
+              <polygon
+                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+              </polygon>
             </svg>
-            <span>Special sibling discount: 15% off for 2nd child onwards. Flexible monthly &amp; quarterly payment
-              plans.</span>
+            <span>Sibling Benefit: 15% concession for second child onwards. Flexible payment schedules upon
+              consultation.</span>
           </div>
         </div>
 
-        <!-- Right "What's included" Dark Navy Card -->
-        <div class="fees-included-card">
-          <div class="included-header">
-            <span class="section-tag light" style="margin-bottom: 8px;">All Inclusive</span>
-            <h3 class="included-title">What's included in every enrollment</h3>
-            <p class="included-subtitle">Everything needed for comprehensive, supported home education.</p>
+        <!-- Right Side: 3-Step Enrollment Path Card -->
+        <div class="enroll-steps-card">
+          <div style="font-size: 1.05rem; font-weight: 800; color: var(--white); margin-bottom: 4px;">Simple 3-Step
+            Admission</div>
+
+          <div class="enroll-step-row">
+            <div class="enroll-step-num">1</div>
+            <div>
+              <div class="enroll-step-title">Academic Consultation</div>
+              <div class="enroll-step-desc">Connect on WhatsApp to discuss your child's age and learning goals.</div>
+            </div>
           </div>
 
-          <ul class="included-list">
-            <li class="included-item">
-              <span class="check-icon">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
-                  stroke-linecap="round" stroke-linejoin="round">
-                  <polyline points="20 6 9 17 4 12"></polyline>
-                </svg>
-              </span>
-              <span>Live online sessions with trained Navigators</span>
-            </li>
-            <li class="included-item">
-              <span class="check-icon">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
-                  stroke-linecap="round" stroke-linejoin="round">
-                  <polyline points="20 6 9 17 4 12"></polyline>
-                </svg>
-              </span>
-              <span>Specialized Indicator / Grade-based report cards</span>
-            </li>
-            <li class="included-item">
-              <span class="check-icon">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
-                  stroke-linecap="round" stroke-linejoin="round">
-                  <polyline points="20 6 9 17 4 12"></polyline>
-                </svg>
-              </span>
-              <span>Official Promotion &amp; Completion certificates</span>
-            </li>
-            <li class="included-item">
-              <span class="check-icon">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
-                  stroke-linecap="round" stroke-linejoin="round">
-                  <polyline points="20 6 9 17 4 12"></polyline>
-                </svg>
-              </span>
-              <span>IQ Navigator digital student platform access</span>
-            </li>
-            <li class="included-item">
-              <span class="check-icon">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
-                  stroke-linecap="round" stroke-linejoin="round">
-                  <polyline points="20 6 9 17 4 12"></polyline>
-                </svg>
-              </span>
-              <span>Transparent parent progress reviews &amp; updates</span>
-            </li>
-            <li class="included-item">
-              <span class="check-icon">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
-                  stroke-linecap="round" stroke-linejoin="round">
-                  <polyline points="20 6 9 17 4 12"></polyline>
-                </svg>
-              </span>
-              <span>Cambridge-aligned assessments &amp; resources</span>
-            </li>
-          </ul>
+          <div class="enroll-step-row">
+            <div class="enroll-step-num">2</div>
+            <div>
+              <div class="enroll-step-title">Placement &amp; Schedule</div>
+              <div class="enroll-step-desc">Select convenient morning or afternoon slots matching your timezone.</div>
+            </div>
+          </div>
 
-          <a href="#contact" class="btn btn-outline-white" style="width: 100%;">Inquire About Fees</a>
+          <div class="enroll-step-row">
+            <div class="enroll-step-num">3</div>
+            <div>
+              <div class="enroll-step-title">Begin Interactive Cohort</div>
+              <div class="enroll-step-desc">Receive LMS credentials, study materials, and meet your dedicated Navigator.
+              </div>
+            </div>
+          </div>
+
+          <a href="https://wa.me/923000000000?text=Hello%2C%20I%20would%20like%20to%20inquire%20about%20IQ%20Navigators%20admissions"
+            target="_blank" rel="noopener" class="btn btn-outline-white"
+            style="width: 100%; text-align: center; justify-content: center; gap: 8px; margin-top: 6px;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path
+                d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z">
+              </path>
+            </svg>
+            <span>Start WhatsApp Consultation</span>
+          </a>
         </div>
       </div>
     </div>
@@ -4356,17 +5954,23 @@
         <!-- Testimonial 1 -->
         <div class="testimonial-card">
           <div>
-            <div class="stars-bar">★★★★★</div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
+              <div class="stars-bar">★★★★★</div>
+              <span class="age-pill"
+                style="font-size: 0.72rem; padding: 4px 10px; background: rgba(250, 210, 78, 0.15); color: var(--yellow); border: 1px solid rgba(250, 210, 78, 0.3);">Verified
+                Family</span>
+            </div>
             <p class="testimonial-quote">
               "Transitioning to IQ Navigators was the best decision for our daughter. Her Navigator gives her individual
               patience, and we have full flexibility with her Quranic and family schedule."
             </p>
           </div>
           <div class="testimonial-author">
-            <div class="author-avatar">AT</div>
+            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=160&q=80"
+              alt="Mrs. Ayesha Tariq — Parent at IQ Navigators" class="author-avatar-img" loading="lazy">
             <div>
               <div class="author-name">Mrs. Ayesha Tariq</div>
-              <div class="author-location">Mother of Primary Student · Lahore</div>
+              <div class="author-location">Primary Student Mother &middot; Lahore</div>
             </div>
           </div>
         </div>
@@ -4374,17 +5978,23 @@
         <!-- Testimonial 2 -->
         <div class="testimonial-card">
           <div>
-            <div class="stars-bar">★★★★★</div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
+              <div class="stars-bar">★★★★★</div>
+              <span class="age-pill"
+                style="font-size: 0.72rem; padding: 4px 10px; background: rgba(75, 184, 232, 0.15); color: var(--sky-blue); border: 1px solid rgba(75, 184, 232, 0.3);">Cambridge
+                Track</span>
+            </div>
             <p class="testimonial-quote">
               "The Cambridge alignment is truly rigorous. My son’s analytical math skills improved drastically within
               two terms, and the termly reporting keeps us completely in the loop."
             </p>
           </div>
           <div class="testimonial-author">
-            <div class="author-avatar" style="background: var(--purple);">SK</div>
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=160&q=80"
+              alt="Dr. Salman Khan — Parent at IQ Navigators" class="author-avatar-img" loading="lazy">
             <div>
               <div class="author-name">Dr. Salman Khan</div>
-              <div class="author-location">Father of Middle Years Student · Islamabad</div>
+              <div class="author-location">Middle Years Father &middot; Islamabad</div>
             </div>
           </div>
         </div>
@@ -4392,17 +6002,23 @@
         <!-- Testimonial 3 -->
         <div class="testimonial-card">
           <div>
-            <div class="stars-bar">★★★★★</div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
+              <div class="stars-bar">★★★★★</div>
+              <span class="age-pill"
+                style="font-size: 0.72rem; padding: 4px 10px; background: rgba(232, 65, 122, 0.15); color: var(--pink); border: 1px solid rgba(232, 65, 122, 0.3);">Overseas
+                UAE</span>
+            </div>
             <p class="testimonial-quote">
               "Living abroad in Dubai, we wanted British Cambridge standards without losing our Islamic values and Urdu
               fluency. IQ Navigators delivered the perfect balance."
             </p>
           </div>
           <div class="testimonial-author">
-            <div class="author-avatar" style="background: var(--pink);">FR</div>
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=160&q=80"
+              alt="Fatima &amp; Omar Rehman — Parents at IQ Navigators" class="author-avatar-img" loading="lazy">
             <div>
               <div class="author-name">Fatima &amp; Omar Rehman</div>
-              <div class="author-location">Overseas Pakistani Family · UAE</div>
+              <div class="author-location">Expatriate Family &middot; Dubai, UAE</div>
             </div>
           </div>
         </div>
@@ -4643,7 +6259,7 @@
         <li><a href="#student-profile" class="footer-link">Virtual Tour</a></li>
         <li><a href="#programs" class="footer-link">Programs</a></li>
         <li><a href="#student-life" class="footer-link">Student Life</a></li>
-        <li><a href="#fees" class="footer-link">Fees</a></li>
+        <li><a href="#fees" class="footer-link">Admissions</a></li>
         <li><a href="#contact" class="footer-link">Contact</a></li>
       </ul>
 
@@ -4754,15 +6370,19 @@
 
       // 6. Video Modal Trigger & Close
       const videoTriggerCard = document.getElementById('videoTriggerCard');
+      const heroVideoTrigger = document.getElementById('heroVideoTrigger');
       const videoModal = document.getElementById('videoModal');
       const closeVideoModal = document.getElementById('closeVideoModal');
       const closeModalBtn = document.getElementById('closeModalBtn');
 
-      if (videoTriggerCard && videoModal) {
-        videoTriggerCard.addEventListener('click', () => {
+      if (videoModal) {
+        const showModal = () => {
           videoModal.classList.add('active');
           document.body.style.overflow = 'hidden';
-        });
+        };
+
+        if (videoTriggerCard) videoTriggerCard.addEventListener('click', showModal);
+        if (heroVideoTrigger) heroVideoTrigger.addEventListener('click', showModal);
 
         const hideModal = () => {
           videoModal.classList.remove('active');
@@ -4780,6 +6400,33 @@
           if (e.key === 'Escape' && videoModal.classList.contains('active')) {
             hideModal();
           }
+        });
+      }
+
+      // 7. Interactive Programs Tab Switching
+      const programTabBtns = document.querySelectorAll('.program-tab-btn');
+      const programTabPanes = document.querySelectorAll('.program-tab-pane');
+
+      if (programTabBtns.length > 0 && programTabPanes.length > 0) {
+        programTabBtns.forEach(btn => {
+          btn.addEventListener('click', () => {
+            const targetTab = btn.getAttribute('data-tab');
+
+            programTabBtns.forEach(b => {
+              b.classList.remove('active');
+              b.setAttribute('aria-selected', 'false');
+            });
+            programTabPanes.forEach(pane => pane.classList.remove('active'));
+
+            btn.classList.add('active');
+            btn.setAttribute('aria-selected', 'true');
+
+            const activePane = document.getElementById(targetTab);
+            if (activePane) {
+              activePane.classList.add('active');
+            }
+            btn.scrollIntoView({ behavior: 'smooth', inline: 'nearest', block: 'nearest' });
+          });
         });
       }
     });
